@@ -66,7 +66,6 @@ git clone https://github.com/yourusername/infertility-masterclass.git
 
 ## 🌐 Live Demo
 
-*(You can add your GitHub Pages link here once you deploy it)*
 **[View the Live Portal Here](https://borun.github.io/fogsi-infertility-masterclass-2025/)**
 
 ---
