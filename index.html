@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FOGSI-ICOG & ISAR Infertility Masterclass E-Learning Portal</title>
+  <title>MedEd | Open Medical E-Learning Platform</title>
   
   <!-- Tailwind CSS & Google Fonts -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   
   <!-- FontAwesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
   <script>
     tailwind.config = {
@@ -46,890 +46,563 @@
   </script>
 
   <style>
-    /* Custom Scrollbars & Accents */
     ::-webkit-scrollbar { width: 6px; height: 6px; }
     ::-webkit-scrollbar-track { background: #0f172a; }
     ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
     ::-webkit-scrollbar-thumb:hover { background: #475569; }
-    .glass-nav { background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(12px); }
-    .badge-time { font-family: 'JetBrains Mono', monospace; }
+    .glass-nav { background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(16px); }
+    .hero-glow {
+      background: radial-gradient(circle at 50% 20%, rgba(2, 132, 199, 0.15), rgba(13, 148, 136, 0.05) 50%, transparent 80%);
+    }
   </style>
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans antialiased min-h-screen flex flex-col">
+<body class="bg-slate-950 text-slate-100 font-sans antialiased min-h-screen flex flex-col selection:bg-sky-500 selection:text-white">
 
   <!-- ==================== TOP NAVIGATION ==================== -->
-  <header class="sticky top-0 z-50 glass-nav border-b border-slate-800 transition-all">
+  <header class="sticky top-0 z-50 glass-nav border-b border-slate-800/80 transition-all">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      <div class="flex items-center space-x-3">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-sky-500 to-teal-400 flex items-center justify-center text-slate-950 font-bold text-lg shadow-lg shadow-sky-500/20">
-          <i class="fa-solid fa-dna"></i>
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="flex items-center space-x-3 group">
+        <div class="h-10 w-10 rounded-xl bg-gradient-to-tr from-sky-600 via-teal-500 to-emerald-400 flex items-center justify-center shadow-lg shadow-sky-500/20 text-white font-bold text-lg group-hover:scale-105 transition-transform">
+          <i class="fa-solid fa-heart-pulse"></i>
         </div>
         <div>
-          <span class="text-xs font-semibold uppercase tracking-wider text-sky-400 block">FOGSI-ICOG & ISAR</span>
-          <h1 class="text-sm sm:text-base font-bold text-white leading-tight">Infertility Certificate Masterclass</h1>
+          <div class="flex items-center space-x-2">
+            <span class="text-lg font-extrabold text-white tracking-tight">Med<span class="text-sky-400">Ed</span></span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-teal-950 text-teal-400 border border-teal-800/60 font-semibold uppercase tracking-wider">Open Access</span>
+          </div>
+          <p class="text-[11px] text-slate-400 font-medium hidden sm:block">Open Medical E-Learning Hub</p>
         </div>
+      </a>
+
+      <!-- Quick Nav Links -->
+      <nav class="hidden md:flex items-center space-x-6 text-xs font-medium text-slate-300">
+        <a href="#topics" class="hover:text-sky-400 transition-colors flex items-center gap-1.5">
+          <i class="fa-solid fa-book-open-reader text-slate-500"></i> Course Directory
+        </a>
+        <a href="#methodology" class="hover:text-sky-400 transition-colors flex items-center gap-1.5">
+          <i class="fa-solid fa-layer-group text-slate-500"></i> Framework
+        </a>
+        <a href="#contribute" class="hover:text-sky-400 transition-colors flex items-center gap-1.5">
+          <i class="fa-solid fa-circle-plus text-slate-500"></i> Add a Topic
+        </a>
+      </nav>
+
+      <!-- Right Action CTAs -->
+      <div class="flex items-center space-x-3">
+        <a href="https://github.com/borun/meded" target="_blank" class="flex items-center space-x-2 px-3.5 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700 text-xs font-semibold hover:border-slate-600 transition-all shadow-sm">
+          <i class="fa-brands fa-github text-sm"></i>
+          <span class="hidden sm:inline">GitHub Repo</span>
+          <span class="bg-slate-800 text-[10px] px-1.5 py-0.5 rounded border border-slate-700 font-mono text-slate-400">★</span>
+        </a>
       </div>
 
-      <!-- Quick Search & Stats -->
-      <div class="flex items-center space-x-4">
-        <div class="relative hidden sm:block w-64">
-          <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
-          <input 
-            type="text" 
-            id="searchInput" 
-            oninput="handleSearch(this.value)"
-            placeholder="Search topic, speaker, drug..." 
-            class="w-full pl-9 pr-3 py-1.5 text-xs bg-slate-900 border border-slate-700 rounded-lg text-slate-200 placeholder-slate-400 focus:outline-none focus:border-sky-500 transition-colors"
-          />
-        </div>
-        <div class="flex items-center space-x-2 bg-slate-900 border border-slate-800 px-3 py-1 rounded-lg">
-          <i class="fa-solid fa-award text-amber-400 text-xs"></i>
-          <span class="text-xs font-medium text-slate-300">Progress: <span id="progressText" class="text-sky-400 font-bold">0/26</span></span>
-        </div>
-      </div>
     </div>
   </header>
 
-  <!-- ==================== MAIN CONTENT LAYOUT ==================== -->
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex-1 grid grid-cols-1 lg:grid-cols-12 gap-8">
-
-    <!-- ==================== LEFT COLUMN: VIDEO PLAYER & CURRICULUM ==================== -->
-    <div class="lg:col-span-5 flex flex-col space-y-4">
+  <!-- ==================== HERO SECTION ==================== -->
+  <section class="relative hero-glow pt-12 pb-16 px-4 sm:px-6 lg:px-8 border-b border-slate-800/60">
+    <div class="max-w-5xl mx-auto text-center space-y-6">
       
-      <!-- Video Player Card -->
-      <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-2xl sticky top-20">
-        <div class="relative aspect-video bg-black">
-          <iframe 
-            id="videoIframe" 
-            src="https://www.youtube.com/embed/sMkY7bdiVlI?enablejsapi=1&start=0" 
-            title="Course Video Player" 
-            class="w-full h-full border-0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            allowfullscreen>
-          </iframe>
-        </div>
-        
-        <div class="p-4 bg-slate-900/90 border-t border-slate-800">
-          <div class="flex items-center justify-between text-xs text-slate-400 mb-1">
-            <span id="playerDayBadge" class="uppercase font-semibold text-sky-400 tracking-wider">Day 1 Session</span>
-            <span id="playerTimestamp" class="badge-time bg-slate-800 text-slate-300 px-2 py-0.5 rounded border border-slate-700">00:00:00</span>
-          </div>
-          <h2 id="playerTopicTitle" class="text-sm font-bold text-white truncate">Inauguration & Course Overview</h2>
-          <p id="playerSpeakerName" class="text-xs text-slate-400 mt-0.5 truncate">Dr. Fessy Louis, Dr. Parag Biniwale</p>
-
-          <div class="mt-3 pt-3 border-t border-slate-800/80 flex items-center justify-between gap-2">
-            <a id="directYoutubeLink" href="https://youtu.be/sMkY7bdiVlI?t=0" target="_blank" rel="noopener noreferrer" class="text-xs text-sky-400 hover:text-sky-300 flex items-center gap-1.5 transition-colors">
-              <i class="fa-brands fa-youtube text-red-500"></i>
-              <span>Watch directly on YouTube</span>
-            </a>
-            <button onclick="toggleCompletedCurrent()" id="btnMarkComplete" class="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1 rounded-md border border-slate-700 transition flex items-center gap-1.5">
-              <i class="fa-regular fa-circle-check text-emerald-400"></i>
-              <span>Mark Done</span>
-            </button>
-          </div>
-        </div>
+      <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-sky-950/80 border border-sky-800/60 text-sky-300 text-xs font-medium backdrop-blur">
+        <span class="flex h-2 w-2 rounded-full bg-teal-400 animate-pulse"></span>
+        <span>Curated Masterclasses & AI-Guided Clinical Notes</span>
       </div>
 
-      <!-- Course Quick Overview Card -->
-      <div class="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-4 hidden lg:block text-xs text-slate-400 space-y-2">
-        <h3 class="font-semibold text-slate-300 flex items-center gap-1.5">
-          <i class="fa-solid fa-graduation-cap text-sky-400"></i> Course Certification Directives
-        </h3>
-        <p>• Mandatory attendance across all 3 days.</p>
-        <p>• Minimum 50% score in post-test MCQ assessment required each day for ICOG Certificate issuance.</p>
+      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
+        Evidence-Based Medical Education, <br class="hidden sm:block" />
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-teal-300 to-emerald-400">
+          Structured for Deep & Comfortable Learning
+        </span>
+      </h1>
+
+      <p class="text-slate-300 text-sm sm:text-base max-w-3xl mx-auto leading-relaxed">
+        A community-driven, open-access platform designed for medical students, residents, and clinicians. 
+        Transforming complex multi-hour webinars and conference lectures into <strong>precision-timestamped modules</strong>, 
+        concise <strong>Markdown clinical pearls</strong>, and <strong>offline-tracked courses</strong>.
+      </p>
+
+      <!-- Metric Badges -->
+      <div class="pt-2 flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-xs text-slate-300">
+        <div class="flex items-center space-x-2 px-3.5 py-2 rounded-xl bg-slate-900/80 border border-slate-800">
+          <i class="fa-solid fa-clock text-sky-400"></i>
+          <span><strong>9+ Hours</strong> Curated Content</span>
+        </div>
+        <div class="flex items-center space-x-2 px-3.5 py-2 rounded-xl bg-slate-900/80 border border-slate-800">
+          <i class="fa-solid fa-bolt text-teal-400"></i>
+          <span><strong>Zero Fluff</strong> Precision Timestamps</span>
+        </div>
+        <div class="flex items-center space-x-2 px-3.5 py-2 rounded-xl bg-slate-900/80 border border-slate-800">
+          <i class="fa-solid fa-cloud-arrow-down text-emerald-400"></i>
+          <span><strong>Offline</strong> Progress Tracking</span>
+        </div>
+        <div class="flex items-center space-x-2 px-3.5 py-2 rounded-xl bg-slate-900/80 border border-slate-800">
+          <i class="fa-brands fa-github text-slate-400"></i>
+          <span><strong>100% Free</strong> on GitHub Pages</span>
+        </div>
       </div>
 
     </div>
+  </section>
 
-    <!-- ==================== RIGHT COLUMN: LECTURES & DETAILED SUMMARIES ==================== -->
-    <div class="lg:col-span-7 flex flex-col space-y-6">
-
-      <!-- Days Switcher Navigation Tabs -->
-      <div class="flex items-center space-x-2 bg-slate-900 p-1.5 rounded-xl border border-slate-800 overflow-x-auto">
-        <button onclick="switchDay(1)" id="tab-day-1" class="day-tab flex-1 py-2 px-3 rounded-lg text-xs font-semibold transition-all flex items-center justify-center space-x-2 bg-sky-600 text-white shadow-md">
-          <i class="fa-solid fa-mars text-xs"></i>
-          <span class="whitespace-nowrap">Day 1: Male & IUI</span>
-        </button>
-        <button onclick="switchDay(2)" id="tab-day-2" class="day-tab flex-1 py-2 px-3 rounded-lg text-xs font-medium text-slate-400 hover:text-slate-200 hover:bg-slate-800 transition-all flex items-center justify-center space-x-2">
-          <i class="fa-solid fa-venus text-xs"></i>
-          <span class="whitespace-nowrap">Day 2: Female & Endoscopy</span>
-        </button>
-        <button onclick="switchDay(3)" id="tab-day-3" class="day-tab flex-1 py-2 px-3 rounded-lg text-xs font-medium text-slate-400 hover:text-slate-200 hover:bg-slate-800 transition-all flex items-center justify-center space-x-2">
-          <i class="fa-solid fa-flask-vial text-xs"></i>
-          <span class="whitespace-nowrap">Day 3: ART & Lab</span>
-        </button>
-      </div>
-
-      <!-- Active Day Header Banner -->
-      <div id="dayHeaderBanner" class="p-4 rounded-2xl bg-gradient-to-r from-slate-900 via-sky-950/40 to-slate-900 border border-sky-900/40 flex items-start justify-between">
+  <!-- ==================== SEARCH & COURSE DIRECTORY ==================== -->
+  <section id="topics" class="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full flex-1 space-y-8">
+    
+    <!-- Section Header & Filter Controls -->
+    <div class="space-y-4">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
-          <span id="dayBadgeSubtitle" class="text-xs uppercase font-bold tracking-widest text-sky-400">Day 1 Focus</span>
-          <h2 id="dayBannerTitle" class="text-lg sm:text-xl font-bold text-white mt-0.5">Male Factor Evaluation, Genetics & IUI Protocols</h2>
-          <p id="dayBannerDescription" class="text-xs text-slate-300 mt-1">Semen analysis (WHO 6th Edition), azoospermia management, sperm preparation, and controlled ovarian induction.</p>
+          <span class="text-xs uppercase font-bold tracking-widest text-sky-400">Clinical Library</span>
+          <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Explore Learning Topics</h2>
+          <p class="text-xs sm:text-sm text-slate-400 mt-1">Filter by specialty, topic format, or search for clinical protocols & conditions.</p>
+        </div>
+
+        <!-- Real-Time Search Bar -->
+        <div class="relative w-full md:w-80">
+          <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 text-xs"></i>
+          <input type="text" id="hubSearchInput" oninput="filterTopics()" placeholder="Search topics, tags, conditions..." class="w-full bg-slate-900 border border-slate-800 rounded-xl pl-9 pr-4 py-2.5 text-xs text-slate-100 placeholder-slate-500 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 transition-all shadow-inner">
         </div>
       </div>
 
-      <!-- Topics Accordion / Modules Container -->
-      <div id="modulesContainer" class="space-y-4">
-        <!-- Javascript will inject topic modules dynamically based on active day -->
+      <!-- Filter Chips Row -->
+      <div class="flex flex-wrap items-center gap-2 pt-2 text-xs border-b border-slate-800/80 pb-4">
+        <span class="text-slate-500 font-semibold mr-1 text-[11px] uppercase tracking-wider">Category:</span>
+        <button onclick="setCategoryFilter('all')" id="cat-all" class="cat-filter-btn px-3 py-1.5 rounded-lg font-medium transition-all bg-sky-600 text-white shadow-sm">
+          All Specialties
+        </button>
+        <button onclick="setCategoryFilter('obgyn')" id="cat-obgyn" class="cat-filter-btn px-3 py-1.5 rounded-lg font-medium transition-all bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800">
+          OB-GYN & Reproductive
+        </button>
+        <button onclick="setCategoryFilter('cardiology')" id="cat-cardiology" class="cat-filter-btn px-3 py-1.5 rounded-lg font-medium transition-all bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800">
+          Cardiology & ECG
+        </button>
+        <button onclick="setCategoryFilter('critical-care')" id="cat-critical-care" class="cat-filter-btn px-3 py-1.5 rounded-lg font-medium transition-all bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800">
+          Critical Care & ICU
+        </button>
+        <button onclick="setCategoryFilter('medicine')" id="cat-medicine" class="cat-filter-btn px-3 py-1.5 rounded-lg font-medium transition-all bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800">
+          Internal Medicine
+        </button>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-2 text-xs">
+        <span class="text-slate-500 font-semibold mr-1 text-[11px] uppercase tracking-wider">Format:</span>
+        <button onclick="setTypeFilter('all')" id="type-all" class="type-filter-btn px-2.5 py-1 rounded-md font-medium transition-all bg-slate-800 text-white border border-slate-700">
+          All Formats
+        </button>
+        <button onclick="setTypeFilter('curated')" id="type-curated" class="type-filter-btn px-2.5 py-1 rounded-md font-medium transition-all bg-slate-900/60 hover:bg-slate-800 text-slate-400 border border-slate-800/80">
+          Curated Masterclasses
+        </button>
+        <button onclick="setTypeFilter('ai-guided')" id="type-ai-guided" class="type-filter-btn px-2.5 py-1 rounded-md font-medium transition-all bg-slate-900/60 hover:bg-slate-800 text-slate-400 border border-slate-800/80">
+          AI-Guided Clinical Notes
+        </button>
+      </div>
+    </div>
+
+    <!-- Topics Cards Grid -->
+    <div id="topicsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+      <!-- Populated via JavaScript dynamically from topics data -->
+    </div>
+
+  </section>
+
+  <!-- ==================== METHODOLOGY / HOW IT WORKS ==================== -->
+  <section id="methodology" class="py-16 bg-slate-900/50 border-y border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <div class="text-center max-w-3xl mx-auto space-y-3">
+        <span class="text-xs uppercase font-bold tracking-widest text-teal-400">Pedagogical Framework</span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-white">How MedEd Accelerates Learning</h2>
+        <p class="text-sm text-slate-400 leading-relaxed">
+          Traditional webinar recordings are bloated with introductions, Q&As, and dead time. MedEd restructures open medical content into an engaging clinical learning environment.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-sky-500/40 transition-all space-y-3">
+          <div class="h-10 w-10 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 text-lg">
+            <i class="fa-solid fa-scissors"></i>
+          </div>
+          <h3 class="text-base font-bold text-white">1. Curated Precision Timestamps</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Jump directly to critical segment starts and stop before transitions or housekeeping. Save 40–50% of watching time while capturing full clinical pearls.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-teal-500/40 transition-all space-y-3">
+          <div class="h-10 w-10 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center text-teal-400 text-lg">
+            <i class="fa-brands fa-markdown"></i>
+          </div>
+          <h3 class="text-base font-bold text-white">2. Markdown-Powered Clinical Notes</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Structured diagnostic criteria (e.g. WHO 6th Ed, Poseidon), dosage tables, and surgical guidelines authored in clean Markdown rendered side-by-side with videos.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-emerald-500/40 transition-all space-y-3">
+          <div class="h-10 w-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 text-lg">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <h3 class="text-base font-bold text-white">3. Zero Lock-in & Offline Progress</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            100% client-side. Progress tracking is stored locally in your browser’s <code class="text-emerald-400 font-mono">localStorage</code>. No accounts, cookies, or tracking servers needed.
+          </p>
+        </div>
+
       </div>
 
     </div>
-  </main>
+  </section>
 
-  <!-- ==================== FOOTER ==================== -->
-  <footer class="border-t border-slate-900 bg-slate-950 py-6 mt-12 text-center text-xs text-slate-500">
-    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <div>
-        <span class="font-semibold text-slate-400">FOGSI - ICOG Certificate Course on Infertility</span> in Collaboration with <span class="text-slate-400">ISAR</span>.
+  <!-- ==================== HOW TO CONTRIBUTE A TOPIC ==================== -->
+  <section id="contribute" class="py-14 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto w-full space-y-8">
+    <div class="p-8 rounded-3xl bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 space-y-6">
+      
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <span class="text-xs uppercase font-bold tracking-widest text-sky-400">Open Collaboration</span>
+          <h2 class="text-xl sm:text-2xl font-bold text-white mt-1">Want to Add a Medical Topic or Summary?</h2>
+          <p class="text-xs sm:text-sm text-slate-400 mt-1">The repository is structured so anyone can contribute a course or AI-synthesized lecture notes.</p>
+        </div>
+        <a href="https://github.com/borun/meded" target="_blank" class="shrink-0 px-4 py-2 rounded-xl bg-sky-600 hover:bg-sky-500 text-white text-xs font-semibold transition flex items-center space-x-2 shadow-lg shadow-sky-600/20">
+          <i class="fa-brands fa-github"></i>
+          <span>Fork on GitHub</span>
+        </a>
       </div>
-      <div class="flex items-center space-x-4 text-slate-400">
-        <span>Evidence-Based Clinical Curriculum</span>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
+        <div class="p-4 rounded-xl bg-slate-950 border border-slate-800/80 space-y-1.5">
+          <span class="font-mono text-sky-400 font-bold">Step 1</span>
+          <h4 class="font-semibold text-slate-200">Create a Directory</h4>
+          <p class="text-slate-400">Create <code class="text-sky-300 font-mono">topics/your-topic-slug/</code> with a <code class="text-sky-300 font-mono">content/</code> folder.</p>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-950 border border-slate-800/80 space-y-1.5">
+          <span class="font-mono text-teal-400 font-bold">Step 2</span>
+          <h4 class="font-semibold text-slate-200">Write Markdown Notes</h4>
+          <p class="text-slate-400">Write lesson notes in Markdown with timestamps, tables, and clinical takeaways.</p>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-950 border border-slate-800/80 space-y-1.5">
+          <span class="font-mono text-emerald-400 font-bold">Step 3</span>
+          <h4 class="font-semibold text-slate-200">Submit a PR</h4>
+          <p class="text-slate-400">Register topic metadata in <code class="text-emerald-300 font-mono">data/topics.json</code> and open a GitHub Pull Request.</p>
+        </div>
       </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== MEDICAL DISCLAIMER & FOOTER ==================== -->
+  <footer class="border-t border-slate-900 bg-slate-950 py-10 text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+      
+      <!-- Medical Disclaimer Box -->
+      <div class="p-4 rounded-xl bg-slate-900/40 border border-slate-800/60 text-[11px] text-slate-400 space-y-1">
+        <p class="font-semibold text-slate-300 flex items-center gap-1.5">
+          <i class="fa-solid fa-triangle-exclamation text-amber-400"></i> Medical & Educational Disclaimer
+        </p>
+        <p class="leading-relaxed">
+          The MedEd platform is designed exclusively for educational and training purposes for medical practitioners, postgraduate trainees, and students. Content summaries are distilled from public academic webinars, society guidelines, and AI synthesis. They do not constitute formal clinical medical advice. Always refer to official clinical society guidelines and individual patient factors for bedside management.
+        </p>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-slate-900">
+        <div class="flex items-center space-x-2 text-slate-400">
+          <span class="font-bold text-white">MedEd</span>
+          <span>•</span>
+          <span>Open Medical E-Learning Hub</span>
+        </div>
+        <div class="flex items-center space-x-6 text-slate-400">
+          <a href="https://github.com/borun/meded/blob/main/LICENSE" target="_blank" class="hover:text-sky-400 transition">MIT License</a>
+          <a href="https://github.com/borun/meded/blob/main/README.md" target="_blank" class="hover:text-sky-400 transition">Platform Documentation</a>
+          <a href="https://github.com/borun" target="_blank" class="hover:text-sky-400 transition">GitHub @borun</a>
+        </div>
+      </div>
+
     </div>
   </footer>
 
-  <!-- ==================== COURSE DATA & INTERACTIVE LOGIC ==================== -->
+  <!-- ==================== HUB DYNAMIC SCRIPT ==================== -->
   <script>
-    const courseData = {
-      1: {
-        title: "Male Factor Evaluation, Genetics & IUI Protocols",
-        subtitle: "Day 1 Masterclass",
-        description: "Standardized semen analysis (WHO 6th Edition), clinical approach to obstructive vs. non-obstructive azoospermia, medical management, genetic workups, and IUI stimulation.",
-        videoId: "sMkY7bdiVlI",
-        modules: [
-          {
-            id: "d1-m1",
-            title: "Inauguration & Course Directives",
-            speaker: "Dr. Fessy Louis, Dr. Parag Biniwale, Dr. Amit Patki",
-            startTime: "00:00:00",
-            startSeconds: 0,
-            endSeconds: 664,
-            summary: `
-              <p class="mb-2 leading-relaxed">Opening remarks establishing the 3-day curriculum organized jointly by ICOG and ISAR. Attendance is mandatory across all 3 days, with a daily qualifying threshold of 50% on post-test MCQs for certificate issuance.</p>
-            `
-          },
-          {
-            id: "d1-m2",
-            title: "How to Interpret Semen Analysis Report (WHO 6th Edition)",
-            speaker: "Dr. Chaitanya Shembekar",
-            startTime: "00:13:03",
-            startSeconds: 783,
-            endSeconds: 1830,
-            summary: `
-              <div class="space-y-2 text-xs">
-                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 bg-slate-950 p-2.5 rounded-lg border border-slate-800">
-                  <div><span class="text-slate-400 block">Concentration:</span> <strong class="text-sky-300">≥ 16 M/mL</strong></div>
-                  <div><span class="text-slate-400 block">Total Count:</span> <strong class="text-sky-300">≥ 39 M/ejaculate</strong></div>
-                  <div><span class="text-slate-400 block">Progressive Motility:</span> <strong class="text-sky-300">≥ 30% (Total ≥42%)</strong></div>
-                  <div><span class="text-slate-400 block">Strict Morphology:</span> <strong class="text-sky-300">≥ 4% normal forms</strong></div>
-                </div>
-                <ul class="list-disc list-inside space-y-1 text-slate-300">
-                  <li><strong>Total Motile Sperm Count (TMSC):</strong> Best predictive index (<span class="font-mono text-sky-400">Vol × Conc × Motility / 100</span>).</li>
-                  <li><strong>Pre-analytical rules:</strong> 72-hour optimal abstinence window; repeat testing after 4 weeks before making definitive diagnoses.</li>
-                  <li><strong>Vitality Test:</strong> Eosin-Nigrosin or HOST test (Normal ≥ 54%). Motile sperms are live, but non-motile are not necessarily dead.</li>
-                  <li><strong>Absolute contraindications to unassisted fertilization:</strong> Complete globospermia and complete necrospermia.</li>
-                </ul>
-              </div>
-            `
-          },
-          {
-            id: "d1-m3",
-            title: "How to Approach Azoospermia",
-            speaker: "Dr. Fessy Louis",
-            startTime: "00:32:49",
-            startSeconds: 1969,
-            endSeconds: 3060,
-            summary: `
-              <div class="space-y-2 text-xs">
-                <p>Azoospermia requires verification by pellet examination post-centrifugation (3000g for 15 min).</p>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-2">
-                  <div class="bg-slate-950 p-2 rounded-lg border border-slate-800">
-                    <strong class="text-teal-400 block mb-1">Obstructive Azoospermia (OA)</strong>
-                    <p class="text-slate-300">• Normal testicular volume, normal FSH (1.5–8 IU/L).</p>
-                    <p class="text-slate-300">• Dilated epididymis; normal spermatogenesis on biopsy.</p>
-                    <p class="text-slate-300">• Retrieval: PESA / TESA with ~100% recovery.</p>
-                  </div>
-                  <div class="bg-slate-950 p-2 rounded-lg border border-slate-800">
-                    <strong class="text-rose-400 block mb-1">Non-Obstructive Azoospermia (NOA)</strong>
-                    <p class="text-slate-300">• Small, soft testes; elevated serum FSH (>8 IU/L).</p>
-                    <p class="text-slate-300">• High prevalence of Klinefelter (47,XXY) or Y-microdeletions.</p>
-                    <p class="text-slate-300">• Retrieval: Micro-TESE on the day of/prior to oocyte pickup.</p>
-                  </div>
-                </div>
-              </div>
-            `
-          },
-          {
-            id: "d1-m4",
-            title: "Ovulation Induction Protocols for IUI",
-            speaker: "Dr. Kedar Ganla",
-            startTime: "00:52:52",
-            startSeconds: 3172,
-            endSeconds: 4106,
-            summary: `
-              <div class="space-y-2 text-xs">
-                <p class="text-slate-300"><strong>Target:</strong> 1–3 mature follicles (18–20 mm) with triple-line endometrium ≥ 7 mm. Avoid multiple gestations.</p>
-                <ul class="list-disc list-inside space-y-1 text-slate-300">
-                  <li><strong>First Line:</strong> Letrozole 2.5–5.0 mg/day (Days 2/3 to 6/7). Superior to Clomiphene with higher live birth rates and no endometrial thinning.</li>
-                  <li><strong>Combined Protocol:</strong> Letrozole (Days 2–6) + HMG/FSH 75 IU on Day 7 & 9 for improved multi-follicular recruitment.</li>
-                  <li><strong>Cancellation Criteria:</strong> Cancel cycle or convert to IVF if ≥ 4 follicles ≥ 16 mm or Serum E2 > 3,000 pg/mL to prevent OHSS and high-order twins/triplets.</li>
-                  <li><strong>Premature LH Surge:</strong> Injectable GnRH antagonist (0.25 mg) when lead follicle is ≥ 14–16 mm. Avoid oral antagonists due to teratogenicity.</li>
-                </ul>
-              </div>
-            `
-          },
-          {
-            id: "d1-m5",
-            title: "Semen Preparation Techniques for IUI",
-            speaker: "Dr. Krishna Chaitanya",
-            startTime: "01:12:21",
-            startSeconds: 4341,
-            endSeconds: 5175,
-            summary: `
-              <div class="space-y-2 text-xs">
-                <p>Preparation eliminates prostaglandins (which trigger severe uterine cramps/shock) and infectious bacteria/WBCs while concentrating motile spermatozoa.</p>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-2">
-                  <div class="bg-slate-950 p-2 rounded-lg border border-slate-800">
-                    <strong class="text-sky-400">Swim-Up Method</strong>
-                    <p class="text-slate-300">• Migration-based technique.</p>
-                    <p class="text-slate-300">• WHO standard for normozoospermic samples.</p>
-                    <p class="text-slate-300">• Minimal ROS generation and zero mechanical stress.</p>
-                  </div>
-                  <div class="bg-slate-950 p-2 rounded-lg border border-slate-800">
-                    <strong class="text-sky-400">Double Density Gradient</strong>
-                    <p class="text-slate-300">• Centrifugation through 40%/80% silica colloid.</p>
-                    <p class="text-slate-300">• Optimal for oligozoospermia, viscous, or serodiscordant samples.</p>
-                    <p class="text-slate-300">• Benchmark target: Post-wash TMSC of <strong>5–10 Million</strong>.</p>
-                  </div>
-                </div>
-              </div>
-            `
-          },
-          {
-            id: "d1-m6",
-            title: "Medical Management of Male Infertility",
-            speaker: "Dr. Kunjimoideen",
-            startTime: "01:29:12",
-            startSeconds: 5352,
-            endSeconds: 6300,
-            summary: `
-              <div class="space-y-2 text-xs">
-                <ul class="list-disc list-inside space-y-1 text-slate-300">
-                  <li><strong>Hypogonadotropic Hypogonadism:</strong> hCG 1,000–2,000 IU 2–3 times/week + HMG/rFSH 75–150 IU for at least 3–6 months (spermatogenic cycle = 72 days; repeat semen analysis only after 12 weeks).</li>
-                  <li><strong>Obesity-Related Hypogonadism:</strong> T:E ratio &lt; 10 denotes aromatase hyperactivity. Treat with Letrozole 2.5 mg/day or Anastrozole 1 mg/day for 3–6 months.</li>
-                  <li><strong>Anabolic Steroid Abuse:</strong> Cessation of exogenous steroids leads to spontaneous recovery in 4–12 months, supported by hCG therapy.</li>
-                  <li><strong>Absolute Contraindication:</strong> Exogenous testosterone therapy in men seeking fertility (suppresses HPG axis and depletes intratesticular testosterone).</li>
-                </ul>
-              </div>
-            `
-          },
-          {
-            id: "d1-m7",
-            title: "Genetics in Male Infertility",
-            speaker: "Dr. Veronica Arora",
-            startTime: "01:46:59",
-            startSeconds: 6419,
-            endSeconds: 7395,
-            summary: `
-              <div class="space-y-2 text-xs">
-                <table class="w-full text-left border border-slate-800 rounded bg-slate-950 text-slate-300">
-                  <thead class="bg-slate-900 text-sky-300">
-                    <tr><th class="p-1.5">Condition</th><th class="p-1.5">Test</th><th class="p-1.5">Clinical Implication</th></tr>
-                  </thead>
-                  <tbody>
-                    <tr class="border-t border-slate-800"><td class="p-1.5 font-semibold">Klinefelter (47,XXY)</td><td class="p-1.5">Karyotype</td><td class="p-1.5">Micro-TESE sperm retrieval before complete fibrosis.</td></tr>
-                    <tr class="border-t border-slate-800"><td class="p-1.5 font-semibold">AZFa / AZFb</td><td class="p-1.5">Y-MLPA</td><td class="p-1.5">Complete Sertoli-cell-only; retrieval contraindicated.</td></tr>
-                    <tr class="border-t border-slate-800"><td class="p-1.5 font-semibold">AZFc Deletion</td><td class="p-1.5">Y-MLPA</td><td class="p-1.5">~70% Micro-TESE retrieval; 100% transmitted to sons.</td></tr>
-                    <tr class="border-t border-slate-800"><td class="p-1.5 font-semibold">CBAVD (CFTR / ADGRG2)</td><td class="p-1.5">Gene Panel</td><td class="p-1.5">Mandatory female partner carrier testing + renal USG.</td></tr>
-                  </tbody>
-                </table>
-              </div>
-            `
-          },
-          {
-            id: "d1-m8",
-            title: "Case-Based Panel: Practical Scenarios in IUI",
-            speaker: "Dr. Deepak Goenka (Moderator)",
-            startTime: "02:12:18",
-            startSeconds: 7938,
-            endSeconds: 10838,
-            summary: `
-              <div class="space-y-2 text-xs">
-                <ul class="list-disc list-inside space-y-1 text-slate-300">
-                  <li><strong>Donor IUI:</strong> Mild Letrozole stimulation + hCG trigger preferred over natural cycle for accurate timing.</li>
-                  <li><strong>Tobacco/Smoking:</strong> Drastically increases sperm DFI and impairs fertilization; mandate cessation before IUI.</li>
-                  <li><strong>Lean PCOS:</strong> Prone to severe OHSS. Start with Letrozole 2.5 mg; avoid high starting gonadotropins.</li>
-                  <li><strong>Follicular-Endometrial Asynchrony:</strong> Follicle 16 mm with 5 mm lining indicates poor oocyte quality or unresponsive endometrium; cancel and restart rather than adding late estrogens.</li>
-                  <li><strong>ART Act Legal Guidelines:</strong> Donor IUI permitted for unmarried women (≥21 with affidavit), divorcees, and widows. Prohibited in abandoned or separated wives without formal legal divorce decrees.</li>
-                </ul>
-              </div>
-            `
-          },
-          {
-            id: "d1-m9",
-            title: "Day 1 Post-Test MCQ Analysis & Key",
-            speaker: "Dr. Ankita Srivastava & Dr. Fessy Louis",
-            startTime: "03:13:06",
-            startSeconds: 11586,
-            endSeconds: 11962,
-            summary: `
-              <div class="space-y-1 text-xs text-slate-300">
-                <p>• <strong>Q1:</strong> Azoospermia + non-palpable vas = <strong class="text-sky-300">CFTR mutation</strong>.</p>
-                <p>• <strong>Q2:</strong> Micro-TESE success correlates with = <strong class="text-sky-300">Larger testicular volume</strong>.</p>
-                <p>• <strong>Q3:</strong> Predictive ICSI value = <strong class="text-sky-300">Sperm motility & morphology</strong>.</p>
-                <p>• <strong>Q4:</strong> Centrifugation g-force = <strong class="text-sky-300">300 to 600g</strong>.</p>
-                <p>• <strong>Q5:</strong> Post-wash IUI target TMSC = <strong class="text-sky-300">5 to 10 Million</strong>.</p>
-              </div>
-            `
-          }
-        ]
-      },
-      2: {
-        title: "Female Infertility, Endoscopy & Endometrial Receptivity",
-        subtitle: "Day 2 Masterclass",
-        description: "Tubal reconstructive surgery vs. ART, surgical hysteroscopy standards, ovarian reserve assessment, Poseidon poor responder management, and chronic endometritis.",
-        videoId: "DSTmsIiuBT0",
-        modules: [
-          {
-            id: "d2-m1",
-            title: "Welcome Address & Day 2 Overview",
-            speaker: "Dr. Seema Pandey, Dr. Ashok Kumar, Dr. Sheila Mane",
-            startTime: "00:00:00",
-            startSeconds: 0,
-            endSeconds: 382,
-            summary: `
-              <p class="leading-relaxed">Day 2 session focusing entirely on the female reproductive tract: fallopian tubes, hysteroscopic cavity restoration, ovarian reserve biomarkers, Poseidon stratification, and infectious causes of recurrent implantation failure.</p>
-            `
-          },
-          {
-            id: "d2-m2",
-            title: "Tubal Factor Evaluation: ART vs. Surgery",
-            speaker: "Dr. Damodar Rao",
-            startTime: "00:09:46",
-            startSeconds: 586,
-            endSeconds: 1479,
-            summary: `
-              <div class="space-y-2 text-xs">
-                <ul class="list-disc list-inside space-y-1 text-slate-300">
-                  <li><strong>Proximal Obstruction:</strong> 10–25% caused by spasm or amorphous debris. <em>Hysteroscopic Proximal Tubal Cannulation (PTC)</em> is the procedure of choice (22–30% pregnancy rate, 4% ectopic risk). Resection and anastomosis are discouraged.</li>
-                  <li><strong>Sterilization Reversal (Tubo-tubal Anastomosis):</strong> Best in women &lt;30 years with residual tube length ≥ 4–5 cm (65–68% pregnancy rate).</li>
-                  <li><strong>Hydrosalpinx:</strong> Salpingectomy or laparoscopic clipping prior to IVF is essential to eliminate toxic fluid reflux and restore implantation rates.</li>
-                  <li><strong>Summary:</strong> Surgery is suited for young women with isolated tubal pathology; IVF is preferred in advanced age, diminished reserve, or severe male factor.</li>
-                </ul>
-              </div>
-            `
-          },
-          {
-            id: "d2-m3",
-            title: "Hysteroscopy: Your Third Eye in Fertility Surgery",
-            speaker: "Dr. Sanket Pisat",
-            startTime: "00:26:40",
-            startSeconds: 1600,
-            endSeconds: 2455,
-            summary: `
-              <div class="space-y-2 text-xs">
-                <ul class="list-disc list-inside space-y-1 text-slate-300">
-                  <li><strong>Endometrial Polyps:</strong> Any polyp ≥ 1 cm or present in an infertile patient requires complete excision down to the base using cold scissors or resectoscopy slicing.</li>
-                  <li><strong>Uterine Septum:</strong> Diagnosed via 3D TVS using CONUTA/ESHRE criteria (internal indentation &gt;50% of wall thickness). Resection increases cavity volume and improves term delivery.</li>
-                  <li><strong>T-Shaped Uterus:</strong> Perform lateral metroplasty only when all three CUME criteria are satisfied; avoid overtreating mild lateral indentations.</li>
-                  <li><strong>Submucous Fibroids:</strong> FIGO Types 0–1 via bipolar resectoscope. Transmural FIGO Types 2–5 should be removed laparoscopically to prevent fluid overload and endometrial scarring.</li>
-                  <li><strong>Intrauterine Synechiae:</strong> Sharp adhesiolysis followed by a pediatric Foley catheter balloon/stent for 2–4 days and cyclical estrogens.</li>
-                </ul>
-              </div>
-            `
-          },
-          {
-            id: "d2-m4",
-            title: "Evaluating the Ovary in Infertile Couples",
-            speaker: "Dr. Narendra Malhotra",
-            startTime: "00:42:20",
-            startSeconds: 2540,
-            endSeconds: 4255,
-            summary: `
-              <div class="space-y-2 text-xs">
-                <ul class="list-disc list-inside space-y-1 text-slate-300">
-                  <li><strong>Quality vs. Quantity:</strong> Female age dictates oocyte euploidy (quality), while AMH and AFC dictate follicle quantity. A younger patient with low AMH has a higher live birth chance than an older patient with normal AMH.</li>
-                  <li><strong>Day 2 TVS Protocol:</strong> Count 2–10 mm antral follicles (Normal: 7–14; Low: &lt;5; High/PCOS: &gt;15), measure ovarian volume (3–12 cm³), and evaluate stromal Doppler vascularity.</li>
-                  <li><strong>Dynamic Markers:</strong> Follicle-to-Oocyte Index (FOI = Retrieved Oocytes / AFC × 100; normal &gt;50%).</li>
-                  <li><strong>Endometriomas:</strong> Perform embryo/oocyte vitrification <em>before</em> surgical cystectomy to prevent depleting healthy ovarian cortex.</li>
-                </ul>
-              </div>
-            `
-          },
-          {
-            id: "d2-m5",
-            title: "Management of Poor Responders (Poseidon Stratification)",
-            speaker: "Dr. Madhuri Patil",
-            startTime: "01:13:35",
-            startSeconds: 4415,
-            endSeconds: 5819,
-            summary: `
-              <div class="space-y-2 text-xs">
-                <table class="w-full text-left border border-slate-800 rounded bg-slate-950 text-slate-300">
-                  <thead class="bg-slate-900 text-sky-300">
-                    <tr><th class="p-1">Group</th><th class="p-1">Profile</th><th class="p-1">Clinical Protocol</th></tr>
-                  </thead>
-                  <tbody>
-                    <tr class="border-t border-slate-800"><td class="p-1 font-semibold">Group 1</td><td class="p-1">&lt;35 yrs, Normal Reserve, Low Yield</td><td class="p-1">Add rLH (2:1 ratio), increase FSH dose, Dual trigger.</td></tr>
-                    <tr class="border-t border-slate-800"><td class="p-1 font-semibold">Group 2</td><td class="p-1">≥35 yrs, Normal Reserve, Low Yield</td><td class="p-1">Add rLH 150 IU from Day 1, DuoStim, Dual trigger.</td></tr>
-                    <tr class="border-t border-slate-800"><td class="p-1 font-semibold">Group 3</td><td class="p-1">&lt;35 yrs, Diminished Reserve</td><td class="p-1">High-dose FSH (300 IU), DuoStim, CoQ10 pre-treatment.</td></tr>
-                    <tr class="border-t border-slate-800"><td class="p-1 font-semibold">Group 4</td><td class="p-1">≥35 yrs, Diminished Reserve</td><td class="p-1">FSH 300 + LH 150 IU, DuoStim, oocyte/embryo accumulation.</td></tr>
-                  </tbody>
-                </table>
-              </div>
-            `
-          },
-          {
-            id: "d2-m6",
-            title: "Chronic Endometritis & Genital Tuberculosis",
-            speaker: "Dr. Nalini Mahajan",
-            startTime: "01:38:45",
-            startSeconds: 5925,
-            endSeconds: 6825,
-            summary: `
-              <div class="space-y-2 text-xs">
-                <ul class="list-disc list-inside space-y-1 text-slate-300">
-                  <li><strong>Genital TB:</strong> Silent endosalpingeal and endometrial fibrosis. Requires multi-modal testing (GeneXpert/CBNAAT, AFB culture, hysteroscopy). Treatment requires a complete, uninterrupted <strong>6-month ATT regimen</strong>.</li>
-                  <li><strong>Non-Tubercular Chronic Endometritis:</strong> Ascending bacterial infection (*E. coli*, *Enterococcus*, *Mycoplasma*).</li>
-                  <li><strong>Diagnosis:</strong> Hysteroscopy (micropolyps, strawberry hyperemia) and endometrial CD138 (Syndecan-1) IHC (diagnostic cutoff: <strong>≥ 5 plasma cells/HPF</strong>).</li>
-                  <li><strong>Treatment:</strong> Doxycycline 100 mg BID for 14 days (first-line); Ciprofloxacin + Metronidazole for refractory cases.</li>
-                </ul>
-              </div>
-            `
-          },
-          {
-            id: "d2-m7",
-            title: "Recurrent Implantation Failure: A Clinician's Dilemma",
-            speaker: "Dr. Sujata Kar",
-            startTime: "01:56:10",
-            startSeconds: 6970,
-            endSeconds: 7864,
-            summary: `
-              <div class="space-y-2 text-xs">
-                <p><strong>Definition:</strong> Failure to achieve clinical pregnancy after transfer of ≥ 4 good-quality embryos across ≥ 3 fresh/frozen cycles in women &lt;40 years.</p>
-                <ul class="list-disc list-inside space-y-1 text-slate-300">
-                  <li>Embryonic aneuploidy accounts for ~80% of failures; uterine defects account for ~10%. Transfer of euploid blastocysts reduces true RIF to &lt;5%.</li>
-                  <li><strong>Not Recommended:</strong> Routine thrombophilia screening, peripheral NK cell testing, routine ERA, assisted hatching, intralipids, and routine endometrial scratching.</li>
-                  <li><strong>Evidence-Supported Actions:</strong> Excision of submucous fibroids/polyps, salpingectomy for hydrosalpinx, and treating chronic endometritis.</li>
-                </ul>
-              </div>
-            `
-          },
-          {
-            id: "d2-m8",
-            title: "Case-Based Panel: Unexplained Infertility Scenarios",
-            speaker: "Dr. Seema Pandey & Dr. Shrutika (Moderators)",
-            startTime: "02:15:42",
-            startSeconds: 8142,
-            endSeconds: 10715,
-            summary: `
-              <div class="space-y-2 text-xs">
-                <ul class="list-disc list-inside space-y-1 text-slate-300">
-                  <li><strong>Case 1 (32y, 18m trying, normal basic tests):</strong> Do not prematurely label as unexplained. Perform complete reserve testing (AMH/AFC) and mid-cycle TVS Doppler. Age 32 represents significant decline in Indian women. Plan: Max 3 cycles of Letrozole + Gonadotropins (75 IU) with IUI, then proceed to IVF.</li>
-                  <li><strong>Case 2 (29y, 4-5 failed stimulated IUIs, persistent thin lining 6–7 mm):</strong> Indication for combined diagnostic Hystero-Laparoscopy to rule out pelvic endometriosis, peritubal adhesions, and chronic endometritis. Perform pre-menstrual GeneXpert and CD138 IHC. Avoid empirical lateral metroplasty unless strict CUME criteria are met.</li>
-                </ul>
-              </div>
-            `
-          },
-          {
-            id: "d2-m9",
-            title: "Day 2 Post-Test Assessment Guidelines",
-            speaker: "Dr. Seema Pandey & Course Coordinators",
-            startTime: "02:58:36",
-            startSeconds: 10716,
-            endSeconds: 10802,
-            summary: `
-              <p class="text-xs text-slate-300">Administration of the 20-question Google Form post-test assessment covering tubal cannulation limits, CONUTA criteria, CD138 thresholds, and Poseidon protocols.</p>
-            `
-          }
-        ]
-      },
-      3: {
-        title: "Advanced ART, Embryology & Maximizing Success",
-        subtitle: "Day 3 Masterclass",
-        description: "Patient selection algorithms, pre-IVF checklists, evidence-based add-ons, ovarian stimulation strategies, Day 3 vs. Day 5 transfers, and embryology lab automation.",
-        videoId: "HKu8u1M6FMk",
-        modules: [
-          {
-            id: "d3-m1",
-            title: "Inauguration, Directives & Overview",
-            speaker: "Dr. Pratik Tambe, Dr. Parag Biniwale",
-            startTime: "00:00:00",
-            startSeconds: 0,
-            endSeconds: 313,
-            summary: `
-              <p class="leading-relaxed">Day 3 overview covering clinical stimulation protocols, lab selection strategies, day 3 vs. day 5 blastocyst transfers, embryology advances, and OHSS-free clinic pathways.</p>
-            `
-          },
-          {
-            id: "d3-m2",
-            title: "Patient Selection & Early Referral for ART",
-            speaker: "Dr. A. J. Mohan",
-            startTime: "00:09:57",
-            startSeconds: 597,
-            endSeconds: 1540,
-            summary: `
-              <div class="space-y-2 text-xs">
-                <ul class="list-disc list-inside space-y-1 text-slate-300">
-                  <li><strong>Accelerated Aging:</strong> Indian women experience reproductive decline ~6 years earlier than Western counterparts (age 34 in Indian women corresponds to age 40 in Caucasian cohorts).</li>
-                  <li><strong>Indications for Direct IVF:</strong> Azoospermia, severe oligospermia, bilateral tubal obstruction, Stage IV endometriosis, and unexplained infertility in women &gt;35 years or duration &gt;2 years.</li>
-                  <li><strong>Counseling:</strong> Live birth rates drop below 10% after age 40; maintain realistic expectations.</li>
-                </ul>
-              </div>
-            `
-          },
-          {
-            id: "d3-m3",
-            title: "Role of Hysteroscopy in ART",
-            speaker: "Dr. Asha Rao",
-            startTime: "00:29:14",
-            startSeconds: 1754,
-            endSeconds: 2763,
-            summary: `
-              <div class="space-y-2 text-xs">
-                <ul class="list-disc list-inside space-y-1 text-slate-300">
-                  <li>Submucous fibroids and endometrial polyps reduce implantation by &gt;50%; hysteroscopic resection normalizes outcomes.</li>
-                  <li>Meta-analyses demonstrate a statistically significant increase in live birth rates when hysteroscopy is performed after ≥1 failed IVF cycle.</li>
-                  <li>Resection of endocervical folds/synechiae ("curtain sign") eliminates difficult, traumatic embryo transfers.</li>
-                </ul>
-              </div>
-            `
-          },
-          {
-            id: "d3-m4",
-            title: "Pre-IVF Checklist and Counseling",
-            speaker: "Dr. Pragya Mishra Choudhary",
-            startTime: "00:51:08",
-            startSeconds: 3068,
-            endSeconds: 4025,
-            summary: `
-              <div class="space-y-2 text-xs">
-                <ul class="list-disc list-inside space-y-1 text-slate-300">
-                  <li><strong>Medical Optimization:</strong> Strict control of HbA1c, TSH, Prolactin, and Vitamin D. Screening for viral markers and rubella/varicella immunity.</li>
-                  <li><strong>Consent Protocols:</strong> Independent, witnessed consent forms for OPU, ICSI, cryopreservation, embryo transfer, and donor cycles.</li>
-                  <li><strong>Expectation Management:</strong> Dispel myths regarding 100% success or gender selection; explain the attrition pyramid (follicles → oocytes → blastocysts → euploid embryos).</li>
-                </ul>
-              </div>
-            `
-          },
-          {
-            id: "d3-m5",
-            title: "Adjuvants & Add-Ons in Assisted Reproduction",
-            speaker: "Dr. Shweta Kauljikar",
-            startTime: "01:09:28",
-            startSeconds: 4168,
-            endSeconds: 4950,
-            summary: `
-              <div class="space-y-2 text-xs">
-                <ul class="list-disc list-inside space-y-1 text-slate-300">
-                  <li><strong>Supported / Moderate Evidence:</strong> EmbryoGlue (hyaluronan-rich transfer media) improves live birth rates in fresh transfers. DHEA and transdermal testosterone show benefit in low responders.</li>
-                  <li><strong>Not Supported for Routine Use:</strong> Routine ERA, intralipids, systemic steroids, routine assisted hatching, routine time-lapse imaging, and intraovarian PRP lack conclusive RCT backing.</li>
-                  <li><strong>PGT-A:</strong> Shortens time to pregnancy and reduces miscarriage, but does not increase cumulative live birth rates per started cycle.</li>
-                </ul>
-              </div>
-            `
-          },
-          {
-            id: "d3-m6",
-            title: "Stimulation Protocols in IVF",
-            speaker: "Dr. Kaberi Banerjee",
-            startTime: "01:29:16",
-            startSeconds: 5356,
-            endSeconds: 6343,
-            summary: `
-              <div class="space-y-2 text-xs">
-                <ul class="list-disc list-inside space-y-1 text-slate-300">
-                  <li><strong>GnRH Antagonist Protocol:</strong> Current gold standard. Achieves comparable oocyte yield with shorter stimulation and enables an OHSS-free clinic via GnRH agonist triggering.</li>
-                  <li><strong>Baseline Criteria:</strong> Day 2 TVS showing thin lining (≤5 mm), absence of functional cysts, and basal E2 &lt; 50–70 pg/mL.</li>
-                  <li><strong>Dosing:</strong> Calculated using Age, AMH, AFC, and BMI. Mid-cycle dose escalation ("step-up") causes asynchronous cohorts and should be avoided. Target: 10–15 oocytes.</li>
-                </ul>
-              </div>
-            `
-          },
-          {
-            id: "d3-m7",
-            title: "Day 3 vs. Day 5 Embryo Transfer",
-            speaker: "Dr. Venugopal M.",
-            startTime: "01:48:42",
-            startSeconds: 6522,
-            endSeconds: 7311,
-            summary: `
-              <div class="space-y-2 text-xs">
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                  <div class="bg-slate-950 p-2 rounded-lg border border-slate-800">
-                    <strong class="text-teal-400 block mb-1">Day 5 Blastocyst Transfer</strong>
-                    <p class="text-slate-300">• Physiological timing matching endometrial receptivity.</p>
-                    <p class="text-slate-300">• Higher implantation rates; facilitates elective Single Embryo Transfer (eSET).</p>
-                    <p class="text-slate-300">• Required for reliable trophectoderm biopsy in PGT-A.</p>
-                  </div>
-                  <div class="bg-slate-950 p-2 rounded-lg border border-slate-800">
-                    <strong class="text-amber-400 block mb-1">Day 3 Cleavage Transfer</strong>
-                    <p class="text-slate-300">• Indicated in poor responders with &lt;4 embryos on Day 3.</p>
-                    <p class="text-slate-300">• Prevents total cycle cancellation from in vitro arrest in low-reserve cohorts.</p>
-                  </div>
-                </div>
-              </div>
-            `
-          },
-          {
-            id: "d3-m8",
-            title: "Recent Advances in the Embryology Lab",
-            speaker: "Dr. Nishad Chimote",
-            startTime: "02:03:36",
-            startSeconds: 7416,
-            endSeconds: 8309,
-            summary: `
-              <div class="space-y-2 text-xs">
-                <ul class="list-disc list-inside space-y-1 text-slate-300">
-                  <li><strong>AI Grading & Automation:</strong> Platforms such as *Chloe* (lab KPIs), *Violet* (oocyte viability), and *SID* (automated flagellar sperm selection and laser immobilization).</li>
-                  <li><strong>Culture Technologies:</strong> Digital microfluidics (EWOD) for automated media renewal under oil; ultra-rapid vitrification protocols (3 min vs. 15 min).</li>
-                  <li><strong>Robotic Laboratories:</strong> Enclosed automated platforms (e.g., *Aura*) performing dish preparation, robotic ICSI, and RFID-witnessed cryostorage.</li>
-                </ul>
-              </div>
-            `
-          },
-          {
-            id: "d3-m9",
-            title: "Case-Based Panel: Maximizing ART Success",
-            speaker: "Dr. Pratik Tambe (Moderator)",
-            startTime: "02:22:48",
-            startSeconds: 8568,
-            endSeconds: 10535,
-            summary: `
-              <div class="space-y-2 text-xs">
-                <ul class="list-disc list-inside space-y-1 text-slate-300">
-                  <li><strong>Case 1 (36y, Prior Ectopic s/p salpingectomy, Beaded contralateral tube):</strong> High suspicion of Genital TB. Proceed directly to IVF. If transfer fails, perform prophylactic laparoscopic clipping of the diseased tube to prevent recurrent ectopic/hydrosalpinx reflux.</li>
-                  <li><strong>Case 2 (34y, BMI 34, Obese PCOS):</strong> Pre-treat with Metformin (up to 1500 mg/day) and lifestyle optimization. Avoid long OCP pre-treatment. Use a Flexible GnRH Antagonist protocol, starting FSH 150–225 IU. Maximum cumulative gonadotropins ≤ 3,500 IU (Cochrane 2023). Mandatory <strong>GnRH Agonist Trigger + Freeze-All strategy</strong> for a 100% OHSS-free cycle.</li>
-                </ul>
-              </div>
-            `
-          },
-          {
-            id: "d3-m10",
-            title: "Day 3 Post-Test MCQ Analysis & Valedictory",
-            speaker: "Dr. Pratik Tambe",
-            startTime: "03:06:00",
-            startSeconds: 11160,
-            endSeconds: 11644,
-            summary: `
-              <div class="space-y-1 text-xs text-slate-300">
-                <p>• <strong>Q1:</strong> Agonist trigger in antagonist cycles = <strong class="text-sky-300">Physiological LH surge with reduced OHSS risk</strong>.</p>
-                <p>• <strong>Q2:</strong> PPOS LH surge suppression = <strong class="text-sky-300">Direct pituitary negative feedback</strong>.</p>
-                <p>• <strong>Q3:</strong> DuoStim relies on = <strong class="text-sky-300">Antral follicles retaining responsiveness in luteal phase</strong>.</p>
-                <p>• <strong>Q4:</strong> Justification for Freeze-all = <strong class="text-sky-300">Serum E2 &gt; 4,000 pg/mL on trigger day</strong>.</p>
-                <p>• <strong>Q5:</strong> EmbryoGlue active ingredient = <strong class="text-sky-300">Hyaluronan (Hyaluronic acid)</strong>.</p>
-              </div>
-            `
-          }
-        ]
+    let allTopics = [];
+    let selectedCategory = 'all';
+    let selectedType = 'all';
+
+    // Fetch topics data
+    document.addEventListener('DOMContentLoaded', async () => {
+      try {
+        const res = await fetch('data/topics.json');
+        if (res.ok) {
+          allTopics = await res.json();
+        } else {
+          // Fallback static data if fetching locally via file://
+          allTopics = getFallbackTopics();
+        }
+      } catch (e) {
+        allTopics = getFallbackTopics();
       }
-    };
-
-    // State
-    let currentDay = 1;
-    let completedModules = JSON.parse(localStorage.getItem('fogsi_completed_modules') || '[]');
-    let currentActiveModule = courseData[1].modules[0];
-
-    // Initialize
-    document.addEventListener('DOMContentLoaded', () => {
-      renderDay(1);
-      updateProgress();
+      renderTopicsGrid(allTopics);
     });
 
-    function switchDay(dayNumber) {
-      currentDay = dayNumber;
-      
-      // Update Tab Styles
-      document.querySelectorAll('.day-tab').forEach(tab => {
-        tab.className = "day-tab flex-1 py-2 px-3 rounded-lg text-xs font-medium text-slate-400 hover:text-slate-200 hover:bg-slate-800 transition-all flex items-center justify-center space-x-2";
-      });
-      const activeTab = document.getElementById(`tab-day-${dayNumber}`);
-      activeTab.className = "day-tab flex-1 py-2 px-3 rounded-lg text-xs font-semibold transition-all flex items-center justify-center space-x-2 bg-sky-600 text-white shadow-md";
-
-      // Update Banner
-      const dayInfo = courseData[dayNumber];
-      document.getElementById('dayBadgeSubtitle').textContent = `Day ${dayNumber} Focus`;
-      document.getElementById('dayBannerTitle').textContent = dayInfo.title;
-      document.getElementById('dayBannerDescription').textContent = dayInfo.description;
-
-      renderDay(dayNumber);
-      
-      // Auto-load first topic of the selected day in video player
-      loadTopic(dayInfo.modules[0], dayNumber);
+    function getFallbackTopics() {
+      return [
+        {
+          id: "fogsi-infertility-masterclass",
+          title: "FOGSI-ICOG & ISAR Infertility Masterclass",
+          subtitle: "3-Day Clinical Certification Course",
+          category: "Reproductive Medicine / OB-GYN",
+          categorySlug: "obgyn",
+          type: "Curated Conference & Masterclass",
+          typeSlug: "curated",
+          status: "Active",
+          duration: "9+ Hours (28 Modules)",
+          targetAudience: "Postgraduates, OB-GYN Residents, Fertility Specialists",
+          description: "Comprehensive 3-day masterclass covering WHO 6th Edition semen analysis, azoospermia pathways, surgical hysteroscopy, Poseidon poor responder stratification, and advanced embryology lab protocols.",
+          highlights: [
+            "WHO 6th Edition semen parameters & TMSC algorithms",
+            "Surgical hysteroscopy & congenital uterine anomalies",
+            "Poseidon poor responder ovarian stimulation protocols",
+            "Embryology advances & 100% OHSS-free clinic pathways"
+          ],
+          tags: ["Infertility", "IUI", "IVF", "Hysteroscopy", "Poseidon Criteria", "Embryology", "WHO 6th"],
+          path: "topics/fogsi-infertility-masterclass/index.html",
+          githubPath: "topics/fogsi-infertility-masterclass/README.md",
+          badgeColor: "sky",
+          icon: "fa-dna",
+          featured: true,
+          lastUpdated: "2025-02"
+        },
+        {
+          id: "clinical-ecg-interpretation",
+          title: "Clinical ECG Masterclass: From Basics to Complex Arrhythmias",
+          subtitle: "Interactive Step-by-Step Diagnostic Guide",
+          category: "Cardiology & Emergency",
+          categorySlug: "cardiology",
+          type: "AI-Guided Clinical Protocol",
+          typeSlug: "ai-guided",
+          status: "Upcoming",
+          duration: "4 Hours (16 Modules)",
+          targetAudience: "Medical Students, Interns, ER Residents",
+          description: "High-yield, systematic approach to 12-lead ECG analysis, ischemia localization, bundle branch blocks, channelopathies, and tachyarrhythmia management algorithms.",
+          highlights: [
+            "Axis determination and bundle branch block criteria",
+            "OSTEMI vs NSTEMI & posterior/RV infarction leads",
+            "Wide complex tachycardia algorithms (Brugada & Vereckei)",
+            "Electrolyte abnormalities and drug toxicities"
+          ],
+          tags: ["ECG", "Cardiology", "Arrhythmia", "Emergency", "STEMI"],
+          path: "#",
+          githubPath: "#",
+          badgeColor: "rose",
+          icon: "fa-heart-pulse",
+          featured: false,
+          lastUpdated: "Roadmap"
+        },
+        {
+          id: "mechanical-ventilation-icu",
+          title: "Mechanical Ventilation & Critical Care Physiology",
+          subtitle: "Bedside ICU Waveforms & Troubleshooting",
+          category: "Critical Care & Anesthesia",
+          categorySlug: "critical-care",
+          type: "AI-Guided Clinical Protocol",
+          typeSlug: "ai-guided",
+          status: "Upcoming",
+          duration: "5 Hours (12 Modules)",
+          targetAudience: "ICU Residents, Anesthesiologists, Pulmonologists",
+          description: "Evidence-based mechanical ventilation principles, waveform scalars interpretation, ARDSNet lung-protective protocols, patient-ventilator dyssynchrony, and weaning algorithms.",
+          highlights: [
+            "Volume control vs Pressure control waveform diagnostics",
+            "ARDSNet compliance optimization and driving pressure",
+            "Auto-PEEP detection & patient dyssynchrony solutions",
+            "SBT checklists and extubation criteria"
+          ],
+          tags: ["ICU", "Ventilation", "ARDS", "Critical Care", "Pulmonology"],
+          path: "#",
+          githubPath: "#",
+          badgeColor: "teal",
+          icon: "fa-lungs",
+          featured: false,
+          lastUpdated: "Roadmap"
+        },
+        {
+          id: "antimicrobial-stewardship",
+          title: "Clinical Antimicrobial Stewardship & Empirical Regimens",
+          subtitle: "Infectious Diseases Protocol Guide",
+          category: "Internal Medicine & Infectious Disease",
+          categorySlug: "medicine",
+          type: "AI-Guided Clinical Protocol",
+          typeSlug: "ai-guided",
+          status: "Upcoming",
+          duration: "3.5 Hours (10 Modules)",
+          targetAudience: "Physicians, Residents, Clinical Pharmacists",
+          description: "System-based empirical antibiotic selection, ESBL/CRE/MRSA management, PK/PD optimization, de-escalation protocols, and local antibiogram navigation.",
+          highlights: [
+            "Gram-positive vs Gram-negative resistance mechanisms",
+            "Severe sepsis initial empiric coverage & timing",
+            "Beta-lactam continuous infusions & therapeutic drug monitoring",
+            "Step-down oral switch therapy criteria"
+          ],
+          tags: ["Antibiotics", "Infectious Disease", "Sepsis", "Stewardship"],
+          path: "#",
+          githubPath: "#",
+          badgeColor: "amber",
+          icon: "fa-shield-virus",
+          featured: false,
+          lastUpdated: "Roadmap"
+        }
+      ];
     }
 
-    function renderDay(dayNumber, filterQuery = '') {
-      const container = document.getElementById('modulesContainer');
-      container.innerHTML = '';
-      const dayInfo = courseData[dayNumber];
+    function setCategoryFilter(cat) {
+      selectedCategory = cat;
+      document.querySelectorAll('.cat-filter-btn').forEach(b => {
+        b.className = "cat-filter-btn px-3 py-1.5 rounded-lg font-medium transition-all bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800";
+      });
+      const activeBtn = document.getElementById(`cat-${cat}`);
+      if (activeBtn) {
+        activeBtn.className = "cat-filter-btn px-3 py-1.5 rounded-lg font-medium transition-all bg-sky-600 text-white shadow-sm";
+      }
+      filterTopics();
+    }
 
-      const filtered = dayInfo.modules.filter(m => {
-        if (!filterQuery) return true;
-        const q = filterQuery.toLowerCase();
-        return m.title.toLowerCase().includes(q) || 
-               m.speaker.toLowerCase().includes(q) || 
-               m.summary.toLowerCase().includes(q);
+    function setTypeFilter(t) {
+      selectedType = t;
+      document.querySelectorAll('.type-filter-btn').forEach(b => {
+        b.className = "type-filter-btn px-2.5 py-1 rounded-md font-medium transition-all bg-slate-900/60 hover:bg-slate-800 text-slate-400 border border-slate-800/80";
+      });
+      const activeBtn = document.getElementById(`type-${t}`);
+      if (activeBtn) {
+        activeBtn.className = "type-filter-btn px-2.5 py-1 rounded-md font-medium transition-all bg-slate-800 text-white border border-slate-700";
+      }
+      filterTopics();
+    }
+
+    function filterTopics() {
+      const q = document.getElementById('hubSearchInput').value.toLowerCase().trim();
+      
+      const filtered = allTopics.filter(t => {
+        const matchesCategory = (selectedCategory === 'all') || (t.categorySlug === selectedCategory);
+        const matchesType = (selectedType === 'all') || (t.typeSlug === selectedType);
+        
+        const matchesQuery = !q || 
+          t.title.toLowerCase().includes(q) || 
+          t.description.toLowerCase().includes(q) ||
+          t.category.toLowerCase().includes(q) ||
+          t.tags.some(tag => tag.toLowerCase().includes(q));
+
+        return matchesCategory && matchesType && matchesQuery;
       });
 
-      if (filtered.length === 0) {
-        container.innerHTML = `
-          <div class="p-8 text-center bg-slate-900/40 rounded-xl border border-slate-800 text-slate-400 text-xs">
-            <i class="fa-solid fa-filter-circle-xmark text-lg mb-2 text-slate-500 block"></i>
-            No lectures found matching "<span class="text-white">${filterQuery}</span>" in Day ${dayNumber}.
+      renderTopicsGrid(filtered);
+    }
+
+    function renderTopicsGrid(topics) {
+      const grid = document.getElementById('topicsGrid');
+      grid.innerHTML = "";
+
+      if (topics.length === 0) {
+        grid.innerHTML = `
+          <div class="col-span-full text-center py-16 bg-slate-900/40 rounded-3xl border border-slate-800/60 text-slate-500 space-y-2">
+            <i class="fa-solid fa-book-medical text-3xl mb-1 text-slate-600 block"></i>
+            <h4 class="text-sm font-semibold text-slate-300">No topics found</h4>
+            <p class="text-xs text-slate-400">Try adjusting your search terms or filter selection.</p>
           </div>
         `;
         return;
       }
 
-      filtered.forEach((mod, idx) => {
-        const isDone = completedModules.includes(mod.id);
+      topics.forEach(topic => {
+        const isActive = topic.status === 'Active';
         const card = document.createElement('div');
-        card.id = `card-${mod.id}`;
-        card.className = `p-4 rounded-xl border transition-all duration-200 ${
-          currentActiveModule.id === mod.id 
-            ? 'bg-slate-900 border-sky-500 ring-1 ring-sky-500/50 shadow-lg' 
-            : 'bg-slate-900/70 border-slate-800 hover:border-slate-700'
+        card.className = `group p-6 rounded-3xl border transition-all duration-300 flex flex-col justify-between relative overflow-hidden ${
+          isActive 
+            ? 'bg-gradient-to-b from-slate-900/90 to-slate-950 border-sky-900/50 hover:border-sky-500/60 shadow-xl shadow-sky-950/20 hover:shadow-sky-500/10' 
+            : 'bg-slate-900/40 border-slate-800/80 hover:border-slate-700 opacity-90'
         }`;
 
+        // Color Accents
+        const badgeColorClass = topic.badgeColor === 'sky' 
+          ? 'bg-sky-500/10 text-sky-400 border-sky-500/20' 
+          : topic.badgeColor === 'rose'
+          ? 'bg-rose-500/10 text-rose-400 border-rose-500/20'
+          : topic.badgeColor === 'teal'
+          ? 'bg-teal-500/10 text-teal-400 border-teal-500/20'
+          : 'bg-amber-500/10 text-amber-400 border-amber-500/20';
+
+        const highlightsHtml = topic.highlights.map(h => `
+          <li class="flex items-start space-x-2 text-xs text-slate-300">
+            <i class="fa-solid fa-check text-[10px] text-teal-400 mt-1 shrink-0"></i>
+            <span>${h}</span>
+          </li>
+        `).join('');
+
+        const tagsHtml = topic.tags.slice(0, 4).map(tag => `
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-slate-950 text-slate-400 border border-slate-800">${tag}</span>
+        `).join('');
+
         card.innerHTML = `
-          <div class="flex items-start justify-between gap-3">
-            <div class="flex-1">
-              <div class="flex items-center space-x-2 mb-1.5 flex-wrap gap-y-1">
-                <button 
-                  onclick="jumpToVideo('${dayInfo.videoId}', ${mod.startSeconds}, ${mod.endSeconds}, '${escapeHtml(mod.title)}', '${escapeHtml(mod.speaker)}', '${mod.startTime}', '${mod.id}', ${dayNumber})"
-                  class="badge-time inline-flex items-center space-x-1.5 px-2.5 py-0.5 rounded bg-sky-950 text-sky-400 border border-sky-800/60 hover:bg-sky-900 transition-colors text-xs font-semibold"
-                >
-                  <i class="fa-solid fa-play text-[10px]"></i>
-                  <span>${mod.startTime}</span>
-                </button>
-                <span class="text-xs text-slate-400">•</span>
-                <span class="text-xs font-semibold text-teal-400 flex items-center gap-1 truncate">
-                  <i class="fa-solid fa-user-doctor text-[11px]"></i> ${mod.speaker}
-                </span>
+          <div>
+            <!-- Header Row -->
+            <div class="flex items-start justify-between gap-3 mb-4">
+              <div class="flex items-center space-x-3">
+                <div class="h-11 w-11 rounded-2xl ${badgeColorClass} border flex items-center justify-center text-base shrink-0 group-hover:scale-110 transition-transform">
+                  <i class="fa-solid ${topic.icon}"></i>
+                </div>
+                <div>
+                  <span class="text-[10px] uppercase font-bold tracking-wider text-slate-400 block">${topic.category}</span>
+                  <span class="text-xs font-semibold text-slate-300">${topic.subtitle}</span>
+                </div>
               </div>
-              <h3 class="text-sm font-bold text-white leading-snug cursor-pointer hover:text-sky-300 transition-colors"
-                  onclick="jumpToVideo('${dayInfo.videoId}', ${mod.startSeconds}, ${mod.endSeconds}, '${escapeHtml(mod.title)}', '${escapeHtml(mod.speaker)}', '${mod.startTime}', '${mod.id}', ${dayNumber})">
-                ${mod.title}
-              </h3>
+              <span class="text-[10px] font-mono px-2.5 py-1 rounded-full font-bold uppercase tracking-wider ${
+                isActive ? 'bg-teal-950 text-teal-300 border border-teal-700/60' : 'bg-slate-800 text-slate-400 border border-slate-700'
+              }">
+                ${topic.status}
+              </span>
             </div>
-            <button 
-              onclick="toggleComplete('${mod.id}')" 
-              title="${isDone ? 'Mark Incomplete' : 'Mark Complete'}"
-              class="w-7 h-7 rounded-lg flex items-center justify-center border transition-all ${
-                isDone 
-                  ? 'bg-emerald-950 border-emerald-700 text-emerald-400' 
-                  : 'bg-slate-800 border-slate-700 text-slate-500 hover:text-slate-300'
-              }"
-            >
-              <i class="fa-solid fa-check text-xs"></i>
-            </button>
+
+            <!-- Title & Description -->
+            <h3 class="text-lg sm:text-xl font-bold text-white group-hover:text-sky-300 transition-colors">
+              ${topic.title}
+            </h3>
+            <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+              ${topic.description}
+            </p>
+
+            <!-- Highlights Checklist -->
+            <div class="my-4 pt-3 border-t border-slate-800/80">
+              <span class="text-[10px] font-bold uppercase tracking-widest text-slate-500 block mb-2">High-Yield Syllabus Highlights:</span>
+              <ul class="space-y-1.5">
+                ${highlightsHtml}
+              </ul>
+            </div>
           </div>
 
-          <div class="mt-3 pt-3 border-t border-slate-800/80 text-xs text-slate-300">
-            ${mod.summary}
-          </div>
+          <!-- Bottom Footer Info & Action -->
+          <div class="pt-4 border-t border-slate-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-3 mt-4">
+            
+            <div class="flex flex-wrap items-center gap-1.5">
+              ${tagsHtml}
+            </div>
 
-          <div class="mt-3 pt-2 flex items-center justify-between text-[11px] text-slate-400">
-            <a 
-              href="https://youtu.be/${dayInfo.videoId}?t=${mod.startSeconds}" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              class="text-sky-400 hover:underline inline-flex items-center gap-1"
-            >
-              <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i> YouTube Timestamp Link
-            </a>
-            <span class="text-slate-500 font-mono">Module ${idx + 1} of ${dayInfo.modules.length}</span>
+            <div>
+              ${isActive ? `
+                <a href="${topic.path}" class="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-4 py-2 rounded-xl bg-gradient-to-r from-sky-600 to-teal-500 hover:from-sky-500 hover:to-teal-400 text-white text-xs font-bold shadow-lg shadow-sky-600/30 transition-all hover:scale-105">
+                  <span>Launch Course</span>
+                  <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                </a>
+              ` : `
+                <button disabled class="w-full sm:w-auto inline-flex items-center justify-center space-x-1.5 px-3 py-1.5 rounded-xl bg-slate-800/70 text-slate-500 border border-slate-700/60 text-xs font-medium cursor-not-allowed">
+                  <i class="fa-solid fa-hammer text-[10px]"></i>
+                  <span>In Development</span>
+                </button>
+              `}
+            </div>
+
           </div>
         `;
-        container.appendChild(card);
+
+        grid.appendChild(card);
       });
-    }
-
-    function jumpToVideo(videoId, startSeconds, endSeconds, title, speaker, timestamp, moduleId, dayNumber) {
-      currentActiveModule = { id: moduleId, title, speaker, startTime: timestamp, startSeconds, endSeconds, videoId };
-      
-      // Update iframe source with start time, end time, and autoplay
-      const iframe = document.getElementById('videoIframe');
-      iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&start=${startSeconds}&end=${endSeconds}&enablejsapi=1`;
-
-      // Update Player metadata card
-      document.getElementById('playerDayBadge').textContent = `Day ${dayNumber} Session`;
-      document.getElementById('playerTimestamp').textContent = timestamp;
-      document.getElementById('playerTopicTitle').textContent = title;
-      document.getElementById('playerSpeakerName').textContent = speaker;
-      document.getElementById('directYoutubeLink').href = `https://youtu.be/${videoId}?t=${startSeconds}`;
-
-      // Update complete button icon
-      updateCompleteButtonState(moduleId);
-
-      // Re-render modules to update active highlight
-      renderDay(dayNumber);
-
-      // Scroll smoothly to player on small screens
-      if (window.innerWidth < 1024) {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
-    }
-
-    function loadTopic(mod, dayNumber) {
-      const videoId = courseData[dayNumber].videoId;
-      currentActiveModule = { ...mod, videoId };
-
-      const iframe = document.getElementById('videoIframe');
-      iframe.src = `https://www.youtube.com/embed/${videoId}?start=${mod.startSeconds}&end=${mod.endSeconds}&enablejsapi=1`;
-
-      document.getElementById('playerDayBadge').textContent = `Day ${dayNumber} Session`;
-      document.getElementById('playerTimestamp').textContent = mod.startTime;
-      document.getElementById('playerTopicTitle').textContent = mod.title;
-      document.getElementById('playerSpeakerName').textContent = mod.speaker;
-      document.getElementById('directYoutubeLink').href = `https://youtu.be/${videoId}?t=${mod.startSeconds}`;
-
-      updateCompleteButtonState(mod.id);
-    }
-
-    function toggleComplete(moduleId) {
-      if (completedModules.includes(moduleId)) {
-        completedModules = completedModules.filter(id => id !== moduleId);
-      } else {
-        completedModules.push(moduleId);
-      }
-      localStorage.setItem('fogsi_completed_modules', JSON.stringify(completedModules));
-      updateProgress();
-      renderDay(currentDay);
-      updateCompleteButtonState(currentActiveModule.id);
-    }
-
-    function toggleCompletedCurrent() {
-      if (currentActiveModule && currentActiveModule.id) {
-        toggleComplete(currentActiveModule.id);
-      }
-    }
-
-    function updateCompleteButtonState(moduleId) {
-      const btn = document.getElementById('btnMarkComplete');
-      const isDone = completedModules.includes(moduleId);
-      if (isDone) {
-        btn.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-400"></i> <span class="text-emerald-400 font-semibold">Completed</span>`;
-        btn.className = "text-xs bg-emerald-950/80 text-emerald-300 px-3 py-1 rounded-md border border-emerald-700 transition flex items-center gap-1.5";
-      } else {
-        btn.innerHTML = `<i class="fa-regular fa-circle text-slate-400"></i> <span>Mark Done</span>`;
-        btn.className = "text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1 rounded-md border border-slate-700 transition flex items-center gap-1.5";
-      }
-    }
-
-    function updateProgress() {
-      const totalModules = Object.values(courseData).reduce((acc, curr) => acc + curr.modules.length, 0);
-      const doneCount = completedModules.length;
-      document.getElementById('progressText').textContent = `${doneCount}/${totalModules}`;
-    }
-
-    function handleSearch(query) {
-      renderDay(currentDay, query);
-    }
-
-    function escapeHtml(text) {
-      return text.replace(/'/g, "\\'").replace(/"/g, '&quot;');
     }
   </script>
 </body>

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+echo "🏥 Running MedEd Pre-Commit Checks..."
+python3 scripts/validate.py
+if [ $? -ne 0 ]; then
+  echo "❌ Pre-commit validation failed. Fix the issues before committing."
+  exit 1
+fi

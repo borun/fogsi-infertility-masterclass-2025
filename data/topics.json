@@ -1,0 +1,131 @@
+[
+  {
+    "id": "fogsi-infertility-masterclass",
+    "title": "FOGSI-ICOG & ISAR Infertility Masterclass",
+    "subtitle": "3-Day Clinical Certification Course",
+    "category": "Reproductive Medicine / OB-GYN",
+    "categorySlug": "obgyn",
+    "type": "Curated Conference & Masterclass",
+    "typeSlug": "curated",
+    "status": "Active",
+    "duration": "9+ Hours (28 Modules)",
+    "targetAudience": "Postgraduates, OB-GYN Residents, Fertility Specialists",
+    "description": "Comprehensive 3-day masterclass covering WHO 6th Edition semen analysis, azoospermia pathways, surgical hysteroscopy, Poseidon poor responder stratification, and advanced embryology lab protocols.",
+    "highlights": [
+      "WHO 6th Edition semen parameters & TMSC algorithms",
+      "Surgical hysteroscopy & congenital uterine anomalies",
+      "Poseidon poor responder ovarian stimulation protocols",
+      "Embryology advances & 100% OHSS-free clinic pathways"
+    ],
+    "tags": [
+      "Infertility",
+      "IUI",
+      "IVF",
+      "Hysteroscopy",
+      "Poseidon Criteria",
+      "Embryology",
+      "WHO 6th"
+    ],
+    "path": "topics/fogsi-infertility-masterclass/index.html",
+    "githubPath": "topics/fogsi-infertility-masterclass/README.md",
+    "badgeColor": "sky",
+    "icon": "fa-dna",
+    "featured": true,
+    "lastUpdated": "2025-02"
+  },
+  {
+    "id": "clinical-ecg-interpretation",
+    "title": "Clinical ECG Masterclass: From Basics to Complex Arrhythmias",
+    "subtitle": "Interactive Step-by-Step Diagnostic Guide",
+    "category": "Cardiology & Emergency",
+    "categorySlug": "cardiology",
+    "type": "AI-Guided Clinical Protocol",
+    "typeSlug": "ai-guided",
+    "status": "Upcoming",
+    "duration": "4 Hours (16 Modules)",
+    "targetAudience": "Medical Students, Interns, ER Residents",
+    "description": "High-yield, systematic approach to 12-lead ECG analysis, ischemia localization, bundle branch blocks, channelopathies, and tachyarrhythmia management algorithms.",
+    "highlights": [
+      "Axis determination and bundle branch block criteria",
+      "OSTEMI vs NSTEMI & posterior/RV infarction leads",
+      "Wide complex tachycardia algorithms (Brugada & Vereckei)",
+      "Electrolyte abnormalities and drug toxicities"
+    ],
+    "tags": [
+      "ECG",
+      "Cardiology",
+      "Arrhythmia",
+      "Emergency",
+      "STEMI"
+    ],
+    "path": "#",
+    "githubPath": "#",
+    "badgeColor": "rose",
+    "icon": "fa-heart-pulse",
+    "featured": false,
+    "lastUpdated": "Roadmap"
+  },
+  {
+    "id": "mechanical-ventilation-icu",
+    "title": "Mechanical Ventilation & Critical Care Physiology",
+    "subtitle": "Bedside ICU Waveforms & Troubleshooting",
+    "category": "Critical Care & Anesthesia",
+    "categorySlug": "critical-care",
+    "type": "AI-Guided Clinical Protocol",
+    "typeSlug": "ai-guided",
+    "status": "Upcoming",
+    "duration": "5 Hours (12 Modules)",
+    "targetAudience": "ICU Residents, Anesthesiologists, Pulmonologists",
+    "description": "Evidence-based mechanical ventilation principles, waveform scalars interpretation, ARDSNet lung-protective protocols, patient-ventilator dyssynchrony, and weaning algorithms.",
+    "highlights": [
+      "Volume control vs Pressure control waveform diagnostics",
+      "ARDSNet compliance optimization and driving pressure",
+      "Auto-PEEP detection & patient dyssynchrony solutions",
+      "SBT checklists and extubation criteria"
+    ],
+    "tags": [
+      "ICU",
+      "Ventilation",
+      "ARDS",
+      "Critical Care",
+      "Pulmonology"
+    ],
+    "path": "#",
+    "githubPath": "#",
+    "badgeColor": "teal",
+    "icon": "fa-lungs",
+    "featured": false,
+    "lastUpdated": "Roadmap"
+  },
+  {
+    "id": "antimicrobial-stewardship",
+    "title": "Clinical Antimicrobial Stewardship & Empirical Regimens",
+    "subtitle": "Infectious Diseases Protocol Guide",
+    "category": "Internal Medicine & Infectious Disease",
+    "categorySlug": "medicine",
+    "type": "AI-Guided Clinical Protocol",
+    "typeSlug": "ai-guided",
+    "status": "Upcoming",
+    "duration": "3.5 Hours (10 Modules)",
+    "targetAudience": "Physicians, Residents, Clinical Pharmacists",
+    "description": "System-based empirical antibiotic selection, ESBL/CRE/MRSA management, PK/PD optimization, de-escalation protocols, and local antibiogram navigation.",
+    "highlights": [
+      "Gram-positive vs Gram-negative resistance mechanisms",
+      "Severe sepsis initial empiric coverage & timing",
+      "Beta-lactam continuous infusions & therapeutic drug monitoring",
+      "Step-down oral switch therapy criteria"
+    ],
+    "tags": [
+      "Antibiotics",
+      "Infectious Disease",
+      "Sepsis",
+      "Stewardship"
+    ],
+    "path": "#",
+    "githubPath": "#",
+    "badgeColor": "amber",
+    "icon": "fa-shield-virus",
+    "featured": false,
+    "lastUpdated": "Roadmap"
+  }
+]
