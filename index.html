@@ -292,21 +292,33 @@
     </div>
   </section>
 
-  <!-- ==================== MEDICAL DISCLAIMER & FOOTER ==================== -->
-  <footer class="border-t border-slate-900 bg-slate-950 py-10 text-xs text-slate-500">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-      
-      <!-- Medical Disclaimer Box -->
-      <div class="p-4 rounded-xl bg-slate-900/40 border border-slate-800/60 text-[11px] text-slate-400 space-y-1">
-        <p class="font-semibold text-slate-300 flex items-center gap-1.5">
-          <i class="fa-solid fa-triangle-exclamation text-amber-400"></i> Medical & Educational Disclaimer
-        </p>
-        <p class="leading-relaxed">
-          The MedEd platform is designed exclusively for educational and training purposes for medical practitioners, postgraduate trainees, and students. Content summaries are distilled from public academic webinars, society guidelines, and AI synthesis. They do not constitute formal clinical medical advice. Always refer to official clinical society guidelines and individual patient factors for bedside management.
-        </p>
+  <!-- ==================== SERIOUS MEDICAL & CLINICAL DISCLAIMER ==================== -->
+  <section class="bg-gradient-to-r from-red-950/80 via-amber-950/60 to-red-950/80 border-t-2 border-b-2 border-red-500/70 py-8 px-4 sm:px-6 lg:px-8 shadow-2xl">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-start gap-4">
+      <div class="h-12 w-12 rounded-2xl bg-red-600/20 border-2 border-red-500/60 flex items-center justify-center text-red-400 text-2xl shrink-0 shadow-lg shadow-red-500/30 mt-0.5">
+        <i class="fa-solid fa-triangle-exclamation animate-pulse"></i>
       </div>
+      <div class="space-y-2 flex-1">
+        <div class="flex flex-wrap items-center gap-2">
+          <span class="text-[10px] font-mono font-extrabold uppercase tracking-widest px-2.5 py-0.5 rounded-full bg-red-500/30 text-red-200 border border-red-400/50">Mandatory Notice</span>
+          <h3 class="text-sm sm:text-base font-extrabold uppercase tracking-wide text-red-100">Medical & Clinical Practice Disclaimer</h3>
+        </div>
+        <p class="text-xs text-red-100/90 leading-relaxed">
+          <strong>Strictly for Academic & Professional Training:</strong> The MedEd platform, its curated lecture modules, surgical manuals, and AI-assisted notes are designed exclusively for medical practitioners, postgraduate trainees, and students.
+        </p>
+        <ul class="text-[11px] text-red-200/80 space-y-1 list-disc list-inside">
+          <li><strong>No Medical Advice:</strong> Content does NOT constitute individualized medical advice, diagnostic directives, or treatment orders.</li>
+          <li><strong>Institutional Protocols Apply:</strong> Surgical techniques, drug regimens, and clinical algorithms must always be verified against current institutional guidelines and official society standards (e.g. ACOG, RCOG, FOGSI, ESHRE, WHO).</li>
+          <li><strong>Patient-Specific Care:</strong> Individual patient factors, allergies, and contraindications always supersede generic educational materials.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-slate-900">
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="border-t border-slate-900 bg-slate-950 py-8 text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
         <div class="flex items-center space-x-2 text-slate-400">
           <span class="font-bold text-white">MedEd</span>
           <span>•</span>
@@ -318,7 +330,6 @@
           <a href="https://github.com/borun" target="_blank" class="hover:text-sky-400 transition">GitHub @borun</a>
         </div>
       </div>
-
     </div>
   </footer>
 

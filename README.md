@@ -143,8 +143,19 @@ A GitHub Actions workflow ([`.github/workflows/test.yml`](.github/workflows/test
 
 ---
 
-## ⚖️ Medical & Copyright Disclaimer
+## ⚠️ MANDATORY MEDICAL & CLINICAL PRACTICE DISCLAIMER
 
-* **Medical Disclaimer:** This platform is created strictly for academic, educational, and reference purposes for medical trainees and healthcare professionals. It does not replace clinical judgement, formal institutional protocols, or individual patient evaluation.
-* **Third-Party Content:** Original video presentations, slides, and conference recordings belong to their respective medical societies, speakers, and organizations. MedEd indexes publicly available educational videos with direct attribution.
-* **Software License:** All source code and original curriculum structures are licensed under the [MIT License](LICENSE).
+> [!CAUTION]
+> ### 🛑 CRITICAL CLINICAL PRACTICE NOTICE — STRICTLY FOR EDUCATIONAL & TRAINING PURPOSES
+> 
+> 1. **No Medical Advice:** The **MedEd** platform, its curated modules, AI-guided summaries, surgical manuals, and clinical notes are intended **strictly for academic education and clinical revision** by certified medical practitioners, postgraduate residents, and healthcare trainees.
+> 2. **Not a Substitute for Bedside Clinical Judgment:** This material does **NOT** constitute patient-specific medical advice, individualized diagnostic directives, or standardized operative mandates.
+> 3. **Verification of Dosages & Protocols:** Clinical medicine and surgical techniques evolve rapidly. All pharmaceutical dosages, stimulation protocols, and surgical algorithms **must be independently verified** against official institutional formularies, manufacturer packaging, and up-to-date peer-reviewed clinical society guidelines (e.g. ACOG, RCOG, FOGSI, ESHRE, WHO, NICE).
+> 4. **No Doctor-Patient Relationship:** Accessing or using this material creates no physician-patient or advisor-advisee relationship. The authors, contributors, and platform maintainers assume **no liability or responsibility** for individual clinical decisions, adverse events, or patient outcomes resulting from the use of this material.
+
+---
+
+## ⚖️ Intellectual Property & Licensing
+
+* **Third-Party Content:** Original webinar recordings, video presentations, slides, and conference media belong to their respective medical societies (e.g. FOGSI, ICOG, ISAR), authors, and speakers. MedEd indexes publicly available academic videos with clear timestamps and attribution.
+* **Open Source Platform Code:** All original platform architecture, HTML/JS/CSS source code, and original structured curriculum syntheses are licensed under the [MIT License](LICENSE).
