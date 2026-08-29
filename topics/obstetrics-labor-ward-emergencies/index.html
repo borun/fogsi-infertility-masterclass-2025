@@ -3,6 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- SEO Meta Tags -->
+  <meta name="description" content="Obstetric Emergencies & Labor Ward Procedures by Dr. Shilpa G B and Dr. Padmapriya Vivek - Shoulder Dystocia HELPERR algorithm, Breech Delivery, Forceps, B-Lynch Sutures, and PPH Devascularization." />
+  <link rel="canonical" href="https://borun.github.io/meded/topics/obstetrics-labor-ward-emergencies/" />
+  <meta property="og:title" content="Obstetric Emergencies & Labor Ward Procedures | MedEd" />
+  <meta property="og:description" content="Obstetric Emergencies & Labor Ward Procedures by Dr. Shilpa G B and Dr. Padmapriya Vivek - Shoulder Dystocia HELPERR algorithm, Breech Delivery, Forceps, B-Lynch Sutures, and PPH Devascularization." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://borun.github.io/meded/topics/obstetrics-labor-ward-emergencies/" />
+
+  <!-- Preconnect to Font Origins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
   <title>Obstetric Emergencies & Labor Ward Procedures | MedEd</title>
   
   <!-- Tailwind CSS & Google Fonts -->
@@ -12,7 +24,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   
   <!-- FontAwesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media=\'all\'" />
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" /></noscript>
 
   <!-- Marked.js for Markdown Parsing -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
@@ -59,9 +72,16 @@
     .clinical-markdown blockquote { border-left: 3px solid #f59e0b; background: rgba(245, 158, 11, 0.08); padding: 0.6rem 1rem; border-radius: 0 0.5rem 0.5rem 0; margin: 0.75rem 0; font-size: 0.85rem; color: #fef3c7; }
     .clinical-markdown p { margin-bottom: 0.65rem; line-height: 1.6; font-size: 0.85rem; }
     .clinical-markdown h4 { color: #fbbf24; font-weight: 700; margin-top: 0.75rem; margin-bottom: 0.35rem; font-size: 0.9rem; }
+      .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+    .focus\:not-sr-only:focus { position: static; width: auto; height: auto; padding: 0.5rem 1rem; margin: 0; overflow: visible; clip: auto; white-space: normal; }
   </style>
 </head>
 <body class="bg-slate-950 text-slate-100 font-sans antialiased min-h-screen flex flex-col">
+
+  <!-- Accessible Skip Link for Keyboard Users -->
+  <a href="#main-content" class="sr-only focus:not-sr-only fixed top-2 left-2 z-[100] bg-sky-600 text-white font-bold text-xs rounded-lg shadow-xl outline-none focus:ring-2 focus:ring-white">
+    Skip to main content
+  </a>
 
   <!-- ==================== TOP NAVIGATION ==================== -->
   <header class="sticky top-0 z-50 glass-nav border-b border-slate-800 transition-all">
@@ -100,7 +120,7 @@
           </div>
         </div>
 
-        <a href="https://github.com/borun/meded/tree/main/topics/obstetrics-labor-ward-emergencies" target="_blank" class="text-slate-400 hover:text-white p-2 rounded-lg hover:bg-slate-800 transition-colors" title="View Source on GitHub">
+        <a href="https://github.com/borun/meded/tree/main/topics/obstetrics-labor-ward-emergencies" target="_blank" class="text-slate-400 hover:text-white p-2 rounded-lg hover:bg-slate-800 transition-colors" title="View Source on GitHub" aria-label="View Source on GitHub">
           <i class="fa-brands fa-github text-lg"></i>
         </a>
       </div>
@@ -109,7 +129,7 @@
   </header>
 
   <!-- ==================== MAIN CONTENT AREA ==================== -->
-  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 grid grid-cols-1 lg:grid-cols-12 gap-6">
+  <main id="main-content" class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 grid grid-cols-1 lg:grid-cols-12 gap-6">
     
     <!-- LEFT COLUMN: VIDEO PLAYER & CLINICAL PROTOCOLS (7 Cols) -->
     <div class="lg:col-span-7 flex flex-col space-y-4">
@@ -184,7 +204,7 @@
       <!-- Search Bar -->
       <div class="relative">
         <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 text-xs"></i>
-        <input type="text" id="searchInput" oninput="handleSearch()" placeholder="Search PPH, Breech, Forceps, Episiotomy, Sutures..." class="w-full bg-slate-900 border border-slate-800 rounded-xl pl-9 pr-4 py-2 text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-amber-500 transition-all">
+        <input type="text" id="searchInput" oninput="handleSearch()" aria-label="Search curriculum" placeholder="Search PPH, Breech, Forceps, Episiotomy, Sutures..." class="w-full bg-slate-900 border border-slate-800 rounded-xl pl-9 pr-4 py-2 text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-amber-500 transition-all">
       </div>
 
       <!-- Module Cards Container -->

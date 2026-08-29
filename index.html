@@ -1,25 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MedEd | Open Medical E-Learning Platform</title>
+  <title>MedEd | Open Medical E-Learning & Clinical Protocol Platform</title>
   
-  <!-- Tailwind CSS & Google Fonts -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  
-  <!-- FontAwesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Open-access, structured medical e-learning platform for healthcare professionals, residents, and medical students. High-yield video courses, surgical manuals, and precision clinical protocols." />
+  <meta name="keywords" content="medical education, infertility masterclass, laparoscopic surgery, total abdominal hysterectomy, obstetric emergencies, PPH, clinical protocols" />
+  <meta name="author" content="MedEd Open Platform" />
+  <link rel="canonical" href="https://borun.github.io/meded/" />
 
+  <!-- OpenGraph / Social Meta Tags -->
+  <meta property="og:title" content="MedEd | Open Medical E-Learning Platform" />
+  <meta property="og:description" content="Evidence-based medical education structured for deep & comfortable learning. Timestamped masterclasses and clinical protocols." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://borun.github.io/meded/" />
+  <meta property="og:site_name" content="MedEd" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="MedEd | Open Medical E-Learning Platform" />
+  <meta name="twitter:description" content="Evidence-based medical education structured for deep & comfortable learning." />
+
+  <!-- Structured JSON-LD Schema.org Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "MedEd",
+    "url": "https://borun.github.io/meded/",
+    "description": "Open-access medical education platform with structured video masterclasses and surgical protocols.",
+    "sameAs": ["https://github.com/borun/meded"]
+  }
+  </script>
+
+  <!-- Preconnect to Font Origins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+
+  <!-- Optimized Google Fonts with display=swap -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Non-Blocking Asynchronous FontAwesome Loading -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'" />
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  </noscript>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           fontFamily: {
-            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            sans: ['Plus Jakarta Sans', 'system-ui', '-apple-system', 'sans-serif'],
             mono: ['JetBrains Mono', 'monospace'],
           },
           colors: {
@@ -50,270 +85,282 @@
     ::-webkit-scrollbar-track { background: #0f172a; }
     ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
     ::-webkit-scrollbar-thumb:hover { background: #475569; }
-    .glass-nav { background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(16px); }
+    .glass-nav { background: rgba(15, 23, 42, 0.92); backdrop-filter: blur(16px); }
     .hero-glow {
       background: radial-gradient(circle at 50% 20%, rgba(2, 132, 199, 0.15), rgba(13, 148, 136, 0.05) 50%, transparent 80%);
     }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+    .focus\:not-sr-only:focus { position: static; width: auto; height: auto; padding: 0.5rem 1rem; margin: 0; overflow: visible; clip: auto; white-space: normal; }
   </style>
 </head>
 <body class="bg-slate-950 text-slate-100 font-sans antialiased min-h-screen flex flex-col selection:bg-sky-500 selection:text-white">
+
+  <!-- Accessible Skip Link for Keyboard Users -->
+  <a href="#main-content" class="sr-only focus:not-sr-only fixed top-2 left-2 z-[100] bg-sky-600 text-white font-bold text-xs rounded-lg shadow-xl outline-none focus:ring-2 focus:ring-white">
+    Skip to main content
+  </a>
 
   <!-- ==================== TOP NAVIGATION ==================== -->
   <header class="sticky top-0 z-50 glass-nav border-b border-slate-800/80 transition-all">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
       
       <!-- Brand Logo -->
-      <a href="index.html" class="flex items-center space-x-3 group">
+      <a href="index.html" class="flex items-center space-x-3 group" aria-label="MedEd Home">
         <div class="h-10 w-10 rounded-xl bg-gradient-to-tr from-sky-600 via-teal-500 to-emerald-400 flex items-center justify-center shadow-lg shadow-sky-500/20 text-white font-bold text-lg group-hover:scale-105 transition-transform">
           <i class="fa-solid fa-heart-pulse"></i>
         </div>
         <div>
           <div class="flex items-center space-x-2">
             <span class="text-lg font-extrabold text-white tracking-tight">Med<span class="text-sky-400">Ed</span></span>
-            <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-teal-950 text-teal-400 border border-teal-800/60 font-semibold uppercase tracking-wider">Open Access</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-teal-950 text-teal-300 border border-teal-800/60 font-semibold uppercase tracking-wider">Open Access</span>
           </div>
-          <p class="text-[11px] text-slate-400 font-medium hidden sm:block">Open Medical E-Learning Hub</p>
+          <p class="text-[11px] text-slate-300 font-medium hidden sm:block">Open Medical E-Learning Hub</p>
         </div>
       </a>
 
       <!-- Quick Nav Links -->
-      <nav class="hidden md:flex items-center space-x-6 text-xs font-medium text-slate-300">
+      <nav aria-label="Main Navigation" class="hidden md:flex items-center space-x-6 text-xs font-medium text-slate-200">
         <a href="#topics" class="hover:text-sky-400 transition-colors flex items-center gap-1.5">
-          <i class="fa-solid fa-book-open-reader text-slate-500"></i> Course Directory
+          <i class="fa-solid fa-book-open-reader text-slate-400"></i> Course Directory
         </a>
         <a href="#methodology" class="hover:text-sky-400 transition-colors flex items-center gap-1.5">
-          <i class="fa-solid fa-layer-group text-slate-500"></i> Framework
+          <i class="fa-solid fa-layer-group text-slate-400"></i> Framework
         </a>
         <a href="#contribute" class="hover:text-sky-400 transition-colors flex items-center gap-1.5">
-          <i class="fa-solid fa-circle-plus text-slate-500"></i> Add a Topic
+          <i class="fa-solid fa-circle-plus text-slate-400"></i> Add a Topic
         </a>
       </nav>
 
       <!-- Right Action CTAs -->
       <div class="flex items-center space-x-3">
-        <a href="https://github.com/borun/meded" target="_blank" class="flex items-center space-x-2 px-3.5 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700 text-xs font-semibold hover:border-slate-600 transition-all shadow-sm">
+        <a href="https://github.com/borun/meded" target="_blank" rel="noopener noreferrer" aria-label="MedEd GitHub Repository" class="flex items-center space-x-2 px-3.5 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700 text-xs font-semibold hover:border-slate-600 transition-all shadow-sm">
           <i class="fa-brands fa-github text-sm"></i>
           <span class="hidden sm:inline">GitHub Repo</span>
-          <span class="bg-slate-800 text-[10px] px-1.5 py-0.5 rounded border border-slate-700 font-mono text-slate-400">★</span>
+          <span class="bg-slate-800 text-[10px] px-1.5 py-0.5 rounded border border-slate-700 font-mono text-slate-300">★</span>
         </a>
       </div>
 
     </div>
   </header>
 
-  <!-- ==================== HERO SECTION ==================== -->
-  <section class="relative hero-glow pt-12 pb-16 px-4 sm:px-6 lg:px-8 border-b border-slate-800/60">
-    <div class="max-w-5xl mx-auto text-center space-y-6">
-      
-      <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-sky-950/80 border border-sky-800/60 text-sky-300 text-xs font-medium backdrop-blur">
-        <span class="flex h-2 w-2 rounded-full bg-teal-400 animate-pulse"></span>
-        <span>Curated Masterclasses & AI-Guided Clinical Notes</span>
-      </div>
+  <!-- ==================== MAIN CONTENT LANDMARK ==================== -->
+  <main id="main-content" class="flex-1 flex flex-col">
 
-      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
-        Evidence-Based Medical Education, <br class="hidden sm:block" />
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-teal-300 to-emerald-400">
-          Structured for Deep & Comfortable Learning
-        </span>
-      </h1>
-
-      <p class="text-slate-300 text-sm sm:text-base max-w-3xl mx-auto leading-relaxed">
-        A community-driven, open-access platform designed for medical students, residents, and clinicians. 
-        Transforming complex multi-hour webinars and conference lectures into <strong>precision-timestamped modules</strong>, 
-        concise <strong>Markdown clinical pearls</strong>, and <strong>offline-tracked courses</strong>.
-      </p>
-
-      <!-- Metric Badges -->
-      <div class="pt-2 flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-xs text-slate-300">
-        <div class="flex items-center space-x-2 px-3.5 py-2 rounded-xl bg-slate-900/80 border border-slate-800">
-          <i class="fa-solid fa-clock text-sky-400"></i>
-          <span><strong>9+ Hours</strong> Curated Content</span>
-        </div>
-        <div class="flex items-center space-x-2 px-3.5 py-2 rounded-xl bg-slate-900/80 border border-slate-800">
-          <i class="fa-solid fa-bolt text-teal-400"></i>
-          <span><strong>Zero Fluff</strong> Precision Timestamps</span>
-        </div>
-        <div class="flex items-center space-x-2 px-3.5 py-2 rounded-xl bg-slate-900/80 border border-slate-800">
-          <i class="fa-solid fa-cloud-arrow-down text-emerald-400"></i>
-          <span><strong>Offline</strong> Progress Tracking</span>
-        </div>
-        <div class="flex items-center space-x-2 px-3.5 py-2 rounded-xl bg-slate-900/80 border border-slate-800">
-          <i class="fa-brands fa-github text-slate-400"></i>
-          <span><strong>100% Free</strong> on GitHub Pages</span>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ==================== SEARCH & COURSE DIRECTORY ==================== -->
-  <section id="topics" class="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full flex-1 space-y-8">
-    
-    <!-- Section Header & Filter Controls -->
-    <div class="space-y-4">
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
-        <div>
-          <span class="text-xs uppercase font-bold tracking-widest text-sky-400">Clinical Library</span>
-          <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Explore Learning Topics</h2>
-          <p class="text-xs sm:text-sm text-slate-400 mt-1">Filter by specialty, topic format, or search for clinical protocols & conditions.</p>
-        </div>
-
-        <!-- Real-Time Search Bar -->
-        <div class="relative w-full md:w-80">
-          <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 text-xs"></i>
-          <input type="text" id="hubSearchInput" oninput="filterTopics()" placeholder="Search topics, tags, conditions..." class="w-full bg-slate-900 border border-slate-800 rounded-xl pl-9 pr-4 py-2.5 text-xs text-slate-100 placeholder-slate-500 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 transition-all shadow-inner">
-        </div>
-      </div>
-
-      <!-- Filter Chips Row -->
-      <div class="flex flex-wrap items-center gap-2 pt-2 text-xs border-b border-slate-800/80 pb-4">
-        <span class="text-slate-500 font-semibold mr-1 text-[11px] uppercase tracking-wider">Category:</span>
-        <button onclick="setCategoryFilter('all')" id="cat-all" class="cat-filter-btn px-3 py-1.5 rounded-lg font-medium transition-all bg-sky-600 text-white shadow-sm">
-          All Specialties
-        </button>
-        <button onclick="setCategoryFilter('obgyn')" id="cat-obgyn" class="cat-filter-btn px-3 py-1.5 rounded-lg font-medium transition-all bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800">
-          OB-GYN & Reproductive
-        </button>
-        <button onclick="setCategoryFilter('cardiology')" id="cat-cardiology" class="cat-filter-btn px-3 py-1.5 rounded-lg font-medium transition-all bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800">
-          Cardiology & ECG
-        </button>
-        <button onclick="setCategoryFilter('critical-care')" id="cat-critical-care" class="cat-filter-btn px-3 py-1.5 rounded-lg font-medium transition-all bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800">
-          Critical Care & ICU
-        </button>
-        <button onclick="setCategoryFilter('medicine')" id="cat-medicine" class="cat-filter-btn px-3 py-1.5 rounded-lg font-medium transition-all bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800">
-          Internal Medicine
-        </button>
-      </div>
-
-      <div class="flex flex-wrap items-center gap-2 text-xs">
-        <span class="text-slate-500 font-semibold mr-1 text-[11px] uppercase tracking-wider">Format:</span>
-        <button onclick="setTypeFilter('all')" id="type-all" class="type-filter-btn px-2.5 py-1 rounded-md font-medium transition-all bg-slate-800 text-white border border-slate-700">
-          All Formats
-        </button>
-        <button onclick="setTypeFilter('curated')" id="type-curated" class="type-filter-btn px-2.5 py-1 rounded-md font-medium transition-all bg-slate-900/60 hover:bg-slate-800 text-slate-400 border border-slate-800/80">
-          Curated Masterclasses
-        </button>
-        <button onclick="setTypeFilter('ai-guided')" id="type-ai-guided" class="type-filter-btn px-2.5 py-1 rounded-md font-medium transition-all bg-slate-900/60 hover:bg-slate-800 text-slate-400 border border-slate-800/80">
-          AI-Guided Clinical Notes
-        </button>
-      </div>
-    </div>
-
-    <!-- Topics Cards Grid -->
-    <div id="topicsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-      <!-- Populated via JavaScript dynamically from topics data -->
-    </div>
-
-  </section>
-
-  <!-- ==================== METHODOLOGY / HOW IT WORKS ==================== -->
-  <section id="methodology" class="py-16 bg-slate-900/50 border-y border-slate-800/80">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-      
-      <div class="text-center max-w-3xl mx-auto space-y-3">
-        <span class="text-xs uppercase font-bold tracking-widest text-teal-400">Pedagogical Framework</span>
-        <h2 class="text-2xl sm:text-4xl font-extrabold text-white">How MedEd Accelerates Learning</h2>
-        <p class="text-sm text-slate-400 leading-relaxed">
-          Traditional webinar recordings are bloated with introductions, Q&As, and dead time. MedEd restructures open medical content into an engaging clinical learning environment.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="relative hero-glow pt-12 pb-16 px-4 sm:px-6 lg:px-8 border-b border-slate-800/60">
+      <div class="max-w-5xl mx-auto text-center space-y-6">
         
-        <div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-sky-500/40 transition-all space-y-3">
-          <div class="h-10 w-10 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 text-lg">
-            <i class="fa-solid fa-scissors"></i>
-          </div>
-          <h3 class="text-base font-bold text-white">1. Curated Precision Timestamps</h3>
-          <p class="text-xs text-slate-300 leading-relaxed">
-            Jump directly to critical segment starts and stop before transitions or housekeeping. Save 40–50% of watching time while capturing full clinical pearls.
-          </p>
+        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-sky-950/80 border border-sky-800/60 text-sky-300 text-xs font-medium backdrop-blur">
+          <span class="flex h-2 w-2 rounded-full bg-teal-400 animate-pulse"></span>
+          <span>Curated Masterclasses & AI-Guided Clinical Notes</span>
         </div>
 
-        <div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-teal-500/40 transition-all space-y-3">
-          <div class="h-10 w-10 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center text-teal-400 text-lg">
-            <i class="fa-brands fa-markdown"></i>
-          </div>
-          <h3 class="text-base font-bold text-white">2. Markdown-Powered Clinical Notes</h3>
-          <p class="text-xs text-slate-300 leading-relaxed">
-            Structured diagnostic criteria (e.g. WHO 6th Ed, Poseidon), dosage tables, and surgical guidelines authored in clean Markdown rendered side-by-side with videos.
-          </p>
-        </div>
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
+          Evidence-Based Medical Education, <br class="hidden sm:block" />
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-teal-300 to-emerald-400">
+            Structured for Deep & Comfortable Learning
+          </span>
+        </h1>
 
-        <div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-emerald-500/40 transition-all space-y-3">
-          <div class="h-10 w-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 text-lg">
-            <i class="fa-solid fa-shield-halved"></i>
-          </div>
-          <h3 class="text-base font-bold text-white">3. Zero Lock-in & Offline Progress</h3>
-          <p class="text-xs text-slate-300 leading-relaxed">
-            100% client-side. Progress tracking is stored locally in your browser’s <code class="text-emerald-400 font-mono">localStorage</code>. No accounts, cookies, or tracking servers needed.
-          </p>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ==================== HOW TO CONTRIBUTE A TOPIC ==================== -->
-  <section id="contribute" class="py-14 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto w-full space-y-8">
-    <div class="p-8 rounded-3xl bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 space-y-6">
-      
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-        <div>
-          <span class="text-xs uppercase font-bold tracking-widest text-sky-400">Open Collaboration</span>
-          <h2 class="text-xl sm:text-2xl font-bold text-white mt-1">Want to Add a Medical Topic or Summary?</h2>
-          <p class="text-xs sm:text-sm text-slate-400 mt-1">The repository is structured so anyone can contribute a course or AI-synthesized lecture notes.</p>
-        </div>
-        <a href="https://github.com/borun/meded" target="_blank" class="shrink-0 px-4 py-2 rounded-xl bg-sky-600 hover:bg-sky-500 text-white text-xs font-semibold transition flex items-center space-x-2 shadow-lg shadow-sky-600/20">
-          <i class="fa-brands fa-github"></i>
-          <span>Fork on GitHub</span>
-        </a>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
-        <div class="p-4 rounded-xl bg-slate-950 border border-slate-800/80 space-y-1.5">
-          <span class="font-mono text-sky-400 font-bold">Step 1</span>
-          <h4 class="font-semibold text-slate-200">Create a Directory</h4>
-          <p class="text-slate-400">Create <code class="text-sky-300 font-mono">topics/your-topic-slug/</code> with a <code class="text-sky-300 font-mono">content/</code> folder.</p>
-        </div>
-        <div class="p-4 rounded-xl bg-slate-950 border border-slate-800/80 space-y-1.5">
-          <span class="font-mono text-teal-400 font-bold">Step 2</span>
-          <h4 class="font-semibold text-slate-200">Write Markdown Notes</h4>
-          <p class="text-slate-400">Write lesson notes in Markdown with timestamps, tables, and clinical takeaways.</p>
-        </div>
-        <div class="p-4 rounded-xl bg-slate-950 border border-slate-800/80 space-y-1.5">
-          <span class="font-mono text-emerald-400 font-bold">Step 3</span>
-          <h4 class="font-semibold text-slate-200">Submit a PR</h4>
-          <p class="text-slate-400">Register topic metadata in <code class="text-emerald-300 font-mono">data/topics.json</code> and open a GitHub Pull Request.</p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ==================== SERIOUS MEDICAL & CLINICAL DISCLAIMER ==================== -->
-  <section class="bg-gradient-to-r from-red-950/80 via-amber-950/60 to-red-950/80 border-t-2 border-b-2 border-red-500/70 py-8 px-4 sm:px-6 lg:px-8 shadow-2xl">
-    <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-start gap-4">
-      <div class="h-12 w-12 rounded-2xl bg-red-600/20 border-2 border-red-500/60 flex items-center justify-center text-red-400 text-2xl shrink-0 shadow-lg shadow-red-500/30 mt-0.5">
-        <i class="fa-solid fa-triangle-exclamation animate-pulse"></i>
-      </div>
-      <div class="space-y-2 flex-1">
-        <div class="flex flex-wrap items-center gap-2">
-          <span class="text-[10px] font-mono font-extrabold uppercase tracking-widest px-2.5 py-0.5 rounded-full bg-red-500/30 text-red-200 border border-red-400/50">Mandatory Notice</span>
-          <h3 class="text-sm sm:text-base font-extrabold uppercase tracking-wide text-red-100">Medical & Clinical Practice Disclaimer</h3>
-        </div>
-        <p class="text-xs text-red-100/90 leading-relaxed">
-          <strong>Strictly for Academic & Professional Training:</strong> The MedEd platform, its curated lecture modules, surgical manuals, and AI-assisted notes are designed exclusively for medical practitioners, postgraduate trainees, and students.
+        <p class="text-slate-200 text-sm sm:text-base max-w-3xl mx-auto leading-relaxed">
+          A community-driven, open-access platform designed for medical students, residents, and clinicians. 
+          Transforming complex multi-hour webinars and conference lectures into <strong>precision-timestamped modules</strong>, 
+          concise <strong>Markdown clinical pearls</strong>, and <strong>offline-tracked courses</strong>.
         </p>
-        <ul class="text-[11px] text-red-200/80 space-y-1 list-disc list-inside">
-          <li><strong>No Medical Advice:</strong> Content does NOT constitute individualized medical advice, diagnostic directives, or treatment orders.</li>
-          <li><strong>Institutional Protocols Apply:</strong> Surgical techniques, drug regimens, and clinical algorithms must always be verified against current institutional guidelines and official society standards (e.g. ACOG, RCOG, FOGSI, ESHRE, WHO).</li>
-          <li><strong>Patient-Specific Care:</strong> Individual patient factors, allergies, and contraindications always supersede generic educational materials.</li>
-        </ul>
+
+        <!-- Metric Badges -->
+        <div class="pt-2 flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-xs text-slate-200">
+          <div class="flex items-center space-x-2 px-3.5 py-2 rounded-xl bg-slate-900/80 border border-slate-800">
+            <i class="fa-solid fa-clock text-sky-400"></i>
+            <span><strong>40+ Hours</strong> Structured Training</span>
+          </div>
+          <div class="flex items-center space-x-2 px-3.5 py-2 rounded-xl bg-slate-900/80 border border-slate-800">
+            <i class="fa-solid fa-bolt text-teal-400"></i>
+            <span><strong>Zero Fluff</strong> Precision Timestamps</span>
+          </div>
+          <div class="flex items-center space-x-2 px-3.5 py-2 rounded-xl bg-slate-900/80 border border-slate-800">
+            <i class="fa-solid fa-cloud-arrow-down text-emerald-400"></i>
+            <span><strong>Offline</strong> Progress Tracking</span>
+          </div>
+          <div class="flex items-center space-x-2 px-3.5 py-2 rounded-xl bg-slate-900/80 border border-slate-800">
+            <i class="fa-brands fa-github text-slate-300"></i>
+            <span><strong>100% Free</strong> on GitHub Pages</span>
+          </div>
+        </div>
+
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- ==================== SEARCH & COURSE DIRECTORY ==================== -->
+    <section id="topics" class="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full flex-1 space-y-8">
+      
+      <!-- Section Header & Filter Controls -->
+      <div class="space-y-4">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div>
+            <span class="text-xs uppercase font-bold tracking-widest text-sky-400">Clinical Library</span>
+            <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Explore Learning Topics</h2>
+            <p class="text-xs sm:text-sm text-slate-300 mt-1">Filter by specialty, topic format, or search for clinical protocols & conditions.</p>
+          </div>
+
+          <!-- Real-Time Search Bar -->
+          <div class="relative w-full md:w-80">
+            <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
+            <input type="text" id="hubSearchInput" oninput="filterTopics()" aria-label="Search clinical topics, tags, and conditions" placeholder="Search topics, tags, conditions..." class="w-full bg-slate-900 border border-slate-800 rounded-xl pl-9 pr-4 py-2.5 text-xs text-slate-100 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 transition-all shadow-inner">
+          </div>
+        </div>
+
+        <!-- Filter Chips Row -->
+        <div class="flex flex-wrap items-center gap-2 pt-2 text-xs border-b border-slate-800/80 pb-4">
+          <span class="text-slate-300 font-semibold mr-1 text-[11px] uppercase tracking-wider">Category:</span>
+          <button onclick="setCategoryFilter('all')" id="cat-all" class="cat-filter-btn px-3 py-1.5 rounded-lg font-medium transition-all bg-sky-600 text-white shadow-sm">
+            All Specialties
+          </button>
+          <button onclick="setCategoryFilter('obgyn')" id="cat-obgyn" class="cat-filter-btn px-3 py-1.5 rounded-lg font-medium transition-all bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-800">
+            OB-GYN & Reproductive
+          </button>
+          <button onclick="setCategoryFilter('cardiology')" id="cat-cardiology" class="cat-filter-btn px-3 py-1.5 rounded-lg font-medium transition-all bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-800">
+            Cardiology & ECG
+          </button>
+          <button onclick="setCategoryFilter('critical-care')" id="cat-critical-care" class="cat-filter-btn px-3 py-1.5 rounded-lg font-medium transition-all bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-800">
+            Critical Care & ICU
+          </button>
+          <button onclick="setCategoryFilter('medicine')" id="cat-medicine" class="cat-filter-btn px-3 py-1.5 rounded-lg font-medium transition-all bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-800">
+            Internal Medicine
+          </button>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2 text-xs">
+          <span class="text-slate-300 font-semibold mr-1 text-[11px] uppercase tracking-wider">Format:</span>
+          <button onclick="setTypeFilter('all')" id="type-all" class="type-filter-btn px-2.5 py-1 rounded-md font-medium transition-all bg-slate-800 text-white border border-slate-700">
+            All Formats
+          </button>
+          <button onclick="setTypeFilter('curated')" id="type-curated" class="type-filter-btn px-2.5 py-1 rounded-md font-medium transition-all bg-slate-900/60 hover:bg-slate-800 text-slate-300 border border-slate-800/80">
+            Curated Masterclasses
+          </button>
+          <button onclick="setTypeFilter('ai-guided')" id="type-ai-guided" class="type-filter-btn px-2.5 py-1 rounded-md font-medium transition-all bg-slate-900/60 hover:bg-slate-800 text-slate-300 border border-slate-800/80">
+            AI-Guided Clinical Notes
+          </button>
+        </div>
+      </div>
+
+      <!-- Topics Cards Grid -->
+      <div id="topicsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+        <!-- Populated via JavaScript dynamically from topics data -->
+      </div>
+
+    </section>
+
+    <!-- ==================== METHODOLOGY / HOW IT WORKS ==================== -->
+    <section id="methodology" class="py-16 bg-slate-900/50 border-y border-slate-800/80">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        
+        <div class="text-center max-w-3xl mx-auto space-y-3">
+          <span class="text-xs uppercase font-bold tracking-widest text-teal-400">Pedagogical Framework</span>
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-white">How MedEd Accelerates Learning</h2>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Traditional webinar recordings are bloated with introductions, Q&As, and dead time. MedEd restructures open medical content into an engaging clinical learning environment.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-sky-500/40 transition-all space-y-3">
+            <div class="h-10 w-10 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 text-lg">
+              <i class="fa-solid fa-scissors"></i>
+            </div>
+            <h3 class="text-base font-bold text-white">1. Curated Precision Timestamps</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Jump directly to critical segment starts and stop before transitions or housekeeping. Save 40–50% of watching time while capturing full clinical pearls.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-teal-500/40 transition-all space-y-3">
+            <div class="h-10 w-10 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center text-teal-400 text-lg">
+              <i class="fa-brands fa-markdown"></i>
+            </div>
+            <h3 class="text-base font-bold text-white">2. Markdown-Powered Clinical Notes</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Structured diagnostic criteria (e.g. WHO 6th Ed, Poseidon), dosage tables, and surgical guidelines authored in clean Markdown rendered side-by-side with videos.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-emerald-500/40 transition-all space-y-3">
+            <div class="h-10 w-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 text-lg">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <h3 class="text-base font-bold text-white">3. Zero Lock-in & Offline Progress</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              100% client-side. Progress tracking is stored locally in your browser’s <code class="text-emerald-400 font-mono">localStorage</code>. No accounts, cookies, or tracking servers needed.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== HOW TO CONTRIBUTE A TOPIC ==================== -->
+    <section id="contribute" class="py-14 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto w-full space-y-8">
+      <div class="p-8 rounded-3xl bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 space-y-6">
+        
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div>
+            <span class="text-xs uppercase font-bold tracking-widest text-sky-400">Open Collaboration</span>
+            <h2 class="text-xl sm:text-2xl font-bold text-white mt-1">Want to Add a Medical Topic or Summary?</h2>
+            <p class="text-xs sm:text-sm text-slate-300 mt-1">The repository is structured so anyone can contribute a course or AI-synthesized lecture notes.</p>
+          </div>
+          <a href="https://github.com/borun/meded" target="_blank" rel="noopener noreferrer" class="shrink-0 px-4 py-2 rounded-xl bg-sky-600 hover:bg-sky-500 text-white text-xs font-semibold transition flex items-center space-x-2 shadow-lg shadow-sky-600/20">
+            <i class="fa-brands fa-github"></i>
+            <span>Fork on GitHub</span>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
+          <div class="p-4 rounded-xl bg-slate-950 border border-slate-800/80 space-y-1.5">
+            <span class="font-mono text-sky-400 font-bold">Step 1</span>
+            <h3 class="font-semibold text-slate-200 text-xs">Create a Directory</h3>
+            <p class="text-slate-300">Create <code class="text-sky-300 font-mono">topics/your-topic-slug/</code> with a <code class="text-sky-300 font-mono">content/</code> folder.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-950 border border-slate-800/80 space-y-1.5">
+            <span class="font-mono text-teal-400 font-bold">Step 2</span>
+            <h3 class="font-semibold text-slate-200 text-xs">Write Markdown Notes</h3>
+            <p class="text-slate-300">Write lesson notes in Markdown with timestamps, tables, and clinical takeaways.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-950 border border-slate-800/80 space-y-1.5">
+            <span class="font-mono text-emerald-400 font-bold">Step 3</span>
+            <h3 class="font-semibold text-slate-200 text-xs">Submit a PR</h3>
+            <p class="text-slate-300">Register topic metadata in <code class="text-emerald-300 font-mono">data/topics.json</code> and open a GitHub Pull Request.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== SERIOUS MEDICAL & CLINICAL DISCLAIMER ==================== -->
+    <section class="bg-gradient-to-r from-red-950/80 via-amber-950/60 to-red-950/80 border-t-2 border-b-2 border-red-500/70 py-8 px-4 sm:px-6 lg:px-8 shadow-2xl">
+      <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-start gap-4">
+        <div class="h-12 w-12 rounded-2xl bg-red-600/20 border-2 border-red-500/60 flex items-center justify-center text-red-400 text-2xl shrink-0 shadow-lg shadow-red-500/30 mt-0.5">
+          <i class="fa-solid fa-triangle-exclamation animate-pulse"></i>
+        </div>
+        <div class="space-y-2 flex-1">
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="text-[10px] font-mono font-extrabold uppercase tracking-widest px-2.5 py-0.5 rounded-full bg-red-500/30 text-red-200 border border-red-400/50">Mandatory Notice</span>
+            <h3 class="text-sm sm:text-base font-extrabold uppercase tracking-wide text-red-100">Medical & Clinical Practice Disclaimer</h3>
+          </div>
+          <p class="text-xs text-red-100/90 leading-relaxed">
+            <strong>Strictly for Academic & Professional Training:</strong> The MedEd platform, its curated lecture modules, surgical manuals, and AI-assisted notes are designed exclusively for medical practitioners, postgraduate trainees, and students.
+          </p>
+          <ul class="text-[11px] text-red-200/90 space-y-1 list-disc list-inside">
+            <li><strong>No Medical Advice:</strong> Content does NOT constitute individualized medical advice, diagnostic directives, or treatment orders.</li>
+            <li><strong>Institutional Protocols Apply:</strong> Surgical techniques, drug regimens, and clinical algorithms must always be verified against current institutional guidelines and official society standards (e.g. ACOG, RCOG, FOGSI, ESHRE, WHO).</li>
+            <li><strong>Patient-Specific Care:</strong> Individual patient factors, allergies, and contraindications always supersede generic educational materials.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
 
   <!-- ==================== FOOTER ==================== -->
   <footer class="border-t border-slate-900 bg-slate-950 py-8 text-xs text-slate-500">
@@ -591,9 +638,9 @@
 
       if (topics.length === 0) {
         grid.innerHTML = `
-          <div class="col-span-full text-center py-16 bg-slate-900/40 rounded-3xl border border-slate-800/60 text-slate-500 space-y-2">
-            <i class="fa-solid fa-book-medical text-3xl mb-1 text-slate-600 block"></i>
-            <h4 class="text-sm font-semibold text-slate-300">No topics found</h4>
+          <div class="col-span-full text-center py-16 bg-slate-900/40 rounded-3xl border border-slate-800/60 text-slate-400 space-y-2">
+            <i class="fa-solid fa-book-medical text-3xl mb-1 text-slate-500 block"></i>
+            <p class="text-sm font-semibold text-slate-200">No topics found</p>
             <p class="text-xs text-slate-400">Try adjusting your search terms or filter selection.</p>
           </div>
         `;
@@ -611,22 +658,22 @@
 
         // Color Accents
         const badgeColorClass = topic.badgeColor === 'sky' 
-          ? 'bg-sky-500/10 text-sky-400 border-sky-500/20' 
+          ? 'bg-sky-500/10 text-sky-300 border-sky-500/30' 
           : topic.badgeColor === 'rose'
-          ? 'bg-rose-500/10 text-rose-400 border-rose-500/20'
+          ? 'bg-rose-500/10 text-rose-300 border-rose-500/30'
           : topic.badgeColor === 'teal'
-          ? 'bg-teal-500/10 text-teal-400 border-teal-500/20'
-          : 'bg-amber-500/10 text-amber-400 border-amber-500/20';
+          ? 'bg-teal-500/10 text-teal-300 border-teal-500/30'
+          : 'bg-amber-500/10 text-amber-300 border-amber-500/30';
 
         const highlightsHtml = topic.highlights.map(h => `
-          <li class="flex items-start space-x-2 text-xs text-slate-300">
+          <li class="flex items-start space-x-2 text-xs text-slate-200">
             <i class="fa-solid fa-check text-[10px] text-teal-400 mt-1 shrink-0"></i>
             <span>${h}</span>
           </li>
         `).join('');
 
         const tagsHtml = topic.tags.slice(0, 4).map(tag => `
-          <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-slate-950 text-slate-400 border border-slate-800">${tag}</span>
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-slate-950 text-slate-300 border border-slate-800">${tag}</span>
         `).join('');
 
         card.innerHTML = `
@@ -638,12 +685,12 @@
                   <i class="fa-solid ${topic.icon}"></i>
                 </div>
                 <div>
-                  <span class="text-[10px] uppercase font-bold tracking-wider text-slate-400 block">${topic.category}</span>
-                  <span class="text-xs font-semibold text-slate-300">${topic.subtitle}</span>
+                  <span class="text-[10px] uppercase font-bold tracking-wider text-slate-300 block">${topic.category}</span>
+                  <span class="text-xs font-semibold text-slate-200">${topic.subtitle}</span>
                 </div>
               </div>
               <span class="text-[10px] font-mono px-2.5 py-1 rounded-full font-bold uppercase tracking-wider ${
-                isActive ? 'bg-teal-950 text-teal-300 border border-teal-700/60' : 'bg-slate-800 text-slate-400 border border-slate-700'
+                isActive ? 'bg-teal-950 text-teal-300 border border-teal-700/60' : 'bg-slate-800 text-slate-300 border border-slate-700'
               }">
                 ${topic.status}
               </span>
@@ -653,13 +700,13 @@
             <h3 class="text-lg sm:text-xl font-bold text-white group-hover:text-sky-300 transition-colors">
               ${topic.title}
             </h3>
-            <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+            <p class="text-xs text-slate-300 mt-2 leading-relaxed">
               ${topic.description}
             </p>
 
             <!-- Highlights Checklist -->
             <div class="my-4 pt-3 border-t border-slate-800/80">
-              <span class="text-[10px] font-bold uppercase tracking-widest text-slate-500 block mb-2">High-Yield Syllabus Highlights:</span>
+              <span class="text-[10px] font-bold uppercase tracking-widest text-slate-400 block mb-2">High-Yield Syllabus Highlights:</span>
               <ul class="space-y-1.5">
                 ${highlightsHtml}
               </ul>
@@ -675,12 +722,12 @@
 
             <div>
               ${isActive ? `
-                <a href="${topic.path}" class="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-4 py-2 rounded-xl bg-gradient-to-r from-sky-600 to-teal-500 hover:from-sky-500 hover:to-teal-400 text-white text-xs font-bold shadow-lg shadow-sky-600/30 transition-all hover:scale-105">
+                <a href="${topic.path}" aria-label="Launch course ${topic.title}" class="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-4 py-2 rounded-xl bg-gradient-to-r from-sky-600 to-teal-500 hover:from-sky-500 hover:to-teal-400 text-white text-xs font-bold shadow-lg shadow-sky-600/30 transition-all hover:scale-105">
                   <span>Launch Course</span>
                   <i class="fa-solid fa-arrow-right text-[10px]"></i>
                 </a>
               ` : `
-                <button disabled class="w-full sm:w-auto inline-flex items-center justify-center space-x-1.5 px-3 py-1.5 rounded-xl bg-slate-800/70 text-slate-500 border border-slate-700/60 text-xs font-medium cursor-not-allowed">
+                <button disabled aria-label="Course in development" class="w-full sm:w-auto inline-flex items-center justify-center space-x-1.5 px-3 py-1.5 rounded-xl bg-slate-800/70 text-slate-400 border border-slate-700/60 text-xs font-medium cursor-not-allowed">
                   <i class="fa-solid fa-hammer text-[10px]"></i>
                   <span>In Development</span>
                 </button>
