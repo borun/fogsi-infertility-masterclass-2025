@@ -31,6 +31,7 @@ Medical education today suffers from two extremes:
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **Reproductive / OB-GYN** | **FOGSI-ICOG & ISAR Infertility Masterclass** | Curated Masterclass | `Active` | 9+ Hours (28 Modules) | [🚀 Launch Course](topics/fogsi-infertility-masterclass/index.html) |
 | **Reproductive / OB-GYN** | **Infertility Masterclass by Dr. Jay Mehta** | Curated Masterclass | `Active` | 27+ Hours (69 Modules) | [🚀 Launch Course](topics/infertility-masterclass-dr-jay-mehta/index.html) |
+| **Obstetrics / Perinatology** | **Obstetric Emergencies & Labor Ward Procedures** | Curated Masterclass | `Active` | 3.5+ Hours (8 Modules) | [🚀 Launch Course](topics/obstetrics-labor-ward-emergencies/index.html) |
 | **Gynecologic Surgery** | **Total Abdominal Hysterectomy (TAH) Manual** | AI-Guided Protocol | `Active` | 35 Mins (Manual + Safety) | [🚀 Launch Manual](topics/total-abdominal-hysterectomy/index.html) |
 | **Cardiology** | **Clinical ECG Masterclass & Arrhythmias** | AI-Guided Protocol | `Roadmap` | 4 Hours (16 Modules) | *In Development* |
 | **Critical Care** | **Mechanical Ventilation & ICU Physiology** | AI-Guided Protocol | `Roadmap` | 5 Hours (12 Modules) | *In Development* |
@@ -56,6 +57,10 @@ meded/
     │   ├── index.html                   # 8-phase chronological interactive viewer SPA
     │   ├── README.md                    # Course syllabus & phase index
     │   └── content/                     # Phase 1-8 structured markdown curriculum
+    ├── obstetrics-labor-ward-emergencies/
+    │   ├── index.html                   # Labor room procedures & PPH interactive viewer
+    │   ├── README.md                    # Emergency obstetric syllabus & module index
+    │   └── content/                     # Modules 1-8 structured operative protocols
     └── total-abdominal-hysterectomy/
         ├── index.html                   # Operative manual & resident safety viewer
         ├── README.md                    # Surgical syllabus & illustration index
