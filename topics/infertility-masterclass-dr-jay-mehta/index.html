@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Infertility Masterclass by Dr. Jay Mehta | MedEd</title>
+  
+  <!-- Tailwind CSS & Google Fonts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Marked.js for Markdown Parsing -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              500: '#0284c7',
+              600: '#0369a1',
+              700: '#075985',
+              800: '#0c4a6e',
+              900: '#082f49',
+            },
+            clinical: {
+              teal: '#0d9488',
+              emerald: '#059669',
+              amber: '#d97706',
+              rose: '#e11d48',
+              slate: '#1e293b',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #0f172a; }
+    ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #475569; }
+    .glass-nav { background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(12px); }
+
+    /* Markdown Clinical Styling */
+    .clinical-markdown table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.825rem; }
+    .clinical-markdown th { background: #0f172a; color: #38bdf8; padding: 0.5rem 0.75rem; text-align: left; border: 1px solid #334155; }
+    .clinical-markdown td { padding: 0.5rem 0.75rem; border: 1px solid #1e293b; background: rgba(15, 23, 42, 0.6); color: #cbd5e1; }
+    .clinical-markdown tr:hover td { background: rgba(30, 41, 59, 0.8); }
+    .clinical-markdown ul { list-style-type: disc; margin-left: 1.25rem; margin-top: 0.5rem; margin-bottom: 0.5rem; }
+    .clinical-markdown li { margin-bottom: 0.35rem; font-size: 0.85rem; color: #cbd5e1; line-height: 1.5; }
+    .clinical-markdown strong { color: #f8fafc; font-weight: 600; }
+    .clinical-markdown blockquote { border-left: 3px solid #38bdf8; background: rgba(56, 189, 248, 0.08); padding: 0.6rem 1rem; border-radius: 0 0.5rem 0.5rem 0; margin: 0.75rem 0; font-size: 0.85rem; color: #e0f2fe; }
+    .clinical-markdown p { margin-bottom: 0.65rem; line-height: 1.6; font-size: 0.85rem; }
+    .clinical-markdown h4 { color: #38bdf8; font-weight: 700; margin-top: 0.75rem; margin-bottom: 0.35rem; font-size: 0.9rem; }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased min-h-screen flex flex-col">
+
+  <!-- ==================== TOP NAVIGATION ==================== -->
+  <header class="sticky top-0 z-50 glass-nav border-b border-slate-800 transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      
+      <!-- Brand & Hub Backlink -->
+      <div class="flex items-center space-x-3">
+        <a href="../../index.html" class="flex items-center space-x-2 text-slate-400 hover:text-sky-400 text-xs font-semibold px-2.5 py-1.5 rounded-lg bg-slate-900 border border-slate-800 hover:border-sky-500/40 transition-all">
+          <i class="fa-solid fa-arrow-left"></i>
+          <span class="hidden sm:inline">MedEd Hub</span>
+        </a>
+        <div class="h-5 w-px bg-slate-800"></div>
+        <div class="h-9 w-9 rounded-xl bg-gradient-to-tr from-sky-600 to-indigo-500 flex items-center justify-center shadow-lg shadow-sky-500/20 text-white font-bold text-base">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <div>
+          <span class="text-xs uppercase tracking-wider font-semibold text-sky-400 block leading-tight">Masterclass Series</span>
+          <h1 class="text-sm sm:text-base font-bold text-white tracking-tight flex items-center gap-2">
+            Infertility Masterclass by Dr. Jay Mehta
+            <span class="text-[10px] font-medium bg-sky-950 text-sky-300 border border-sky-800 px-2 py-0.5 rounded-full hidden md:inline">24+ Hours • 8 Phases</span>
+          </h1>
+        </div>
+      </div>
+
+      <!-- Completion & Progress Tracker -->
+      <div class="flex items-center space-x-3 sm:space-x-5">
+        <div class="flex flex-col items-end">
+          <span class="text-[10px] text-slate-400 uppercase tracking-widest font-semibold flex items-center gap-1">
+            <i class="fa-solid fa-chart-pie text-sky-400 text-[9px]"></i> Completion
+          </span>
+          <div class="flex items-center space-x-2">
+            <div class="w-20 sm:w-28 bg-slate-800 rounded-full h-2 overflow-hidden border border-slate-700">
+              <div id="progressBar" class="bg-gradient-to-r from-sky-500 to-indigo-500 h-full w-0 transition-all duration-500"></div>
+            </div>
+            <span id="progressText" class="text-xs font-mono font-bold text-sky-400">0%</span>
+          </div>
+        </div>
+
+        <a href="https://github.com/borun/meded/tree/main/topics/infertility-masterclass-dr-jay-mehta" target="_blank" class="text-slate-400 hover:text-white p-2 rounded-lg hover:bg-slate-800 transition-colors" title="View Source on GitHub">
+          <i class="fa-brands fa-github text-lg"></i>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ==================== MAIN CONTENT AREA ==================== -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 grid grid-cols-1 lg:grid-cols-12 gap-6">
+    
+    <!-- LEFT COLUMN: VIDEO PLAYER & ACTIVE LECTURE NOTES (7 Cols) -->
+    <div class="lg:col-span-7 flex flex-col space-y-4">
+      
+      <!-- Video Player Wrapper -->
+      <div class="bg-slate-900 rounded-2xl overflow-hidden border border-slate-800 shadow-2xl relative">
+        <div class="aspect-video w-full bg-black relative flex items-center justify-center">
+          <div id="player"></div>
+        </div>
+
+        <!-- Video Info & Controls Sub-bar -->
+        <div class="p-3.5 bg-slate-900/90 border-t border-slate-800 flex flex-wrap items-center justify-between gap-3 text-xs">
+          <div class="flex items-center space-x-2">
+            <span class="px-2 py-0.5 rounded bg-sky-500/10 text-sky-400 border border-sky-500/20 font-mono font-medium" id="currentDurationBadge">
+              --:--
+            </span>
+            <span class="text-slate-300 font-medium truncate max-w-[200px] sm:max-w-xs" id="currentTitleBadge">
+              Select a lecture
+            </span>
+          </div>
+          
+          <div class="flex items-center space-x-2">
+            <button onclick="toggleCompletedCurrent()" id="btnMarkComplete" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition flex items-center space-x-1.5 text-xs">
+              <i class="fa-regular fa-circle-check text-sky-400"></i>
+              <span id="btnMarkCompleteText">Mark Completed</span>
+            </button>
+            <a id="btnOpenYouTube" href="#" target="_blank" class="px-3 py-1.5 rounded-lg bg-sky-600 hover:bg-sky-500 text-white font-medium shadow-md shadow-sky-600/30 transition flex items-center space-x-1.5 text-xs">
+              <i class="fa-brands fa-youtube"></i>
+              <span>Watch on YouTube</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Active Module Clinical Summary Card -->
+      <div class="bg-slate-900/80 backdrop-blur rounded-2xl border border-slate-800 p-5 shadow-lg space-y-3">
+        <div class="flex items-center justify-between border-b border-slate-800/80 pb-3">
+          <div class="flex items-center space-x-2.5">
+            <div class="h-7 w-7 rounded-lg bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 text-xs">
+              <i class="fa-solid fa-notes-medical"></i>
+            </div>
+            <div>
+              <h2 class="text-xs uppercase font-bold tracking-wider text-sky-400">High-Yield Clinical Pearls</h2>
+              <p class="text-xs text-slate-400" id="currentLectureTitleDetail">Select a lecture to view notes</p>
+            </div>
+          </div>
+          <span class="text-[10px] font-mono text-slate-500 px-2 py-0.5 rounded bg-slate-950 border border-slate-800" id="currentMcBadge">Masterclass</span>
+        </div>
+
+        <div id="lectureSummaryContent" class="clinical-markdown prose-invert text-slate-300 max-h-[380px] overflow-y-auto pr-2">
+          <!-- Populated by Markdown parser -->
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN: PHASE SELECTOR & LECTURE ACCORDION (5 Cols) -->
+    <div class="lg:col-span-5 flex flex-col space-y-4">
+      
+      <!-- Phase Navigation Dropdown / Buttons -->
+      <div class="p-2 bg-slate-900 rounded-xl border border-slate-800 space-y-2">
+        <div class="flex items-center justify-between px-1">
+          <span class="text-[10px] uppercase font-bold tracking-widest text-slate-400">Curriculum Phases:</span>
+          <span class="text-[10px] font-mono text-sky-400 font-semibold" id="activePhaseCountBadge">Phase 1 / 8</span>
+        </div>
+        <div class="grid grid-cols-4 gap-1">
+          <button onclick="switchPhase(1)" id="phase-btn-1" class="phase-btn py-1.5 px-2 rounded-lg text-[11px] transition flex items-center justify-center bg-sky-600 text-white font-bold">
+  Phase 1
+</button><button onclick="switchPhase(2)" id="phase-btn-2" class="phase-btn py-1.5 px-2 rounded-lg text-[11px] transition flex items-center justify-center text-slate-400 hover:text-slate-200 hover:bg-slate-800 font-medium">
+  Phase 2
+</button><button onclick="switchPhase(3)" id="phase-btn-3" class="phase-btn py-1.5 px-2 rounded-lg text-[11px] transition flex items-center justify-center text-slate-400 hover:text-slate-200 hover:bg-slate-800 font-medium">
+  Phase 3
+</button><button onclick="switchPhase(4)" id="phase-btn-4" class="phase-btn py-1.5 px-2 rounded-lg text-[11px] transition flex items-center justify-center text-slate-400 hover:text-slate-200 hover:bg-slate-800 font-medium">
+  Phase 4
+</button><button onclick="switchPhase(5)" id="phase-btn-5" class="phase-btn py-1.5 px-2 rounded-lg text-[11px] transition flex items-center justify-center text-slate-400 hover:text-slate-200 hover:bg-slate-800 font-medium">
+  Phase 5
+</button><button onclick="switchPhase(6)" id="phase-btn-6" class="phase-btn py-1.5 px-2 rounded-lg text-[11px] transition flex items-center justify-center text-slate-400 hover:text-slate-200 hover:bg-slate-800 font-medium">
+  Phase 6
+</button><button onclick="switchPhase(7)" id="phase-btn-7" class="phase-btn py-1.5 px-2 rounded-lg text-[11px] transition flex items-center justify-center text-slate-400 hover:text-slate-200 hover:bg-slate-800 font-medium">
+  Phase 7
+</button><button onclick="switchPhase(8)" id="phase-btn-8" class="phase-btn py-1.5 px-2 rounded-lg text-[11px] transition flex items-center justify-center text-slate-400 hover:text-slate-200 hover:bg-slate-800 font-medium">
+  Phase 8
+</button>
+        </div>
+      </div>
+
+      <!-- Search & Filter Bar -->
+      <div class="relative">
+        <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 text-xs"></i>
+        <input type="text" id="searchInput" oninput="handleSearch()" placeholder="Search protocols, hormones, or surgery..." class="w-full bg-slate-900 border border-slate-800 rounded-xl pl-9 pr-4 py-2 text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-sky-500 transition-all">
+      </div>
+
+      <!-- Active Phase Banner -->
+      <div id="phaseHeaderBanner" class="p-3.5 rounded-xl bg-gradient-to-r from-slate-900 via-sky-950/30 to-slate-900 border border-sky-900/30 flex items-start justify-between">
+        <div>
+          <span id="phaseBadgeSubtitle" class="text-[10px] uppercase font-bold tracking-widest text-sky-400">Phase 1</span>
+          <h3 id="phaseBannerTitle" class="text-sm font-bold text-white mt-0.5">Basic Physiology & Reserve Assessment</h3>
+          <p id="phaseBannerDescription" class="text-[11px] text-slate-400 mt-0.5">2-Cell Theory, AMH, hpHMG vs rFSH, Luteal Phase</p>
+        </div>
+      </div>
+
+      <!-- Lectures List Container -->
+      <div id="lecturesContainer" class="space-y-2.5 max-h-[560px] overflow-y-auto pr-1">
+        <!-- Injected dynamically via JS -->
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ==================== SERIOUS MEDICAL & CLINICAL DISCLAIMER ==================== -->
+  <section class="bg-gradient-to-r from-red-950/80 via-amber-950/60 to-red-950/80 border-t-2 border-b-2 border-red-500/70 py-6 px-4 sm:px-6 lg:px-8 mt-12 shadow-2xl">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-start gap-4">
+      <div class="h-10 w-10 rounded-xl bg-red-600/20 border-2 border-red-500/60 flex items-center justify-center text-red-400 text-xl shrink-0 shadow-lg shadow-red-500/30 mt-0.5">
+        <i class="fa-solid fa-triangle-exclamation animate-pulse"></i>
+      </div>
+      <div class="space-y-1.5 flex-1">
+        <div class="flex items-center space-x-2">
+          <span class="text-[10px] font-mono font-extrabold uppercase tracking-widest px-2 py-0.5 rounded-full bg-red-500/30 text-red-200 border border-red-400/50">Mandatory Clinical Warning</span>
+          <h3 class="text-xs sm:text-sm font-extrabold uppercase tracking-wide text-red-100">Medical & Educational Disclaimer</h3>
+        </div>
+        <p class="text-[11px] text-red-100/90 leading-relaxed">
+          <strong>Academic & Training Purposes Only:</strong> This masterclass series organizes public educational lectures by Dr. Jay Mehta for clinical practitioners and trainees. It does <strong>not</strong> constitute individualized medical advice. Stimulation dosages, gonadotropin regimens, immunological therapies (LMWH, LIT, Intralipids), and surgical interventions must always be adapted to individual patient factors and institutional protocols.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="border-t border-slate-900 bg-slate-950 py-5 text-center text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <div>
+        <span class="font-semibold text-slate-400">Infertility Masterclass by Dr. Jay Mehta</span> • Part of <span class="text-slate-400">MedEd</span>.
+      </div>
+      <div class="flex items-center space-x-4 text-slate-400">
+        <a href="../../index.html" class="hover:text-sky-400 transition">MedEd Hub</a>
+        <span>•</span>
+        <a href="../../README.md" class="hover:text-sky-400 transition">About MedEd</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== COURSE LOGIC ==================== -->
+  <script>
+    const curriculumData = [
+  {
+    "phase": 1,
+    "slug": "phase-1",
+    "title": "Phase 1: Basic Physiology & Reserve Assessment",
+    "subtitle": "2-Cell Theory, AMH, hpHMG vs rFSH, Luteal Phase",
+    "description": "Fundamental endocrinology of the hypothalamic-pituitary-ovarian axis, 2-Cell 2-Gonadotropin theory, AMH interpretation, gonadotropin selection (hpHMG vs rFSH), and luteal phase biology.",
+    "duration": "2h 45m",
+    "icon": "fa-dna",
+    "lectures": [
+      {
+        "id": "jm-p1-l1",
+        "title": "2-Cell 2-Gonadotropin Theory: Basis of Ovarian Stimulation",
+        "mcNumber": 19,
+        "videoId": "n3BaOUceqEA",
+        "duration": "18:24",
+        "markdown": "#### Core Clinical Takeaways\n* **Theca Cells:** Stimulated by LH to produce androgens (androstenedione & testosterone) from cholesterol.\n* **Granulosa Cells:** Stimulated by FSH to aromatize theca-derived androgens into estradiol (E2).\n* **Clinical Implication:** Without adequate basal LH activity, theca androgen substrate is depleted, resulting in poor oocyte quality and compromised cytoplasmic maturation.\n* **Triage:** Advanced age (>35y) and hypogonadotropic hypogonadism require exogenous LH activity."
+      },
+      {
+        "id": "jm-p1-l2",
+        "title": "Everything About AMH & Clinical Ovarian Reserve",
+        "mcNumber": 18,
+        "videoId": "kg72Z_sfeI8",
+        "duration": "22:15",
+        "markdown": "#### AMH Reference Guide & Principles\n| AMH Level (ng/mL) | Clinical Classification | Stimulation Strategy |\n| :--- | :--- | :--- |\n| **> 3.5** | High / PCOS | Mild FSH, GnRH Antagonist + Agonist Trigger |\n| **1.2 \u2013 3.5** | Normal Reserve | Standard Antagonist (150\u2013225 IU) |\n| **0.5 \u2013 1.1** | Low Reserve (Poor Responder) | High FSH (300 IU) + LH (150 IU) / DuoStim |\n| **< 0.5** | Severely Diminished | Embryo Accumulation / PPOS / Donor Counseling |\n\n> AMH predicts oocyte QUANTITY, whereas female age determines oocyte QUALITY (euploidy rate)."
+      },
+      {
+        "id": "jm-p1-l3",
+        "title": "hpHMG vs rFSH: Logic of hCG-Driven LH Activity",
+        "mcNumber": 17,
+        "videoId": "wmUzPDv12mU",
+        "duration": "19:40",
+        "markdown": "#### Comparing Gonadotropin Formulations\n* **Highly Purified HMG (hpHMG):** Contains FSH + LH activity (predominantly derived from co-purified human chorionic gonadotropin, hCG).\n* **Recombinant FSH (rFSH):** Pure FSH with zero batch-to-batch variation and high receptor specificity.\n* **Who Needs hpHMG?** Advanced maternal age (>35y), Poseidon Group 1/2 unexpected poor responders, and patients with LH suppression from long downregulation."
+      },
+      {
+        "id": "jm-p1-l4",
+        "title": "Luteal Phase Support in Ovulation Induction & IUI Cycles",
+        "mcNumber": 8,
+        "videoId": "tGZeiYmG3mE",
+        "duration": "16:50",
+        "markdown": "#### Evidence-Based Luteal Support Protocol\n* **Why Support is Needed:** Supraphysiological estradiol levels in stimulated cycles induce early luteolysis through negative feedback on LH pulsatility.\n* **First-Line Drug:** Micronized Natural Progesterone (200\u2013400 mg/day vaginally) or Oral Dydrogesterone (10 mg BID/TID).\n* **Timing:** Initiate 36\u201348 hours after IUI or hCG trigger. Continue until 10\u201312 weeks of pregnancy."
+      },
+      {
+        "id": "jm-p1-l5",
+        "title": "Prolactin & Thyroid Dynamics in Subfertility",
+        "mcNumber": 48,
+        "videoId": "AGy3aepu34s",
+        "duration": "17:35",
+        "markdown": "#### Endocrine Optimization Targets\n* **Hyperprolactinemia:** Disrupts pulsatile GnRH secretion, causing anovulation, luteal deficiency, and galactorrhea.\n* **Treatment:** Cabergoline 0.25\u20130.5 mg once or twice weekly. Discontinue upon pregnancy confirmation.\n* **Target TSH:** Maintain TSH < 2.5 mIU/L prior to conception to optimize implantation and lower miscarriage risk."
+      }
+    ]
+  },
+  {
+    "phase": 2,
+    "slug": "phase-2",
+    "title": "Phase 2: Ovulation Induction Protocols & IUI",
+    "subtitle": "Letrozole Protocols, PCOS, Endometriosis & Lab Setup",
+    "description": "Step-by-step stimulation protocols for natural conception and IUI in normal responders, low AMH, PCOS, endometriosis, and unexplained infertility.",
+    "duration": "3h 10m",
+    "icon": "fa-flask",
+    "lectures": [
+      {
+        "id": "jm-p2-l1",
+        "title": "Ovarian Stimulation Protocols without IVF in Normal Responders",
+        "mcNumber": 31,
+        "videoId": "EYOkJ8lrJX4",
+        "duration": "21:10",
+        "markdown": "#### First-Line Non-IVF Protocol\n* **Letrozole:** 2.5 mg/day on cycle Days 3 to 7. Superior to Clomiphene with thicker endometrial lining.\n* **Follicular Monitoring:** Ultrasound on Day 9\u201310. Target: 1\u20132 mature follicles (18\u201320 mm) with triple-line endometrium \u22657.5 mm.\n* **Trigger:** Recombinant hCG 250 mcg or Urinary hCG 5,000\u201310,000 IU.\n* **IUI Timing:** Single IUI performed 36 hours post-trigger."
+      },
+      {
+        "id": "jm-p2-l2",
+        "title": "Low AMH Ovarian Stimulation Protocols for Natural Conception",
+        "mcNumber": 21,
+        "videoId": "_8J09tQOAaY",
+        "duration": "19:05",
+        "markdown": "#### Managing Diminished Reserve without IVF\n* **Do Not Overstimulate:** High gonadotropins in low AMH do not recruit more eggs in IUI cycles and only increase financial toxicity.\n* **Protocol:** Letrozole 5 mg (Days 2\u20136) + HMG 75 IU on alternate days.\n* **Adjuvant Pre-treatment:** DHEA 25 mg TID + CoQ10 300 mg/day for 8\u201312 weeks before stimulation."
+      },
+      {
+        "id": "jm-p2-l3",
+        "title": "PCOS Stimulation & Extended Letrozole Protocols",
+        "mcNumber": 13,
+        "videoId": "oiBGXFnPTyg",
+        "duration": "24:30",
+        "markdown": "#### Step-Up Protocols in Resistant PCOS\n* **Step-Wise Titration:** Start at 2.5 mg; if non-responsive, escalate to 5 mg, then 7.5 mg.\n* **Extended Letrozole:** Administered for 7\u20139 days (Days 3 to 9 or 11) in clomiphene/letrozole-resistant anovulatory PCOS.\n* **Strict Cancellation Rules:** Cancel cycle if \u22653 follicles exceed 16 mm to avoid multiple gestations and OHSS."
+      },
+      {
+        "id": "jm-p2-l4",
+        "title": "Stimulation Protocols for Thin PCOS in Natural Conception",
+        "mcNumber": 77,
+        "videoId": "PSTy06fwjJM",
+        "duration": "18:40",
+        "markdown": "#### Lean PCOS Considerations\n* **Phenotype:** High baseline LH/FSH ratio (>2:1), normal BMI, hyperandrogenism.\n* **Strategy:** Use Letrozole 2.5 mg; avoid high starting gonadotropins. Check serum LH to avoid premature follicular luteinization."
+      },
+      {
+        "id": "jm-p2-l5",
+        "title": "How to Enhance Your IUI Results & Timing Strategies",
+        "mcNumber": 15,
+        "videoId": "83L0owWShcE",
+        "duration": "22:15",
+        "markdown": "#### Key Determinants of IUI Success\n* **Semen Benchmark:** Post-wash Total Motile Sperm Count (TMSC) > 5\u201310 Million.\n* **Endometrial Thickness:** 8\u201312 mm with distinct trilaminar pattern.\n* **Triage Rule:** If pregnancy is not achieved after 3\u20134 well-stimulated IUI cycles, proceed to IVF."
+      },
+      {
+        "id": "jm-p2-l6",
+        "title": "Setting Up Your IUI Laboratory: Practical Gynecologist Guide",
+        "mcNumber": 30,
+        "videoId": "6zceLbG_Ra4",
+        "duration": "20:50",
+        "markdown": "#### IUI Lab Equipment & Standards\n* **Essential Setup:** Class II Biosafety Cabinet, 37\u00b0C dry heating block, centrifuge with soft acceleration/deceleration, and phase-contrast microscope.\n* **Witnessing:** Dual-operator verification of patient names and ID codes on all tubes and catheters."
+      }
+    ]
+  },
+  {
+    "phase": 3,
+    "slug": "phase-3",
+    "title": "Phase 3: Male Factor Subfertility & Andrology",
+    "subtitle": "Semen Analysis, DFI, Morphology, Micro-TESE & Genetics",
+    "description": "Semen analysis interpretation (WHO 6th Edition), sperm preparation techniques, hyperviscosity, teratozoospermia, Sperm DNA Fragmentation Index (DFI), micro-TESE, and genetics.",
+    "duration": "3h 05m",
+    "icon": "fa-mars",
+    "lectures": [
+      {
+        "id": "jm-p3-l1",
+        "title": "How to Interpret Semen Analysis (WHO Criteria) & Male Factor",
+        "mcNumber": 20,
+        "videoId": "nSwarWgvRuI",
+        "duration": "25:30",
+        "markdown": "#### Standard WHO Lower Reference Limits\n* **Concentration:** \u2265 16 Million/mL | **Total Count:** \u2265 39 Million/ejaculate\n* **Progressive Motility:** \u2265 30% | **Strict Morphology:** \u2265 4% normal forms\n* **Formula:** TMSC = (Vol \u00d7 Conc \u00d7 Motility) / 100\n* Always repeat after 4\u20136 weeks before establishing definitive chronic diagnoses."
+      },
+      {
+        "id": "jm-p3-l2",
+        "title": "Semen Preparation Techniques in IUI: Swim-Up vs Density Gradient",
+        "mcNumber": 16,
+        "videoId": "qbsUgbb3eVc",
+        "duration": "19:15",
+        "markdown": "#### Technique Comparison\n* **Swim-Up:** WHO standard for normozoospermic samples. Minimal ROS generation and zero centrifugal mechanical stress.\n* **Double Density Gradient (40%/80%):** Best for oligozoospermia, viscous samples, debris, and viral clearance."
+      },
+      {
+        "id": "jm-p3-l3",
+        "title": "Semen Hyperviscosity & High Liquefaction Time",
+        "mcNumber": 57,
+        "videoId": "JNZu-bcc0aU",
+        "duration": "16:45",
+        "markdown": "#### Clinical Management\n* **Pathology:** Prostatitis, seminal vesiculitis, or lack of prostatic proteolytic enzymes.\n* **Treatment:** N-acetylcysteine (600 mg BID), oral hydration, alpha-chymotrypsin enzymatic incubation in the lab, and syringe shearing."
+      },
+      {
+        "id": "jm-p3-l4",
+        "title": "Assessment of Sperm Morphology & Teratozoospermia",
+        "mcNumber": 41,
+        "videoId": "wRb-WAdKOuQ",
+        "duration": "18:50",
+        "markdown": "#### Kruger Strict Criteria\n* Strict morphology <4% indicates severe teratozoospermia.\n* Head defects (globozoospermia) lack acrosomes and require ICSI with Artificial Oocyte Activation (AOA) with calcium ionophore."
+      },
+      {
+        "id": "jm-p3-l5",
+        "title": "Sperm DNA Fragmentation Index (DFI) in Practice",
+        "mcNumber": 40,
+        "videoId": "SGxf6wmSpdk",
+        "duration": "23:40",
+        "markdown": "#### DFI Clinical Decision Thresholds\n* **DFI < 15%:** Excellent fertility potential.\n* **DFI 15\u201325%:** Fair; optimize lifestyle, antioxidants, and short abstinence.\n* **DFI > 25\u201330%:** Poor; high risk of blastocyst arrest and miscarriage. Use microfluidic sorting (Zym\u014dt) or testicular sperm (TESA)."
+      },
+      {
+        "id": "jm-p3-l6",
+        "title": "Micro-TESE for Non-Obstructive Azoospermia (NOA)",
+        "mcNumber": 50,
+        "videoId": "HVPEwavswxs",
+        "duration": "24:10",
+        "markdown": "#### Surgical Pearls for Micro-TESE\n* Genetic workup: Karyotype + Y-chromosome microdeletions (AZFa, b, c).\n* AZFa/b deletions = complete absence of germ cells (Micro-TESE contraindicated).\n* AZFc deletions = ~50\u201370% sperm retrieval success.\n* Operative microscope at 15\u201325\u00d7 magnification to dissect dilated, opaque seminiferous tubules."
+      }
+    ]
+  },
+  {
+    "phase": 4,
+    "slug": "phase-4",
+    "title": "Phase 4: Advanced IVF Ovarian Stimulation Protocols",
+    "subtitle": "Antagonist, Long Agonist, PPOS, Low AMH & OHSS Prevention",
+    "description": "Mastering IVF protocols: GnRH Antagonist, GnRH Agonist Long, PPOS, Low AMH stimulation, Endometriosis/Adenomyosis IVF strategies, and OHSS prevention.",
+    "duration": "3h 40m",
+    "icon": "fa-syringe",
+    "lectures": [
+      {
+        "id": "jm-p4-l1",
+        "title": "GnRH Antagonist (SHORT) Protocol: Modern Gold Standard",
+        "mcNumber": 10,
+        "videoId": "_YrikNxrFqo",
+        "duration": "26:30",
+        "markdown": "#### Antagonist Protocol Essentials\n* **Flexible Protocol:** Start Cetrorelix / Ganirelix 0.25 mg/day when lead follicle reaches \u226514 mm or serum E2 >400\u2013600 pg/mL.\n* **Agonist Trigger:** Triptorelin 0.2 mg or Leuprolide 0.2 mg triggers endogenous LH surge and completely prevents OHSS."
+      },
+      {
+        "id": "jm-p4-l2",
+        "title": "GnRH Agonist (LONG) Protocol: Indications & Technique",
+        "mcNumber": 9,
+        "videoId": "i66pq5vD2Oc",
+        "duration": "22:15",
+        "markdown": "#### Long Protocol Mechanics\n* Start daily GnRH agonist (Leuprolide 0.5 mg/day) in mid-luteal phase (Day 21) of preceding cycle.\n* Downregulation confirmed on Day 2 TVS: Endometrium \u22645 mm, baseline E2 <30\u201350 pg/mL, absence of functional cysts."
+      },
+      {
+        "id": "jm-p4-l3",
+        "title": "Progesterone Primed Ovarian Stimulation (PPOS) Protocol",
+        "mcNumber": 35,
+        "videoId": "Q3TSht5X3pM",
+        "duration": "28:40",
+        "markdown": "#### PPOS Protocol Structure\n* Oral Medroxyprogesterone Acetate (MPA 10 mg/day) or Dydrogesterone from Day 2 of stimulation to suppress premature LH surge.\n* Highly cost-effective; mandatory **Freeze-All strategy** due to premature luteinization of endometrium."
+      },
+      {
+        "id": "jm-p4-l4",
+        "title": "Stimulation Protocols for Low AMH / Poor Responders in IVF",
+        "mcNumber": 83,
+        "videoId": "HCIBNKxnON0",
+        "duration": "27:10",
+        "markdown": "#### Low Responder Regimens\n* Poseidon Group 3 & 4: FSH 300 IU + rLH/hpHMG 150 IU (2:1 ratio).\n* **DuoStim Strategy:** Follicular Phase Stimulation followed by Luteal Phase Stimulation 2\u20135 days post-OPU to maximize oocyte yield."
+      },
+      {
+        "id": "jm-p4-l5",
+        "title": "IVF Stimulation Protocols in Endometriosis & Adenomyosis",
+        "mcNumber": 75,
+        "videoId": "vYZGAvGQYT8",
+        "duration": "25:50",
+        "markdown": "#### Managing Endometriosis in IVF\n* Pre-treatment with Depot GnRH agonist (3.75 mg monthly for 1\u20133 months).\n* Higher gonadotropin starting doses; avoid aspirating endometriomas during OPU to prevent pelvic infection."
+      },
+      {
+        "id": "jm-p4-l6",
+        "title": "Ovarian Hyperstimulation Syndrome (OHSS): Prevention & Care",
+        "mcNumber": 37,
+        "videoId": "hAcxDBtEyks",
+        "duration": "23:20",
+        "markdown": "#### OHSS Prevention Checklist\n* **Trigger:** Dual trigger or Agonist-only trigger (Leuprolide/Triptorelin 0.2 mg).\n* **Medical Prophylaxis:** Cabergoline 0.5 mg/day for 8 days post-OPU.\n* **Mandatory Freeze-All:** Whenever >20 follicles are retrieved or serum E2 >4,000 pg/mL."
+      }
+    ]
+  },
+  {
+    "phase": 5,
+    "slug": "phase-5",
+    "title": "Phase 5: Uterine Factors, Endometrial Receptivity & Adenomyosis",
+    "subtitle": "Thin Endometrium, PRP, Chronic Endometritis & FET Protocols",
+    "description": "Thin endometrium protocols, autologous stem cells / PRP, chronic endometritis, endometrial microbiome, FET protocols, and comprehensive adenomyosis management.",
+    "duration": "3h 30m",
+    "icon": "fa-microscope",
+    "lectures": [
+      {
+        "id": "jm-p5-l1",
+        "title": "Understanding & Evaluation of Thin Endometrium in IVF",
+        "mcNumber": 46,
+        "videoId": "HrvbeT0cUjA",
+        "duration": "21:40",
+        "markdown": "#### Diagnostic Criteria\n* Definition: Endometrium <7 mm on day of trigger or progesterone start.\n* Causes: Asherman syndrome (intrauterine synechiae), Genital TB, over-curettage, and impaired uterine radial artery perfusion."
+      },
+      {
+        "id": "jm-p5-l2",
+        "title": "Treatment of Thin Endometrium & Autologous PRP Therapy",
+        "mcNumber": 47,
+        "videoId": "24enAw-j1KE",
+        "duration": "24:15",
+        "markdown": "#### Management Strategy\n* **Medical:** High-dose Estradiol Valerate (up to 8\u201312 mg/day oral + vaginal), Vaginal Sildenafil 25 mg QID, G-CSF intrauterine perfusion.\n* **Regenerative:** Intrauterine Platelet-Rich Plasma (PRP) instillation on Days 8, 11, and 13 of FET preparation."
+      },
+      {
+        "id": "jm-p5-l3",
+        "title": "Chronic Endometritis & Implantation Failure in IVF",
+        "mcNumber": 63,
+        "videoId": "z-6se-MxTzU",
+        "duration": "22:50",
+        "markdown": "#### Diagnostic Cutoffs & Treatment\n* Diagnostic marker: CD138 (Syndecan-1) IHC on endometrial biopsy (\u22651\u20135 plasma cells/HPF).\n* First-line antibiotic: Doxycycline 100 mg BID for 14 days. Refractory: Ciprofloxacin 500 mg BID + Metronidazole 500 mg TID for 14 days."
+      },
+      {
+        "id": "jm-p5-l4",
+        "title": "Endometrial Preparation Protocols for Frozen Embryo Transfer (FET)",
+        "mcNumber": 24,
+        "videoId": "DeqhOWj1-j0",
+        "duration": "26:10",
+        "markdown": "#### FET Protocol Comparison\n* **HRT Cycle:** Estradiol Valerate 2 mg TID from Day 2; progesterone added when lining reaches \u22658 mm with triple-line pattern.\n* **Natural / Modified Natural FET:** Spontaneous LH surge + hCG trigger; lowest risk of preeclampsia and hypertensive disorders of pregnancy."
+      },
+      {
+        "id": "jm-p5-l5",
+        "title": "BLAST Series: Everything About Adenomyosis & Fertility",
+        "mcNumber": 79,
+        "videoId": "W3wSH45RMPs",
+        "duration": "32:00",
+        "markdown": "#### Adenomyosis Protocols\n* Pre-FET suppression: GnRH agonist depot (3.75 mg monthly for 3 months) + Letrozole 2.5 mg.\n* Significantly improves clinical pregnancy and reduces spontaneous miscarriage rates in diffuse adenomyosis."
+      }
+    ]
+  },
+  {
+    "phase": 6,
+    "slug": "phase-6",
+    "title": "Phase 6: Advanced ART, Embryology & Lab Protocols",
+    "subtitle": "OPU, Embryo Transfer, Blastocyst Grading, Vitrification & PGT-A",
+    "description": "Ovum pick up (OPU) techniques, embryo transfer (ET) catheter navigation, Day 3 vs Day 5 blastocyst grading, vitrification, incubators, and PGT-A.",
+    "duration": "3h 15m",
+    "icon": "fa-vial",
+    "lectures": [
+      {
+        "id": "jm-p6-l1",
+        "title": "Ovum Pick Up (OPU): Surgical Tips & High Yield Technique",
+        "mcNumber": 22,
+        "videoId": "JrXkGNPZzpk",
+        "duration": "23:45",
+        "markdown": "#### OPU Surgical Technique\n* Aspiration pressure: 100\u2013120 mmHg with 17G/18G needle.\n* Smooth rotational needle movement; empty entire follicle cluster before retracting out of ovarian cortex."
+      },
+      {
+        "id": "jm-p6-l2",
+        "title": "Technique of Embryo Transfer: Clinical Tips for High Implantation",
+        "mcNumber": 26,
+        "videoId": "MJ5bYMGm66Q",
+        "duration": "25:10",
+        "markdown": "#### Embryo Transfer Rules\n* Full bladder transabdominal ultrasound guidance.\n* Soft flexible catheter; deposit blastocysts 1.5\u20132 cm from the fundus to avoid fundal trauma and uterine contractions."
+      },
+      {
+        "id": "jm-p6-l3",
+        "title": "Embryo Grading (Day 3 vs Day 5) & Time-Lapse Imaging",
+        "mcNumber": 33,
+        "videoId": "cHbb2fj7Ykg",
+        "duration": "26:30",
+        "markdown": "#### Gardner Blastocyst Grading\n* Expansion (1\u20136), Inner Cell Mass (A, B, C), Trophectoderm (A, B, C). E.g., 4AA or 5AA.\n* Day 5 transfer selects naturally for metabolically competent, euploid embryos."
+      },
+      {
+        "id": "jm-p6-l4",
+        "title": "Vitrification of Blastocyst Embryos: Live Freezing Technique",
+        "mcNumber": 73,
+        "videoId": "0-cSp6oF-30",
+        "duration": "21:20",
+        "markdown": "#### Cryopreservation Standards\n* Ultra-rapid vitrification (>20,000\u00b0C/min) with non-crystallizing cryoprotectant media (DMSO + Ethylene Glycol).\n* Blastocyst survival rate >95\u201398% with optimal thaw protocols."
+      },
+      {
+        "id": "jm-p6-l5",
+        "title": "Role of PGT-A & Genetic Embryo Testing in Indian Practice",
+        "mcNumber": 53,
+        "videoId": "Tl8S1Gr9pJw",
+        "duration": "24:00",
+        "markdown": "#### PGT-A Indications\n* Advanced maternal age (>37y), recurrent pregnancy loss (\u22652 losses), recurrent implantation failure, and severe male factor.\n* Trophectoderm biopsy on Day 5/6 followed by Next-Generation Sequencing (NGS)."
+      }
+    ]
+  },
+  {
+    "phase": 7,
+    "slug": "phase-7",
+    "title": "Phase 7: Recurrent Implantation Failure & Immunology",
+    "subtitle": "RPL, RIF, Reproductive Immunology, LMWH, Intralipids & Genetics",
+    "description": "Algorithmic evaluation of recurrent pregnancy loss and failed IVF, immunological testing, LMWH, intralipids, paternal LIT, and POC genetics.",
+    "duration": "3h 20m",
+    "icon": "fa-shield-halved",
+    "lectures": [
+      {
+        "id": "jm-p7-l1",
+        "title": "Evaluation Protocol for Recurrent Implantation Failure (RIF)",
+        "mcNumber": 65,
+        "videoId": "sSsjUaMtddw",
+        "duration": "28:30",
+        "markdown": "#### Step-by-Step RIF Diagnostic Checklist\n1. Uterine Cavity: 3D TVS + Diagnostic Hysteroscopy to rule out polyps, septum, synechiae.\n2. Endometrium: CD138 biopsy for chronic endometritis.\n3. Genetics: Parental karyotypes + PGT-A for embryonic euploidy.\n4. Andrology: Sperm DNA Fragmentation Index (DFI).\n5. Immunology & Thrombophilia: aPL panel, ANA, Factor V Leiden."
+      },
+      {
+        "id": "jm-p7-l2",
+        "title": "Basics of Reproductive Immunology & Testing Panels",
+        "mcNumber": 61,
+        "videoId": "jTlalr83qLk",
+        "duration": "24:10",
+        "markdown": "#### Immunology in Fertility\n* Decidual Natural Killer (dNK) cells support trophoblast invasion; excessive peripheral NK cytotoxicity may impair implantation.\n* Antiphospholipid Syndrome (APS) requires confirmed positive Lupus Anticoagulant or Anticardiolipin IgG/IgM measured 12 weeks apart."
+      },
+      {
+        "id": "jm-p7-l3",
+        "title": "Role of Low Molecular Weight Heparin (LMWH) & Aspirin",
+        "mcNumber": 52,
+        "videoId": "n6tsaOtcBb8",
+        "duration": "21:15",
+        "markdown": "#### Anticoagulation Protocol\n* Indicated in confirmed APS and hereditary thrombophilias.\n* Low-Dose Aspirin (75\u2013150 mg/day) + Prophylactic Enoxaparin (40 mg/day subcutaneously) started from day of embryo transfer."
+      },
+      {
+        "id": "jm-p7-l4",
+        "title": "Role of Intralipids in Recurrent Implantation Failure",
+        "mcNumber": 64,
+        "videoId": "LSuogLA0sJ0",
+        "duration": "20:45",
+        "markdown": "#### 20% Intravenous Fat Emulsion Protocol\n* Modulates immune response and shifts Th1 to Th2 cytokine profile.\n* Infusion (100 mL of 20% Intralipid in 500 mL normal saline over 2\u20133 hours) 7\u201310 days before FET and on the day of transfer."
+      },
+      {
+        "id": "jm-p7-l5",
+        "title": "Product of Conception (POC) Karyotyping & Genetics",
+        "mcNumber": 68,
+        "videoId": "SqITN9I3S3Y",
+        "duration": "22:50",
+        "markdown": "#### Genetic Testing in Miscarriage\n* Microarray / NGS on POC tissue to identify chromosomal trisomies, monosomies, and structural rearrangements.\n* Differentiates maternal cell contamination from true fetal aneuploidy."
+      }
+    ]
+  },
+  {
+    "phase": 8,
+    "slug": "phase-8",
+    "title": "Phase 8: Reproductive Surgery & M\u00fcllerian Anomalies",
+    "subtitle": "Laparoscopic Cerclage, OHVIRA, Uterine Artery & Septum",
+    "description": "Laparoscopic cerclage in pregnancy, Shirodkar/McDonald techniques, OHVIRA syndrome, retroperitoneal uterine artery access, and M\u00fcllerian anomaly classifications.",
+    "duration": "2h 50m",
+    "icon": "fa-user-doctor",
+    "lectures": [
+      {
+        "id": "jm-p8-l1",
+        "title": "Laparoscopic Cerclage in Pregnancy for Incompetent Cervix",
+        "mcNumber": 99,
+        "videoId": "jSRvuLlUE2U",
+        "duration": "26:40",
+        "markdown": "#### Surgical Indications & Pearls\n* Indicated in failed prior vaginal cerclages, extremely short or amputated cervix.\n* Placement of 5mm Mersilene tape at the level of the internal os medial to the uterine vascular bundle."
+      },
+      {
+        "id": "jm-p8-l2",
+        "title": "Fertility in M\u00fcllerian Anomalies: Obstructive & Non-Obstructive",
+        "mcNumber": 85,
+        "videoId": "pRb_rZCpJeU",
+        "duration": "29:15",
+        "markdown": "#### Classification & Surgery\n* Septate uterus: Hysteroscopic metroplasty with cold scissors or bipolar needle improves live birth rates to normal baseline.\n* Unicornuate uterus: Screen for rudimentary communicating/non-communicating horns and renal anomalies."
+      },
+      {
+        "id": "jm-p8-l3",
+        "title": "Surgical Management of OHVIRA Syndrome",
+        "mcNumber": 98,
+        "videoId": "WwAOQ1S5g5w",
+        "duration": "24:30",
+        "markdown": "#### Clinical Management\n* Triad: Obstructed Hemivagina, Ipsilateral Renal Agenesis, Uterus Didelphys.\n* Complete transvaginal surgical excision of obstructing vaginal septum restores normal outflow and preserves fertility."
+      },
+      {
+        "id": "jm-p8-l4",
+        "title": "Uterine Artery at Origin: Retroperitoneal Dissection",
+        "mcNumber": 97,
+        "videoId": "TZfx0FaVx6s",
+        "duration": "22:10",
+        "markdown": "#### Retroperitoneal Access\n* Open pararectal space to expose the anterior branch of the internal iliac artery.\n* Safely ligate or clip the uterine artery at its origin prior to extensive myomectomy or resection of vascular malformations."
+      }
+    ]
+  }
+];
+
+    let currentPhaseNum = 1;
+    let currentActiveLecture = curriculumData[0].lectures[0];
+    let completedLectures = JSON.parse(localStorage.getItem('jay_mehta_completed') || '[]');
+    let player;
+    let isPlayerReady = false;
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderPhase(1);
+      updateProgress();
+    });
+
+    function switchPhase(phaseNum) {
+      currentPhaseNum = phaseNum;
+      
+      // Update Phase Tab styles
+      document.querySelectorAll('.phase-btn').forEach(b => {
+        b.className = "phase-btn py-1.5 px-2 rounded-lg text-[11px] font-medium text-slate-400 hover:text-slate-200 hover:bg-slate-800 transition flex items-center justify-center";
+      });
+      const activeBtn = document.getElementById(`phase-btn-${phaseNum}`);
+      if (activeBtn) {
+        activeBtn.className = "phase-btn py-1.5 px-2 rounded-lg text-[11px] font-bold bg-sky-600 text-white shadow transition flex items-center justify-center";
+      }
+
+      const phase = curriculumData[phaseNum - 1];
+      document.getElementById('activePhaseCountBadge').textContent = `Phase ${phaseNum} / 8 (${phase.duration})`;
+      document.getElementById('phaseBadgeSubtitle').textContent = `Phase ${phaseNum} • ${phase.duration}`;
+      document.getElementById('phaseBannerTitle').textContent = phase.title;
+      document.getElementById('phaseBannerDescription').textContent = phase.subtitle;
+
+      renderPhase(phaseNum);
+
+      // Select first lecture in phase
+      if (phase.lectures.length > 0) {
+        selectLecture(phase.lectures[0].id);
+      }
+    }
+
+    function renderPhase(phaseNum, filterQuery = "") {
+      const container = document.getElementById('lecturesContainer');
+      container.innerHTML = "";
+
+      const phase = curriculumData[phaseNum - 1];
+      const filtered = phase.lectures.filter(l => {
+        const q = filterQuery.toLowerCase();
+        return l.title.toLowerCase().includes(q) || 
+               l.markdown.toLowerCase().includes(q) ||
+               `masterclass ${l.mcNumber}`.includes(q);
+      });
+
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div class="text-center py-8 text-slate-500 text-xs">
+            <i class="fa-solid fa-search text-lg mb-1 block"></i>
+            No lectures found matching "${filterQuery}"
+          </div>
+        `;
+        return;
+      }
+
+      filtered.forEach((lec, idx) => {
+        const isCompleted = completedLectures.includes(lec.id);
+        const isActive = currentActiveLecture && currentActiveLecture.id === lec.id;
+
+        const card = document.createElement('div');
+        card.id = `card-${lec.id}`;
+        card.className = `p-3 rounded-xl border transition-all cursor-pointer flex items-start justify-between gap-3 ${
+          isActive 
+            ? 'bg-sky-950/40 border-sky-500 shadow-md shadow-sky-500/10' 
+            : 'bg-slate-900/90 border-slate-800 hover:border-slate-700 hover:bg-slate-850'
+        }`;
+
+        card.innerHTML = `
+          <div class="flex items-start space-x-2.5 flex-1 min-w-0" onclick="selectLecture('${lec.id}')">
+            <div class="mt-0.5 h-6 w-6 rounded-lg ${isActive ? 'bg-sky-500 text-white' : 'bg-slate-800 text-slate-400'} flex items-center justify-center text-xs font-mono font-bold shrink-0">
+              ${idx + 1}
+            </div>
+            <div class="flex-1 min-w-0">
+              <h4 class="text-xs font-semibold ${isActive ? 'text-sky-300' : 'text-slate-200'} truncate">${lec.title}</h4>
+              <div class="flex items-center space-x-2 mt-1 text-[10px] font-mono text-slate-400">
+                <span class="bg-slate-950 px-1.5 py-0.5 rounded border border-slate-800 text-sky-400"><i class="fa-regular fa-clock mr-1"></i>${lec.duration}</span>
+                <span class="text-slate-500">MC #${lec.mcNumber}</span>
+              </div>
+            </div>
+          </div>
+
+          <button onclick="toggleCompleted('${lec.id}', event)" class="p-1.5 text-slate-500 hover:text-teal-400 transition" title="Toggle Completed">
+            <i class="${isCompleted ? 'fa-solid fa-circle-check text-teal-400 text-base' : 'fa-regular fa-circle text-slate-600 hover:text-slate-400 text-base'}"></i>
+          </button>
+        `;
+
+        container.appendChild(card);
+      });
+    }
+
+    function selectLecture(lecId) {
+      let lec = null;
+      for (let p of curriculumData) {
+        const found = p.lectures.find(l => l.id === lecId);
+        if (found) {
+          lec = found;
+          if (p.phase !== currentPhaseNum) {
+            switchPhase(p.phase);
+          }
+          break;
+        }
+      }
+      if (!lec) return;
+
+      currentActiveLecture = lec;
+
+      // Update UI Highlights
+      document.querySelectorAll('#lecturesContainer > div').forEach(c => {
+        c.className = "p-3 rounded-xl border transition-all cursor-pointer flex items-start justify-between gap-3 bg-slate-900/90 border-slate-800 hover:border-slate-700";
+      });
+      const activeCard = document.getElementById(`card-${lec.id}`);
+      if (activeCard) {
+        activeCard.className = "p-3 rounded-xl border transition-all cursor-pointer flex items-start justify-between gap-3 bg-sky-950/40 border-sky-500 shadow-md shadow-sky-500/10";
+      }
+
+      // Update Controls Sub-bar
+      document.getElementById('currentDurationBadge').textContent = lec.duration;
+      document.getElementById('currentTitleBadge').textContent = lec.title;
+      document.getElementById('currentLectureTitleDetail').textContent = lec.title;
+      document.getElementById('currentMcBadge').textContent = `Masterclass #${lec.mcNumber}`;
+      document.getElementById('btnOpenYouTube').href = `https://www.youtube.com/watch?v=${lec.videoId}`;
+
+      // Update Mark Complete Button
+      updateMarkCompleteBtn();
+
+      // Render Markdown
+      document.getElementById('lectureSummaryContent').innerHTML = marked.parse(lec.markdown);
+
+      // Play in YouTube Player
+      if (isPlayerReady && player) {
+        player.loadVideoById(lec.videoId);
+      }
+    }
+
+    function toggleCompleted(lecId, event) {
+      if (event) event.stopPropagation();
+
+      if (completedLectures.includes(lecId)) {
+        completedLectures = completedLectures.filter(id => id !== lecId);
+      } else {
+        completedLectures.push(lecId);
+      }
+
+      localStorage.setItem('jay_mehta_completed', JSON.stringify(completedLectures));
+      renderPhase(currentPhaseNum, document.getElementById('searchInput').value);
+      updateProgress();
+      updateMarkCompleteBtn();
+    }
+
+    function toggleCompletedCurrent() {
+      if (currentActiveLecture) {
+        toggleCompleted(currentActiveLecture.id);
+      }
+    }
+
+    function updateMarkCompleteBtn() {
+      if (!currentActiveLecture) return;
+      const isCompleted = completedLectures.includes(currentActiveLecture.id);
+      const btn = document.getElementById('btnMarkComplete');
+      const text = document.getElementById('btnMarkCompleteText');
+
+      if (isCompleted) {
+        btn.className = "px-3 py-1.5 rounded-lg bg-teal-950 border border-teal-600/50 text-teal-300 transition flex items-center space-x-1.5 text-xs";
+        text.textContent = "Completed";
+        btn.querySelector('i').className = "fa-solid fa-circle-check text-teal-400";
+      } else {
+        btn.className = "px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition flex items-center space-x-1.5 text-xs";
+        text.textContent = "Mark Completed";
+        btn.querySelector('i').className = "fa-regular fa-circle-check text-sky-400";
+      }
+    }
+
+    function updateProgress() {
+      let total = 0;
+      for (let p of curriculumData) {
+        total += p.lectures.length;
+      }
+      const count = completedLectures.length;
+      const pct = Math.round((count / total) * 100);
+
+      document.getElementById('progressBar').style.width = `${pct}%`;
+      document.getElementById('progressText').textContent = `${pct}% (${count}/${total})`;
+    }
+
+    function handleSearch() {
+      const q = document.getElementById('searchInput').value;
+      renderPhase(currentPhaseNum, q);
+    }
+
+    // YouTube API Integration
+    const tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    const firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('player', {
+        height: '100%',
+        width: '100%',
+        videoId: curriculumData[0].lectures[0].videoId,
+        playerVars: {
+          'playsinline': 1,
+          'rel': 0,
+          'modestbranding': 1
+        },
+        events: {
+          'onReady': onPlayerReady
+        }
+      });
+    }
+
+    function onPlayerReady(event) {
+      isPlayerReady = true;
+      selectLecture(curriculumData[0].lectures[0].id);
+    }
+  </script>
+</body>
+</html>
