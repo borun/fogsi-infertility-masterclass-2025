@@ -1,18 +1,18 @@
 ---
 phase: 4
-title: "Phase 4: Advanced Ovarian Stimulation Protocols in IVF"
-slug: "phase-4-ivf-stimulation-protocols"
-duration: "3h 40m"
-lectureCount: 6
+title: "Phase 4: Advanced IVF Ovarian Stimulation Protocols"
+slug: "phase-4"
+duration: "3h 45m"
+lectureCount: 10
 ---
 
-# Phase 4: Advanced Ovarian Stimulation Protocols in IVF
+# Phase 4: Advanced IVF Ovarian Stimulation Protocols
 
 Mastering IVF protocols: GnRH Antagonist, GnRH Agonist Long, PPOS, Low AMH stimulation, Endometriosis/Adenomyosis IVF strategies, and OHSS prevention.
 
 ---
 
-## 📋 Phase Syllabus & Video Lectures
+## 📋 Phase Syllabus & Individual Video Lectures
 
 ### Lecture 1: GnRH Antagonist (SHORT) Protocol: Modern Gold Standard
 <!-- video:id="_YrikNxrFqo", duration="26:30", mcNumber=10 -->
@@ -25,7 +25,18 @@ Mastering IVF protocols: GnRH Antagonist, GnRH Agonist Long, PPOS, Low AMH stimu
 
 ---
 
-### Lecture 2: GnRH Agonist (LONG) Protocol: Indications & Technique
+### Lecture 2: Pre-Treatment with GnRH Antagonist in Fertility Practice
+<!-- video:id="Z-sqMbCIVgE", duration="18:15", mcNumber=7 -->
+* **Video ID:** `Z-sqMbCIVgE` | **Duration:** 18:15 | **Series Number:** Masterclass #7
+
+#### High-Yield Clinical Pearls:
+* Short course of GnRH antagonist in the late luteal phase of the preceding cycle.
+* Suppresses early inter-cycle FSH rise, synchronizing the antral follicular cohort for uniform recruitment.
+* Prevents asynchronous lead follicle emergence in poor responders.
+
+---
+
+### Lecture 3: GnRH Agonist (LONG) Protocol: Indications & Technique
 <!-- video:id="i66pq5vD2Oc", duration="22:15", mcNumber=9 -->
 * **Video ID:** `i66pq5vD2Oc` | **Duration:** 22:15 | **Series Number:** Masterclass #9
 
@@ -36,7 +47,7 @@ Mastering IVF protocols: GnRH Antagonist, GnRH Agonist Long, PPOS, Low AMH stimu
 
 ---
 
-### Lecture 3: Progesterone Primed Ovarian Stimulation (PPOS) Protocol
+### Lecture 4: Progesterone Primed Ovarian Stimulation (PPOS) Protocol
 <!-- video:id="Q3TSht5X3pM", duration="28:40", mcNumber=35 -->
 * **Video ID:** `Q3TSht5X3pM` | **Duration:** 28:40 | **Series Number:** Masterclass #35
 
@@ -47,7 +58,7 @@ Mastering IVF protocols: GnRH Antagonist, GnRH Agonist Long, PPOS, Low AMH stimu
 
 ---
 
-### Lecture 4: Stimulation Protocols for Low AMH / Poor Responders in IVF
+### Lecture 5: Stimulation Protocols for Low AMH / Poor Responders in IVF
 <!-- video:id="HCIBNKxnON0", duration="27:10", mcNumber=83 -->
 * **Video ID:** `HCIBNKxnON0` | **Duration:** 27:10 | **Series Number:** Masterclass #83
 
@@ -58,7 +69,18 @@ Mastering IVF protocols: GnRH Antagonist, GnRH Agonist Long, PPOS, Low AMH stimu
 
 ---
 
-### Lecture 5: IVF Stimulation Protocols in Endometriosis & Adenomyosis
+### Lecture 6: Role of DHEA & CoQ-10 Adjuvants for Low AMH Patients
+<!-- video:id="rtYX9ruLRQg", duration="19:50", mcNumber=78 -->
+* **Video ID:** `rtYX9ruLRQg` | **Duration:** 19:50 | **Series Number:** Masterclass #78
+
+#### High-Yield Clinical Pearls:
+* DHEA (25 mg TID for 8–12 weeks) augments theca androgen production, increasing FSH receptor density.
+* CoQ10 (300–600 mg/day) restores mitochondrial ATP production and oocyte spindle integrity in aging ovaries.
+* Statistically improves oocyte retrieval numbers and fertilization rates in POR.
+
+---
+
+### Lecture 7: IVF Stimulation Protocols in Endometriosis & Ovarian Cysts
 <!-- video:id="vYZGAvGQYT8", duration="25:50", mcNumber=75 -->
 * **Video ID:** `vYZGAvGQYT8` | **Duration:** 25:50 | **Series Number:** Masterclass #75
 
@@ -69,7 +91,29 @@ Mastering IVF protocols: GnRH Antagonist, GnRH Agonist Long, PPOS, Low AMH stimu
 
 ---
 
-### Lecture 6: Ovarian Hyperstimulation Syndrome (OHSS): Prevention & Management
+### Lecture 8: Stimulation Protocols for IVF with Adenomyosis
+<!-- video:id="xpXgiBG9DaM", duration="24:30", mcNumber=80 -->
+* **Video ID:** `xpXgiBG9DaM` | **Duration:** 24:30 | **Series Number:** Masterclass #80
+
+#### High-Yield Clinical Pearls:
+* Adenomyosis creates chronic junctional zone inflammation and pelvic hyperestrogenism.
+* Use Antagonist or PPOS protocol with agonist trigger; avoid fresh transfer.
+* Freeze-all blastocysts for delayed transfer after long agonist depot suppression.
+
+---
+
+### Lecture 9: Random Start Protocol: Ovarian Stimulation in Cancer & Urgent Cycles
+<!-- video:id="5d6U2tyP2jE", duration="18:40", mcNumber=12 -->
+* **Video ID:** `5d6U2tyP2jE` | **Duration:** 18:40 | **Series Number:** Masterclass #12
+
+#### High-Yield Clinical Pearls:
+* Ovarian stimulation can be started on ANY day of the menstrual cycle (Follicular or Luteal phase) without waiting for menses.
+* Crucial for emergency fertility preservation in oncological patients prior to chemotherapy.
+* Use GnRH Antagonist + Letrozole (in ER+ breast cancers) + Agonist trigger + mandatory vitrification.
+
+---
+
+### Lecture 10: Ovarian Hyperstimulation Syndrome (OHSS): Prevention & Care
 <!-- video:id="hAcxDBtEyks", duration="23:20", mcNumber=37 -->
 * **Video ID:** `hAcxDBtEyks` | **Duration:** 23:20 | **Series Number:** Masterclass #37
 

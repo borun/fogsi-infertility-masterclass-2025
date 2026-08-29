@@ -1,9 +1,9 @@
 ---
 phase: 3
 title: "Phase 3: Male Factor Subfertility & Andrology Workup"
-slug: "phase-3-male-factor-andrology"
-duration: "3h 05m"
-lectureCount: 6
+slug: "phase-3"
+duration: "3h 30m"
+lectureCount: 8
 ---
 
 # Phase 3: Male Factor Subfertility & Andrology Workup
@@ -12,9 +12,9 @@ Semen analysis interpretation (WHO 6th Edition), sperm preparation techniques, h
 
 ---
 
-## 📋 Phase Syllabus & Video Lectures
+## 📋 Phase Syllabus & Individual Video Lectures
 
-### Lecture 1: How to Interpret Semen Analysis (WHO Criteria) & Male Factor
+### Lecture 1: How to Interpret Semen Analysis (WHO 6th Edition Criteria)
 <!-- video:id="nSwarWgvRuI", duration="25:30", mcNumber=20 -->
 * **Video ID:** `nSwarWgvRuI` | **Duration:** 25:30 | **Series Number:** Masterclass #20
 
@@ -36,7 +36,7 @@ Semen analysis interpretation (WHO 6th Edition), sperm preparation techniques, h
 
 ---
 
-### Lecture 3: Semen Hyperviscosity & High Liquefaction Time: Clinical Approach
+### Lecture 3: Semen Hyperviscosity & High Liquefaction Time: Clinical Protocol
 <!-- video:id="JNZu-bcc0aU", duration="16:45", mcNumber=57 -->
 * **Video ID:** `JNZu-bcc0aU` | **Duration:** 16:45 | **Series Number:** Masterclass #57
 
@@ -68,7 +68,18 @@ Semen analysis interpretation (WHO 6th Edition), sperm preparation techniques, h
 
 ---
 
-### Lecture 6: Micro-TESE for Non-Obstructive Azoospermia (NOA): Practical Points
+### Lecture 6: Role of Antioxidants in Male Fertility: Evidence & Dosages
+<!-- video:id="2_JMZTZIakc", duration="17:20", mcNumber=43 -->
+* **Video ID:** `2_JMZTZIakc` | **Duration:** 17:20 | **Series Number:** Masterclass #43
+
+#### High-Yield Clinical Pearls:
+* Oxidative stress damages sperm cell membranes and causes single/double-strand DNA breaks.
+* Rational regimen: CoQ10 200–300 mg, L-Carnitine 1–2g, Zinc 25–50 mg, Selenium 200 mcg, and Vitamin C/E.
+* Avoid excessive antioxidant megadosing which can trigger reductive stress and chromatin decondensation.
+
+---
+
+### Lecture 7: Micro-TESE for Non-Obstructive Azoospermia (NOA): Practical Pearls
 <!-- video:id="HVPEwavswxs", duration="24:10", mcNumber=50 -->
 * **Video ID:** `HVPEwavswxs` | **Duration:** 24:10 | **Series Number:** Masterclass #50
 
@@ -76,5 +87,16 @@ Semen analysis interpretation (WHO 6th Edition), sperm preparation techniques, h
 * NOA workup: Serum FSH, LH, Testosterone, Karyotype (47,XXY), and Y-chromosome microdeletions (AZFa, b, c).
 * AZFa/b microdeletions: Sperm retrieval is contraindicated (0% success). AZFc microdeletions: ~50–70% retrieval rate via Micro-TESE.
 * Operating microscope at 15–25× magnification to selectively identify dilated, opaque seminiferous tubules containing active spermatogenesis.
+
+---
+
+### Lecture 8: Genetic Evaluation in Male Fertility: Karyotyping & Y-Deletions
+<!-- video:id="k0BpKTC4og0", duration="21:30", mcNumber=71 -->
+* **Video ID:** `k0BpKTC4og0` | **Duration:** 21:30 | **Series Number:** Masterclass #71
+
+#### High-Yield Clinical Pearls:
+* Mandatory in severe oligozoospermia (<5 M/mL) and azoospermia.
+* Screen for Klinefelter syndrome (47,XXY), Robertsonian/reciprocal translocations, and CFTR mutations in CBAVD.
+* Pre-ICSI genetic counseling on transmission of Y-chromosome microdeletions to male offspring.
 
 ---

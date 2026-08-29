@@ -1,18 +1,18 @@
 ---
 phase: 1
 title: "Phase 1: Basic Physiology, Endocrinology & Reserve Assessment"
-slug: "phase-1-physiology-endocrinology"
+slug: "phase-1"
 duration: "2h 45m"
 lectureCount: 5
 ---
 
 # Phase 1: Basic Physiology, Endocrinology & Reserve Assessment
 
-Fundamental endocrinology of the hypothalamic-pituitary-ovarian axis, 2-Cell 2-Gonadotropin theory, AMH interpretation, gonadotropin selection (hpHMG vs rFSH), and luteal phase biology.
+Fundamental endocrinology of the hypothalamic-pituitary-ovarian axis, the 2-Cell 2-Gonadotropin theory, AMH biological interpretation, gonadotropin selection logic (hpHMG vs rFSH), and luteal phase biology.
 
 ---
 
-## 📋 Phase Syllabus & Video Lectures
+## 📋 Phase Syllabus & Individual Video Lectures
 
 ### Lecture 1: 2-Cell 2-Gonadotropin Theory: Basis of Ovarian Stimulation
 <!-- video:id="n3BaOUceqEA", duration="18:24", mcNumber=19 -->
@@ -21,7 +21,7 @@ Fundamental endocrinology of the hypothalamic-pituitary-ovarian axis, 2-Cell 2-G
 #### High-Yield Clinical Pearls:
 * Theca cells respond to LH by converting cholesterol to androgens (androstenedione & testosterone).
 * Granulosa cells respond to FSH by aromatizing theca-derived androgens into estradiol (E2).
-* Without adequate basal LH action, theca androgen substrate is inadequate, resulting in poor follicle quality and compromised oocyte maturation.
+* Without adequate basal LH action, theca androgen substrate is depleted, compromising cytoplasmic oocyte maturation.
 
 ---
 
@@ -32,7 +32,7 @@ Fundamental endocrinology of the hypothalamic-pituitary-ovarian axis, 2-Cell 2-G
 #### High-Yield Clinical Pearls:
 * Produced by granulosa cells of pre-antral and small antral follicles (<8 mm).
 * AMH predicts oocyte QUANTITY, but female age determines oocyte QUALITY (euploidy).
-* Cutoffs: High/PCOS (>3.5 ng/mL), Normal (1.2–3.5 ng/mL), Low/Diminished (<1.1 ng/mL), Severely Diminished (<0.5 ng/mL).
+* High (>3.5 ng/mL), Normal (1.2–3.5 ng/mL), Low (0.5–1.1 ng/mL), Severely Diminished (<0.5 ng/mL).
 
 ---
 
@@ -41,9 +41,9 @@ Fundamental endocrinology of the hypothalamic-pituitary-ovarian axis, 2-Cell 2-G
 * **Video ID:** `wmUzPDv12mU` | **Duration:** 19:40 | **Series Number:** Masterclass #17
 
 #### High-Yield Clinical Pearls:
-* Highly Purified HMG (hpHMG) contains FSH + LH-like activity predominantly derived from human chorionic gonadotropin (hCG).
-* Recombinant FSH (rFSH) provides pure FSH activity with minimal batch variability.
-* Patients with advanced maternal age (>35 yrs), poor ovarian response (Poseidon 1/2), or hypogonadotropic hypogonadism benefit significantly from hpHMG.
+* Highly Purified HMG (hpHMG) contains FSH + LH-like activity predominantly derived from hCG.
+* Recombinant FSH (rFSH) provides pure FSH activity with minimal batch-to-batch variability.
+* Advanced maternal age (>35y) and Poseidon Group 1/2 unexpected poor responders benefit significantly from hpHMG.
 
 ---
 
@@ -53,12 +53,12 @@ Fundamental endocrinology of the hypothalamic-pituitary-ovarian axis, 2-Cell 2-G
 
 #### High-Yield Clinical Pearls:
 * Luteal phase deficiency is common in stimulated cycles due to supraphysiological steroid levels altering LH pulsatility.
-* Micronized natural progesterone (oral/vaginal 200–400 mg/day) or dydrogesterone (10 mg BID/TID) started 36–48 hours post-IUI.
+* Micronized natural progesterone (vaginal 200–400 mg/day) or dydrogesterone (10 mg BID/TID) started 36–48 hours post-IUI.
 * Support should be continued until the 10th to 12th week of gestation if pregnancy is confirmed.
 
 ---
 
-### Lecture 5: Prolactin & Thyroid Dynamics in Subfertility
+### Lecture 5: Prolactin & Thyroid Dynamics in Subfertility Management
 <!-- video:id="AGy3aepu34s", duration="17:35", mcNumber=48 -->
 * **Video ID:** `AGy3aepu34s` | **Duration:** 17:35 | **Series Number:** Masterclass #48
 

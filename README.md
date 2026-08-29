@@ -30,7 +30,7 @@ Medical education today suffers from two extremes:
 | Specialty | Course / Topic | Format | Status | Duration | Interactive Portal |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **Reproductive / OB-GYN** | **FOGSI-ICOG & ISAR Infertility Masterclass** | Curated Masterclass | `Active` | 9+ Hours (28 Modules) | [🚀 Launch Course](topics/fogsi-infertility-masterclass/index.html) |
-| **Reproductive / OB-GYN** | **Infertility Masterclass by Dr. Jay Mehta** | Curated Masterclass | `Active` | 24+ Hours (8 Phases) | [🚀 Launch Course](topics/infertility-masterclass-dr-jay-mehta/index.html) |
+| **Reproductive / OB-GYN** | **Infertility Masterclass by Dr. Jay Mehta** | Curated Masterclass | `Active` | 27+ Hours (69 Modules) | [🚀 Launch Course](topics/infertility-masterclass-dr-jay-mehta/index.html) |
 | **Gynecologic Surgery** | **Total Abdominal Hysterectomy (TAH) Manual** | AI-Guided Protocol | `Active` | 35 Mins (Manual + Safety) | [🚀 Launch Manual](topics/total-abdominal-hysterectomy/index.html) |
 | **Cardiology** | **Clinical ECG Masterclass & Arrhythmias** | AI-Guided Protocol | `Roadmap` | 4 Hours (16 Modules) | *In Development* |
 | **Critical Care** | **Mechanical Ventilation & ICU Physiology** | AI-Guided Protocol | `Roadmap` | 5 Hours (12 Modules) | *In Development* |
