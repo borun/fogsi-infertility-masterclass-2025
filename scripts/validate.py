@@ -174,6 +174,18 @@ def test_html_files():
             parser.feed(content)
             log_pass(f"{rel_html} parsed successfully with valid HTML structure.")
 
+            # Ensure essential production CSS & Icons are linked (skip google verification file)
+            if not rel_html.startswith("google"):
+                if "font-awesome" not in content:
+                    log_error(f"In {rel_html}: FontAwesome stylesheet link is missing! Icons will not render.")
+                else:
+                    log_pass(f"In {rel_html}: verified FontAwesome icon stylesheet.")
+
+                if "cdn.tailwindcss.com" in content:
+                    log_error(f"In {rel_html}: cdn.tailwindcss.com is present! Replace with main.min.css.")
+                else:
+                    log_pass(f"In {rel_html}: verified no cdn.tailwindcss.com runtime script.")
+
             # Validate relative href links
             html_dir = os.path.dirname(html_path)
             for link in parser.links:
