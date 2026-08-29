@@ -101,6 +101,8 @@ def test_markdown_files():
     md_count = 0
     for root, _, files in os.walk(topics_dir):
         for file in files:
+            if file.startswith("."):
+                continue
             if file.endswith(".md"):
                 md_count += 1
                 rel_path = os.path.relpath(os.path.join(root, file), ROOT_DIR)
@@ -154,9 +156,11 @@ def test_html_files():
     print("\n\033[1m[3/4] Validating HTML structure & local relative links...\033[0m")
     html_files = []
     for root, _, files in os.walk(ROOT_DIR):
-        if ".git" in root or "node_modules" in root:
+        if ".git" in root or "node_modules" in root or ".githooks" in root:
             continue
         for file in files:
+            if file.startswith("."):
+                continue
             if file.endswith(".html"):
                 html_files.append(os.path.join(root, file))
 

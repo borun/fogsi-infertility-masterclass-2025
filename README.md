@@ -30,6 +30,7 @@ Medical education today suffers from two extremes:
 | Specialty | Course / Topic | Format | Status | Duration | Interactive Portal |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **Reproductive / OB-GYN** | **FOGSI-ICOG & ISAR Infertility Masterclass** | Curated Masterclass | `Active` | 9+ Hours (28 Modules) | [🚀 Launch Course](topics/fogsi-infertility-masterclass/index.html) |
+| **Gynecologic Surgery** | **Total Abdominal Hysterectomy (TAH) Manual** | AI-Guided Protocol | `Active` | 35 Mins (Manual + Safety) | [🚀 Launch Manual](topics/total-abdominal-hysterectomy/index.html) |
 | **Cardiology** | **Clinical ECG Masterclass & Arrhythmias** | AI-Guided Protocol | `Roadmap` | 4 Hours (16 Modules) | *In Development* |
 | **Critical Care** | **Mechanical Ventilation & ICU Physiology** | AI-Guided Protocol | `Roadmap` | 5 Hours (12 Modules) | *In Development* |
 | **Internal Medicine** | **Clinical Antimicrobial Stewardship** | AI-Guided Protocol | `Roadmap` | 3.5 Hours (10 Modules) | *In Development* |
@@ -46,13 +47,20 @@ meded/
 ├── data/
 │   └── topics.json                      # Central topic registry (metadata for hub search & filters)
 └── topics/
-    └── fogsi-infertility-masterclass/
-        ├── index.html                   # Interactive course viewer & video player SPA
-        ├── README.md                    # Course documentation & syllabus index
+    ├── fogsi-infertility-masterclass/
+    │   ├── index.html                   # Interactive course viewer & video player SPA
+    │   ├── README.md                    # Course documentation & syllabus index
+    │   └── content/
+    │       ├── day1.md                  # Day 1: Male Factor, Genetics & IUI
+    │       ├── day2.md                  # Day 2: Female Infertility & Endoscopy
+    │       └── day3.md                  # Day 3: Advanced ART & Embryology
+    └── total-abdominal-hysterectomy/
+        ├── index.html                   # Operative manual & resident safety viewer
+        ├── README.md                    # Surgical syllabus & illustration index
+        ├── images/                      # High-resolution anatomical & operative figures
         └── content/
-            ├── day1.md                  # Day 1: Male Factor, Genetics & IUI
-            ├── day2.md                  # Day 2: Female Infertility & Endoscopy
-            └── day3.md                  # Day 3: Advanced ART & Embryology
+            ├── operative-manual.md      # Comprehensive operative manual & ERAS
+            └── ureter-safety-cheat-sheet.md # Ureter danger zones & injury protocol
 ```
 
 ---
