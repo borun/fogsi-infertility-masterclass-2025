@@ -198,14 +198,14 @@ def test_html_files():
 # 4. Check Root Platform Essentials
 # -------------------------------------------------------------
 def test_root_essentials():
-    print("\n\033[1m[4/4] Validating repository root essentials...\033[0m")
-    essentials = ["index.html", "README.md", "LICENSE"]
+    print("\n\033[1m[4/4] Validating repository root essentials & compiled assets...\033[0m")
+    essentials = ["index.html", "README.md", "LICENSE", "assets/css/main.min.css"]
     for item in essentials:
         path = os.path.join(ROOT_DIR, item)
         if os.path.exists(path) and os.path.getsize(path) > 0:
-            log_pass(f"Root '{item}' is present and non-empty.")
+            log_pass(f"Essential file '{item}' is present and non-empty ({os.path.getsize(path)} bytes).")
         else:
-            log_error(f"Root '{item}' is missing or empty.")
+            log_error(f"Essential file '{item}' is missing or empty. Run 'npm run build:css' to compile.")
 
 # -------------------------------------------------------------
 # Main Runner
